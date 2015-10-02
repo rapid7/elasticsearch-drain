@@ -1,6 +1,11 @@
 # Elasticsearch::Drain
 
-TODO: Write a gem description
+The purpose of this script is to drain an existing ASG with ES nodes that are part of a single cluster.
+
+Consider the following deployment procecture:
+ * Start with an ASG with ES nodes in a cluster
+ * Create a new ASG with ES nodes that join the above
+ * Drain all data off first(old) ASG and remove instances from ASG and terminate
 
 ## Installation
 
