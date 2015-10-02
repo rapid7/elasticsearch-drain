@@ -1,2 +1,82 @@
-require "bundler/gem_tasks"
+require 'elasticsearch/extensions/test/cluster'
+require 'bundler/gem_tasks'
+require 'rubocop/rake_task'
+require 'rake/testtask'
+require 'net/https'
+require 'fileutils'
+require 'zip'
 
+RuboCop::RakeTask.new
+
+Rake::TestTask.new do |t|
+  t.libs << 'test'
+  t.pattern = 'test/**/test_*.rb'
+end
+
+namespace :elasticsearch do
+  task :clean do
+    next if File.exist? 'tmp/es.lock'
+    FileUtils.rm_rf 'tmp'
+  end
+
+  directory 'tmp'
+
+  task :install_lock do
+    FileUtils.touch 'tmp/es.lock'
+  end
+
+  # based on http://snippets.dzone.com/posts/show/2469
+  # http://farm1.static.flickr.com/92/218926700_ecedc5fef7_o.jpg
+  desc 'Download/extract Elasticsearch archive'
+  task download: [:tmp] do
+    next if File.exist? 'tmp/es.lock'
+    Net::HTTP.start('download.elastic.co') do |http|
+      resp = http.get('/elasticsearch/elasticsearch/elasticsearch-1.7.2.zip')
+      open('tmp/es.zip', 'w') { |file| file.write(resp.body) }
+    end
+  end
+
+  task :extract do
+    next if File.exist? 'tmp/es.lock'
+    Zip::File.open('tmp/es.zip') do |zip_file|
+      # Handle entries one by one
+      zip_file.each do |entry|
+        # Extract to file/directory/symlink
+        puts "Extracting #{entry.name}"
+        entry.extract(::File.join('tmp', entry.name))
+      end
+    end
+  end
+
+  def elasticsearch_command
+    path = 'tmp/elasticsearch-1.7.2/bin/elasticsearch'
+    path = ::File.expand_path(path, __dir__)
+    "bash #{path}"
+  end
+
+  task start: ['elasticsearch:stop', :install] do
+    Elasticsearch::Extensions::Test::Cluster.start \
+      cluster_name: 'my-testing-cluster',
+      command: elasticsearch_command,
+      port: 9350,
+      nodes: 2,
+      timeout: 120
+  end
+
+  task :stop do
+    Elasticsearch::Extensions::Test::Cluster.stop \
+      cluster_name: 'my-testing-cluster',
+      command: elasticsearch_command,
+      port: 9350,
+      nodes: 1,
+      timeout: 120
+  end
+
+  task install: [:clean, :download, :extract, :install_lock]
+end
+
+task refresh_fixtures: ['elasticsearch:install',
+                        'elasticsearch:start',
+                        'test',
+                        'elasticsearch:stop']
+task default: [:test, :rubocop]
