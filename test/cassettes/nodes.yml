@@ -1,0 +1,33 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://localhost:9350/_nodes
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.9.1
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Content-Length:
+      - '3477'
+    body:
+      encoding: UTF-8
+      string: '{"cluster_name":"my-testing-cluster","nodes":{"ByhaGHRFRF-rMTRmUWKP9A":{"name":"node-1","transport_address":"inet[/192.168.0.3:9300]","host":"CAM-MBP-2852.local","ip":"192.168.0.3","version":"1.7.2","build":"e43676b","http_address":"inet[/192.168.0.3:9350]","attributes":{"bench":"true","test":"true"},"settings":{"node":{"bench":"true","test":"true","name":"node-1"},"client":{"type":"node"},"http":{"port":"9350"},"name":"node-1","logger":{"level":"DEBUG"},"path":{"work":"/tmp","data":"/tmp","home":"/Users/athompson/code/personal/elasticsearch-drain/tmp/elasticsearch-1.7.2","logs":"/Users/athompson/code/personal/elasticsearch-drain/tmp/elasticsearch-1.7.2/logs"},"config":{"ignore_system_properties":"true"},"cluster":{"routing":{"allocation":{"disk":{"threshold_enabled":"false"}}},"name":"my-testing-cluster"},"script":{"disable_dynamic":"false"},"discovery":{"zen":{"ping":{"multicast":{"enabled":"true"}}}},"foreground":"yes","network":{"host":"0.0.0.0"}},"os":{"refresh_interval_in_millis":1000,"available_processors":8,"cpu":{"vendor":"Intel","model":"MacBookPro11,3","mhz":2500,"total_cores":8,"total_sockets":8,"cores_per_socket":16,"cache_size_in_bytes":256},"mem":{"total_in_bytes":17179869184},"swap":{"total_in_bytes":2147483648}},"process":{"refresh_interval_in_millis":1000,"id":20801,"max_file_descriptors":10240,"mlockall":false},"jvm":{"pid":20801,"version":"1.7.0_79","vm_name":"Java
+        HotSpot(TM) 64-Bit Server VM","vm_version":"24.79-b02","vm_vendor":"Oracle
+        Corporation","start_time_in_millis":1443722105296,"mem":{"heap_init_in_bytes":268435456,"heap_max_in_bytes":1037959168,"non_heap_init_in_bytes":24313856,"non_heap_max_in_bytes":136314880,"direct_max_in_bytes":1037959168},"gc_collectors":["ParNew","ConcurrentMarkSweep"],"memory_pools":["Code
+        Cache","Par Eden Space","Par Survivor Space","CMS Old Gen","CMS Perm Gen"]},"thread_pool":{"generic":{"type":"cached","keep_alive":"30s","queue_size":-1},"index":{"type":"fixed","min":8,"max":8,"queue_size":"200"},"fetch_shard_store":{"type":"scaling","min":1,"max":16,"keep_alive":"5m","queue_size":-1},"get":{"type":"fixed","min":8,"max":8,"queue_size":"1k"},"snapshot":{"type":"scaling","min":1,"max":4,"keep_alive":"5m","queue_size":-1},"merge":{"type":"scaling","min":1,"max":4,"keep_alive":"5m","queue_size":-1},"suggest":{"type":"fixed","min":8,"max":8,"queue_size":"1k"},"bulk":{"type":"fixed","min":8,"max":8,"queue_size":"50"},"optimize":{"type":"fixed","min":1,"max":1,"queue_size":-1},"warmer":{"type":"scaling","min":1,"max":4,"keep_alive":"5m","queue_size":-1},"flush":{"type":"scaling","min":1,"max":4,"keep_alive":"5m","queue_size":-1},"search":{"type":"fixed","min":13,"max":13,"queue_size":"1k"},"fetch_shard_started":{"type":"scaling","min":1,"max":16,"keep_alive":"5m","queue_size":-1},"listener":{"type":"fixed","min":4,"max":4,"queue_size":-1},"percolate":{"type":"fixed","min":8,"max":8,"queue_size":"1k"},"management":{"type":"scaling","min":1,"max":5,"keep_alive":"5m","queue_size":-1},"refresh":{"type":"scaling","min":1,"max":4,"keep_alive":"5m","queue_size":-1}},"network":{"refresh_interval_in_millis":5000,"primary_interface":{"address":"192.168.0.3","name":"en0","mac_address":"60:F8:1D:C1:9F:92"}},"transport":{"bound_address":"inet[/0:0:0:0:0:0:0:0:9300]","publish_address":"inet[/192.168.0.3:9300]","profiles":{}},"http":{"bound_address":"inet[/0:0:0:0:0:0:0:0:9350]","publish_address":"inet[/192.168.0.3:9350]","max_content_length_in_bytes":104857600},"plugins":[]}}}'
+    http_version: 
+  recorded_at: Thu, 01 Oct 2015 18:42:38 GMT
+recorded_with: VCR 2.9.3
