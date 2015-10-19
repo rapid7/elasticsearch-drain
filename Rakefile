@@ -1,3 +1,4 @@
+require 'elasticsearch/extensions/test/cluster/tasks'
 require 'elasticsearch/extensions/test/cluster'
 require 'bundler/gem_tasks'
 require 'rubocop/rake_task'
@@ -12,6 +13,15 @@ Rake::TestTask.new do |t|
   t.libs << 'test'
   t.pattern = 'test/**/test_*.rb'
 end
+
+def elasticsearch_command
+  path = 'tmp/elasticsearch-1.7.2/bin/elasticsearch'
+  path = ::File.expand_path(path, __dir__)
+  "bash #{path}"
+end
+
+ENV['TEST_CLUSTER_NODES'] = '1'
+ENV['TEST_CLUSTER_COMMAND'] = elasticsearch_command
 
 namespace :elasticsearch do
   task :clean do
@@ -46,30 +56,6 @@ namespace :elasticsearch do
         entry.extract(::File.join('tmp', entry.name))
       end
     end
-  end
-
-  def elasticsearch_command
-    path = 'tmp/elasticsearch-1.7.2/bin/elasticsearch'
-    path = ::File.expand_path(path, __dir__)
-    "bash #{path}"
-  end
-
-  task start: ['elasticsearch:stop', :install] do
-    Elasticsearch::Extensions::Test::Cluster.start \
-      cluster_name: 'my-testing-cluster',
-      command: elasticsearch_command,
-      port: 9350,
-      nodes: 2,
-      timeout: 120
-  end
-
-  task :stop do
-    Elasticsearch::Extensions::Test::Cluster.stop \
-      cluster_name: 'my-testing-cluster',
-      command: elasticsearch_command,
-      port: 9350,
-      nodes: 1,
-      timeout: 120
   end
 
   task install: [:clean, :download, :extract, :install_lock]
