@@ -12,12 +12,22 @@ module Elasticsearch
     # The Elasticsearch hosts to connect to
     attr_reader :hosts
 
+    # @attribute [r]
+    # EC2 AutoScaling Client
+    attr_reader :asg
+
+    # @attribute [r]
+    # EC2 Region
+    attr_reader :region
+
     # Sets up the Elasticsearch client
     #
     # @option [String] :hosts ('localhost:9200') The Elasticsearch hosts to connect to
     # @return [Elasticsearch::Transport::Client] Elasticsearch transport client
-    def initialize(hosts: 'localhost:9200')
+    def initialize(hosts: 'localhost:9200', asg:, region:)
       @hosts = hosts
+      @asg = asg
+      @region = region
       @client = ::Elasticsearch::Client.new(
         hosts: hosts,
         retry_on_failure: true,
