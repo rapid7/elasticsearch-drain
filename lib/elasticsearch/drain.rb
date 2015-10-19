@@ -10,7 +10,7 @@ module Elasticsearch
 
     # @attribute [r]
     # The Elasticsearch hosts to connect to
-    attr_accessor :host
+    attr_reader :hosts
 
     # Sets up the Elasticsearch client
     #
@@ -18,6 +18,7 @@ module Elasticsearch
     # @return [Elasticsearch::Transport::Client] Elasticsearch transport client
     def initialize(hosts: 'localhost:9200')
       @client = ::Elasticsearch::Client.new hosts: hosts, retry_on_failure: true, log: true
+      @hosts = hosts
     end
 
     # Convience method to access {Elasticsearch::Drain::Nodes#nodes}
