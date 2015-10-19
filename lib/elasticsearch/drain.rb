@@ -28,7 +28,7 @@ module Elasticsearch
 
     # Convience method to access {Elasticsearch::Drain::Nodes#nodes}
     #
-    # @return [Array<Elasticsearch::Drain::Node>] Array of node objects
+    # @return [Array<OpenStruct>] Array of node objects
     def nodes
       Nodes.new.nodes
     end

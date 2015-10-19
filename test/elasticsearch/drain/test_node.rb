@@ -1,44 +1,54 @@
 require 'test_helper'
+require 'ipaddr'
 require 'pp'
 
-class TestNodes < Minitest::Test
+class TestNode < Minitest::Test
   def setup
-    VCR.insert_cassette 'nodes'
-    @nodes = ::Elasticsearch::Drain::Nodes.new(hosts: 'localhost:9250')
+    VCR.insert_cassette 'node'
+    @node = ::Elasticsearch::Drain::Nodes.new(hosts: 'localhost:9250').nodes.first
   end
 
   def teardown
     VCR.eject_cassette
   end
 
-  def test_has_nodes
-    assert_respond_to @nodes, :client
+  def test_version
+    assert_instance_of String, @node.version
   end
 
-  def test_nodes_is_array
-    assert_respond_to @nodes.nodes, :each
+  def test_hostname
+    assert_instance_of String, @node.hostname
   end
 
-  def test_bytes_stored
-    node = @nodes.info['nodes'].first[0]
-    bytes_stored = @nodes.bytes_stored(node)
-    assert_respond_to bytes_stored, :+
+  def test_name
+    assert_instance_of String, @node.name
   end
-  # end
-  #
-  # def test_bytes_stored_on_host_is_num
-  #   skip("NYI")
-  #   VCR.use_cassette(@cassette) do
-  #     pp @drain.es_client
-  #     #pp @drain.es_client.methods
-  #
-  #     pp @drain.nodes
-  #     pp @drain.nodes.methods
-  #     assert_respond_to @drain.nodes.first.bytes, :+
-  #   end
-  # end
+
+  def test_id
+    assert_instance_of String, @node.id
+  end
+
+  def test_ipaddress
+    assert_respond_to IPAddr.new(@node.ipaddress).to_i, :+
+  end
+
+   def test_transport_address
+    ipaddress,port = @node.transport_address.split(':')
+    assert_respond_to IPAddr.new(ipaddress).to_i, :+
+    assert_respond_to port.to_i, :+
+   end
+
+  def test_http_address
+    ipaddress,port = @node.http_address.split(':')
+    assert_respond_to IPAddr.new(ipaddress).to_i, :+
+    assert_respond_to port.to_i, :+
+  end
+
+  def test_bytes_stored_on_host
+    assert_respond_to @node.bytes_stored, :+
+  end
 end
-#   #
+#
 #   # function drain_docs_from_node() {
 #   #     curl -XPUT $CLUSTER_HOST/_cluster/settings -d "{ \"transient\" : { \"cluster.routing.allocation.exclude._ip\" : \"$NODES\" }}"
 #   #     echo
@@ -50,10 +60,10 @@ end
 #   #     return $bytes
 #   # }
 #
-#   def test_nodes_in_recovery
-#     skip("NYI")
-#     assert_respond_to @drain.recovery :each
-#   end
+#   # def test_nodes_in_recovery
+#   #   skip("NYI")
+#   #   assert_respond_to @drain.recovery :each
+#   # end
 #   # function node_in_recovery() {
 #   #     curl -s "$CLUSTER_HOST/_cat/recovery?active_only=true&v=true" | grep $NODE
 #   #     recovery_status=$?

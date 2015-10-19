@@ -12,4 +12,6 @@ SimpleCov.start
 VCR.configure do |c|
   c.cassette_library_dir = 'test/cassettes'
   c.hook_into :webmock
+#  c.debug_logger = $stderr
+#  c.default_cassette_options = { allow_playback_repeats: true }
 end
