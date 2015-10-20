@@ -1,7 +1,6 @@
 module Elasticsearch
   class Drain
     class Nodes < Drain
-
       # @!attribute [r]
       # The Elasticsearch node stats json object
       attr_reader :stats
@@ -19,18 +18,17 @@ module Elasticsearch
       # Get list of nodes in the cluster
       #
       # @return [Array<OpenStruct>] Array of node objects
-      def nodes
-        # ids = client.nodes.info['nodes'].keys
-        # ids.map! { |id| Drain::Node.new(id: id, hosts: hosts) }
+      def nodes # rubocop:disable Metrics/MethodLength, Metrics/AbcSize
         @info['nodes'].map do |node|
+          stats = node[1]
           OpenStruct.new(
             id: node[0],
-            version: node[1]['version'],
-            hostname: node[1]['host'],
-            name: node[1]['name'],
-            ipaddress: node[1]['ip'],
-            transport_address: address(node[1]['transport_address']),
-            http_address: address(node[1]['http_address']),
+            version: stats['version'],
+            hostname: stats['host'],
+            name: stats['name'],
+            ipaddress: stats['ip'],
+            transport_address: address(stats['transport_address']),
+            http_address: address(stats['http_address']),
             bytes_stored: bytes_stored(node[0])
           )
         end
@@ -43,7 +41,6 @@ module Elasticsearch
       def address(str)
         str.match(/.+\[\/(.+)\]/)[1]
       end
-
 
       # Get size in bytes used for indices for a node
       #
