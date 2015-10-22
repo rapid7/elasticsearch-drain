@@ -23,7 +23,7 @@ class TestDrain < Minitest::Test
   # end
 
   def test_has_asg
-    assert_equal 'esuilogs-razor-d0prod-r01-v000', @drain.asg
+    assert_equal 'esuilogs-razor-d0prod-r01-v000', @drain.asg.asg
   end
 
   def test_has_region
