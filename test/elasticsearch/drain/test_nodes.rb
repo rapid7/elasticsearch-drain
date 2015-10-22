@@ -4,7 +4,11 @@ require 'pp'
 class TestNodes < Minitest::Test
   def setup
     VCR.insert_cassette 'nodes'
-    @nodes = ::Elasticsearch::Drain::Nodes.new(hosts: 'localhost:9250')
+    @nodes = ::Elasticsearch::Drain::Nodes.new(
+     hosts: 'localhost:9250',
+     region: 'us-west-2',
+     asg: 'esuilogs-razor-d0prod-r01-v000'
+    )
   end
 
   def teardown
@@ -24,19 +28,15 @@ class TestNodes < Minitest::Test
     bytes_stored = @nodes.bytes_stored(node)
     assert_respond_to bytes_stored, :+
   end
-  # end
-  #
-  # def test_bytes_stored_on_host_is_num
-  #   skip("NYI")
-  #   VCR.use_cassette(@cassette) do
-  #     pp @drain.es_client
-  #     #pp @drain.es_client.methods
-  #
-  #     pp @drain.nodes
-  #     pp @drain.nodes.methods
-  #     assert_respond_to @drain.nodes.first.bytes, :+
-  #   end
-  # end
+
+  def test_asg
+    assert_respond_to @nodes, :asg
+  end
+
+  def test_region
+    assert_respond_to @nodes, :region
+  end
+
 end
 #   #
 #   # function drain_docs_from_node() {

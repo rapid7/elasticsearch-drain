@@ -22,4 +22,5 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'rake', '~> 10.0'
 
   spec.add_dependency 'elasticsearch', '~> 1.0'
+  spec.add_dependency 'aws-sdk', '~> 2'
 end

@@ -26,7 +26,7 @@ module Elasticsearch
     # @return [Elasticsearch::Transport::Client] Elasticsearch transport client
     def initialize(hosts: 'localhost:9200', asg:, region:)
       @hosts = hosts
-      @asg = asg
+      @asg = AutoScaling.new(asg, region)
       @region = region
       @client = ::Elasticsearch::Client.new(
         hosts: hosts,
@@ -45,7 +45,7 @@ module Elasticsearch
   end
 end
 
+require_relative 'drain/autoscaling'
 require_relative 'drain/version'
 require_relative 'drain/nodes'
-require_relative 'drain/node'
 
