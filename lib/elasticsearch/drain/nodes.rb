@@ -10,7 +10,7 @@ module Elasticsearch
       attr_reader :info
 
       def initialize(_)
-        super(hosts: hosts)
+        super
         @info = client.nodes.info metric: '_all'
         @stats = client.nodes.stats metric: '_all'
       end
