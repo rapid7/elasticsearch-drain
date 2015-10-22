@@ -44,6 +44,13 @@ module Elasticsearch
       Nodes.new.nodes
     end
 
+    # Convience method to access {Elasticsearch::Drain::Cluster#cluster}
+    #
+    # @return [Elasticsearch::API::Cluster] Elasticsearch cluster client
+    def cluster
+      Cluster.new.cluster
+    end
+
     def drain
       # if [ -z "$ASG_NAME" ]; then
       #     echo "ASG_NAME is missing"
@@ -98,4 +105,5 @@ end
 
 require_relative 'drain/autoscaling'
 require_relative 'drain/version'
+require_relative 'drain/cluster'
 require_relative 'drain/nodes'

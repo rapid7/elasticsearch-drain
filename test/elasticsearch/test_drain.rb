@@ -29,4 +29,8 @@ class TestDrain < Minitest::Test
   def test_has_region
     assert_equal 'us-west-2', @drain.region
   end
+
+  def test_has_cluster
+    assert_respond_to @drain, :cluster
+  end
 end
