@@ -31,14 +31,14 @@ class TestNode < Minitest::Test
     assert_respond_to IPAddr.new(@node.ipaddress).to_i, :+
   end
 
-   def test_transport_address
-    ipaddress,port = @node.transport_address.split(':')
+  def test_transport_address
+    ipaddress, port = @node.transport_address.split(':')
     assert_respond_to IPAddr.new(ipaddress).to_i, :+
     assert_respond_to port.to_i, :+
-   end
+  end
 
   def test_http_address
-    ipaddress,port = @node.http_address.split(':')
+    ipaddress, port = @node.http_address.split(':')
     assert_respond_to IPAddr.new(ipaddress).to_i, :+
     assert_respond_to port.to_i, :+
   end
