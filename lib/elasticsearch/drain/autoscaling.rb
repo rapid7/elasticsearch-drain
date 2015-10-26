@@ -41,6 +41,17 @@ module Elasticsearch
         find_instances_in_asg
         find_private_ips
       end
+
+      # Sets the MinSize of an AutoScalingGroup
+      #
+      # @option [FixNum] count (0) The new MinSize of the AutoScalingGroup
+      # @return [Struct] Empty response from the sdk
+      def min_count(count = 0)
+        @asg_client.update_auto_scaling_group(
+          auto_scaling_group_name: asg,
+          min_size: count
+        )
+      end
     end
   end
 end
