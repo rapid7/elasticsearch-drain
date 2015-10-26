@@ -53,10 +53,10 @@ module Elasticsearch
     end
 
     def drain
-      fail 'Cluster is unhealthy' unless cluster.health?
+      fail 'Cluster is unhealthy' unless cluster.healthy?
       instances = asg.instances # need to get the node objects for the instances in the asg
       puts "Found nodes in AutoScalingGroup: #{instances.join(' ')}"
-      fail 'Cluster is unhealthy' unless cluster.health?
+      fail 'Cluster is unhealthy' unless cluster.healthy?
       asg.min_size(0)
       cluster.drain_nodes(instances)
       nodes = Nodes.new
@@ -66,10 +66,10 @@ module Elasticsearch
           sleep 2
         else
           puts "Removing #{instance} from Elasticsearch cluster and #{asg} AutoScalingGroup"
-          fail 'Cluster is unhealthy' unless cluster.health?
+          fail 'Cluster is unhealthy' unless cluster.healthy?
           #remove_node_from_cluster NYI
           sleep 5 until instance.in_recovery?
-          fail 'Cluster is unhealthy' unless cluster.health?
+          fail 'Cluster is unhealthy' unless cluster.healthy?
           puts 'Sleeping for 1 minute before removing the next node'
           sleep 60
         end
