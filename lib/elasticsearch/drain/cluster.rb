@@ -4,13 +4,9 @@
 module Elasticsearch
   class Drain
     class Cluster < Drain
-      # @attribute [r]
       # Elasticsearch Cluster Object
-      attr_reader :cluster
-
-      def initialize(*args)
-        super(*args)
-        @cluster = client.cluster
+      def cluster
+        client.cluster
       end
 
       def health(opts = {})
