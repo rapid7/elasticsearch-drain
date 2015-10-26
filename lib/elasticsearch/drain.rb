@@ -29,7 +29,7 @@ module Elasticsearch
         hosts: hosts,
         retry_on_failure: true,
         log: true,
-        logger: Logger.new('es_client.log', 10, 1_024_000)
+        logger: ::Logger.new('es_client.log', 10, 1_024_000)
       )
     end
 
@@ -110,3 +110,4 @@ require_relative 'drain/cluster'
 require_relative 'drain/nodes'
 require_relative 'drain/node'
 require_relative 'drain/cli'
+require 'logger'
