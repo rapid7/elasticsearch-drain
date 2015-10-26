@@ -1,0 +1,3 @@
+#!/usr/bin/env ruby
+require_relative File.join(File.expand_path('../../lib', __FILE__), 'elasticsearch/drain')
+::Elasticsearch::Drain::CLI.start(ARGV)

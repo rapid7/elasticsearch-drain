@@ -4,6 +4,7 @@ PATH
     elasticsearch-drain (0.0.1)
       aws-sdk (~> 2)
       elasticsearch (~> 1.0)
+      thor (~> 0.19)
 
 GEM
   remote: https://rubygems.org/
