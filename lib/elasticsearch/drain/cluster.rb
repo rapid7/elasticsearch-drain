@@ -30,6 +30,14 @@ module Elasticsearch
         )
         health['relocating_shards'] <= 3
       end
+
+      def drain_nodes(nodes, exclude_by = '_ip')
+        cluster.put_settings(
+          body: {
+            transient: { "cluster.routing.allocation.exclude.#{exclude_by}" => nodes }
+          }
+        )
+      end
     end
   end
 end
