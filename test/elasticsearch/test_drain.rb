@@ -2,11 +2,16 @@ require 'test_helper'
 
 class TestDrain < Minitest::Test
   def setup
+    VCR.insert_cassette 'drain', record: :new_episodes
     @drain = ::Elasticsearch::Drain.new(
       'localhost:9250',
       'esuilogs-razor-d0prod-r01-v000',
       'us-west-2'
     )
+  end
+
+  def teardown
+    VCR.eject_cassette
   end
 
   def test_nodes_method
@@ -27,5 +32,9 @@ class TestDrain < Minitest::Test
 
   def test_has_cluster
     assert_respond_to @drain, :cluster
+  end
+
+  def test_cluster_health_is_green
+    assert @drain.cluster.healthy?
   end
 end
