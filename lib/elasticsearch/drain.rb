@@ -53,53 +53,27 @@ module Elasticsearch
     end
 
     def drain
-      # if [ -z "$ASG_NAME" ]; then
-      #     echo "ASG_NAME is missing"
-      #     usage
-      #     exit 1
-      # fi
-      #
-      # if [ -z "$REGION" ]; then
-      #     echo "REGION is missing"
-      #     usage
-      #     exit 1
-      # fi
-      #
-      # if [ -z "$CLUSTER_HOST" ]; then
-      #     echo "CLUSTER_HOST is missing"
-      #     usage
-      #     exit 1
-      # fi
-      #
-      # cluster_health
-      # get_nodes_in_asg
-      # echo "Found nodes in ASG: $INSTANCES"
-      #
-      # cluster_health
-      # set_asg_min_size
-      #
-      # for i in $INSTANCES; do
-      #     get_node_ipaddress
-      #     NODE=$IP
-      #     NODES+="${NODE},"
-      # done
-      # NODES=${NODES%?}
-      #
-      # echo "Sleeping 1 minute before starting"
-      # sleep 60
-      # echo "Draining data from $NODES"
-      #
-      # for i in $INSTANCES; do
-      #     get_node_ipaddress
-      #     INSTANCE_ID=$i
-      #     NODE=$IP
-      #     echo "Removing $NODE from ES cluster and $ASG_NAME AutoScalingGroup"
-      #     cluster_health
-      #     remove_node_from_cluster
-      #     cluster_health
-      #     echo "Sleeping for 1 minute before removing the next node"
-      #     sleep 60
-      # done
+      fail 'Cluster is unhealthy' unless cluster.health?
+      instances = asg.instances # need to get the node objects for the instances in the asg
+      puts "Found nodes in AutoScalingGroup: #{instances.join(' ')}"
+      fail 'Cluster is unhealthy' unless cluster.health?
+      asg.min_size(0)
+      cluster.drain_nodes(instances)
+      nodes = Nodes.new
+      nodes.nodes_in_asg(reload: true, instances: instances).each do |instance|
+        sleep 30 while cluster.relocating_shards?
+        if instance.bytes_stored > 0
+          sleep 2
+        else
+          puts "Removing #{instance} from Elasticsearch cluster and #{asg} AutoScalingGroup"
+          fail 'Cluster is unhealthy' unless cluster.health?
+          #remove_node_from_cluster NYI
+          sleep 5 until instance.in_recovery?
+          fail 'Cluster is unhealthy' unless cluster.health?
+          puts 'Sleeping for 1 minute before removing the next node'
+          sleep 60
+        end
+      end
     end
   end
 end
