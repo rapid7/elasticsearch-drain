@@ -4,11 +4,12 @@ require 'webmock'
 require 'simplecov'
 require 'minitest/spec'
 require 'minitest/autorun'
-require_relative '../lib/elasticsearch/drain'
 require 'elasticsearch/extensions/test/cluster'
 
 gem 'minitest'
 SimpleCov.start
+
+require_relative '../lib/elasticsearch/drain'
 
 VCR.configure do |c|
   c.cassette_library_dir = 'test/cassettes'
