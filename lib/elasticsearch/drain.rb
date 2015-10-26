@@ -13,10 +13,6 @@ module Elasticsearch
     attr_reader :hosts
 
     # @attribute [r]
-    # EC2 AutoScaling Client
-    attr_reader :asg
-
-    # @attribute [r]
     # EC2 Region
     attr_reader :region
 
@@ -27,14 +23,19 @@ module Elasticsearch
     # @return [Elasticsearch::Transport::Client] Elasticsearch transport client
     def initialize(hosts = 'localhost:9200', asg = nil, region = nil)
       @hosts = hosts
-      @asg = AutoScaling.new(asg, region)
       @region = region
+      @asg_name = asg
       @client = ::Elasticsearch::Client.new(
         hosts: hosts,
         retry_on_failure: true,
         log: true,
         logger: Logger.new('es_client.log', 10, 1_024_000)
       )
+    end
+
+    # EC2 AutoScaling Client
+    def asg
+      AutoScaling.new(@asg_name, @region)
     end
 
     # Convience method to access {Elasticsearch::Drain::Nodes#nodes}
