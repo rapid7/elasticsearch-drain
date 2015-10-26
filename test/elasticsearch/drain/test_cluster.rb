@@ -3,7 +3,7 @@ require 'pp'
 
 class TestCluster < Minitest::Test
   def setup
-    VCR.insert_cassette 'cluster'
+    VCR.insert_cassette 'cluster', record: :new_episodes
     @cluster = ::Elasticsearch::Drain::Cluster.new('localhost:9250')
   end
 
@@ -16,6 +16,6 @@ class TestCluster < Minitest::Test
   end
 
   def test_cluster_relocating_shards
-    assert @cluster.relocating_shards?
+    refute @cluster.relocating_shards?
   end
 end

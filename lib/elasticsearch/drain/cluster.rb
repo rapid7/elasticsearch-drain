@@ -13,22 +13,22 @@ module Elasticsearch
         @cluster = client.cluster
       end
 
-      def healthy?
-        health = cluster.health(
+      def health(opts = {})
+        default_opts = {
           wait_for_status: 'green',
           timeout: 60
-        )
+        }
+        opts = default_opts.merge(opts)
+        cluster.health(opts)
+      end
+
+      def healthy?
         health['status'] == 'green'
       end
 
       def relocating_shards?
         return true unless healthy?
-        health = cluster.health(
-          wait_for_status: 'green',
-          wait_for_relocating_shards: 3,
-          timeout: 60
-        )
-        health['relocating_shards'] <= 3
+        health(wait_for_relocating_shards: 3)['relocating_shards'] >= 3
       end
 
       def drain_nodes(nodes, exclude_by = '_ip')
