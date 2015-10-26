@@ -3,7 +3,7 @@ require 'pp'
 
 class TestNode < Minitest::Test
   def setup
-    VCR.insert_cassette 'node'
+    VCR.insert_cassette 'node', record: :new_episodes
     @node = ::Elasticsearch::Drain::Nodes.new('localhost:9250').nodes.first
   end
 
@@ -45,5 +45,9 @@ class TestNode < Minitest::Test
 
   def test_bytes_stored_on_host
     assert_respond_to @node.bytes_stored, :+
+  end
+
+  def test_in_recovery
+    assert @node.in_recovery?
   end
 end

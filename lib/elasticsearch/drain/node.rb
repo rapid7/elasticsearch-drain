@@ -84,8 +84,8 @@ module Elasticsearch
       end
 
       def in_recovery?
-        recovery = client.cat.recovery(format: 'json').first.values
-        recovery.include?(node)
+        recovery = client.cat.recovery(format: 'json', v: true).first.values
+        [hostname, name].any? { |a| recovery.include?(a) }
       end
     end
   end
