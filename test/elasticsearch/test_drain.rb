@@ -3,9 +3,9 @@ require 'test_helper'
 class TestDrain < Minitest::Test
   def setup
     @drain = ::Elasticsearch::Drain.new(
-      hosts: 'localhost:9250',
-      asg: 'esuilogs-razor-d0prod-r01-v000',
-      region: 'us-west-2'
+      'localhost:9250',
+      'esuilogs-razor-d0prod-r01-v000',
+      'us-west-2'
     )
   end
 

@@ -8,8 +8,8 @@ module Elasticsearch
       # Elasticsearch Cluster Object
       attr_reader :cluster
 
-      def initialize(_)
-        super
+      def initialize(*args)
+        super(*args)
         @cluster = client.cluster
       end
 

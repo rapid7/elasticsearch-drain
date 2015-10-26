@@ -4,11 +4,7 @@ require 'pp'
 class TestCluster < Minitest::Test
   def setup
     VCR.insert_cassette 'cluster'
-    @cluster = ::Elasticsearch::Drain::Cluster.new(
-      hosts: 'localhost:9250',
-      region: 'us-west-2',
-      asg: 'esuilogs-razor-d0prod-r01-v000'
-    )
+    @cluster = ::Elasticsearch::Drain::Cluster.new('localhost:9250')
   end
 
   def teardown

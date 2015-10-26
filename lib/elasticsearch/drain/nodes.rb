@@ -9,8 +9,13 @@ module Elasticsearch
       # The Elasticsearch node info json object
       attr_reader :info
 
-      def initialize(_)
-        super
+      def initialize(*args)
+        @args = *args
+        super(*args)
+        load
+      end
+
+      def load
         @info = client.nodes.info metric: '_all'
         @stats = client.nodes.stats metric: '_all'
       end

@@ -4,11 +4,7 @@ require 'pp'
 class TestNodes < Minitest::Test
   def setup
     VCR.insert_cassette 'nodes'
-    @nodes = ::Elasticsearch::Drain::Nodes.new(
-     hosts: 'localhost:9250',
-     region: 'us-west-2',
-     asg: 'esuilogs-razor-d0prod-r01-v000'
-    )
+    @nodes = ::Elasticsearch::Drain::Nodes.new('localhost:9250')
   end
 
   def teardown

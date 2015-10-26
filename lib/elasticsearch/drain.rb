@@ -25,7 +25,7 @@ module Elasticsearch
     # @option [String] :hosts ('localhost:9200') The Elasticsearch hosts
     #   to connect to
     # @return [Elasticsearch::Transport::Client] Elasticsearch transport client
-    def initialize(hosts: 'localhost:9200', asg:, region:)
+    def initialize(hosts = 'localhost:9200', asg = nil, region = nil)
       @hosts = hosts
       @asg = AutoScaling.new(asg, region)
       @region = region
