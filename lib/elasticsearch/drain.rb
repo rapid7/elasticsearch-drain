@@ -3,11 +3,6 @@
 #
 module Elasticsearch
   class Drain
-
-    # @!attribute [r]
-    # The Elasticsearch client object
-    attr_reader :client
-
     # @attribute [r]
     # The Elasticsearch hosts to connect to
     attr_reader :hosts
@@ -25,6 +20,11 @@ module Elasticsearch
       @hosts = hosts
       @region = region
       @asg_name = asg
+    end
+
+    # The Elasticsearch client object
+    def client
+      return @client unless @client.nil?
       @client = ::Elasticsearch::Client.new(
         hosts: hosts,
         retry_on_failure: true,
@@ -42,14 +42,14 @@ module Elasticsearch
     #
     # @return [Array<OpenStruct>] Array of node objects
     def nodes
-      Nodes.new.nodes
+      Nodes.new(client).nodes
     end
 
     # Convience method to access {Elasticsearch::Drain::Cluster#cluster}
     #
     # @return [Elasticsearch::API::Cluster] Elasticsearch cluster client
     def cluster
-      Cluster.new.cluster
+      Cluster.new(client)
     end
 
     def drain
@@ -80,6 +80,7 @@ end
 
 require_relative 'drain/autoscaling'
 require_relative 'drain/version'
+require_relative 'drain/base'
 require_relative 'drain/cluster'
 require_relative 'drain/nodes'
 require_relative 'drain/node'

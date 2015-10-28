@@ -37,4 +37,8 @@ class TestDrain < Minitest::Test
   def test_cluster_health_is_green
     assert @drain.cluster.healthy?
   end
+
+  def test_es_cluster_hosts_match
+    assert_equal 'localhost:9250', @drain.hosts
+  end
 end

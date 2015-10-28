@@ -3,8 +3,13 @@ require 'pp'
 
 class TestNodes < Minitest::Test
   def setup
-    VCR.insert_cassette 'nodes'
-    @nodes = ::Elasticsearch::Drain::Nodes.new('localhost:9250')
+    VCR.insert_cassette 'nodes', record: :new_episodes
+    @drain = ::Elasticsearch::Drain.new(
+      'localhost:9250',
+      'esuilogs-razor-d0prod-r01-v000',
+      'us-west-2'
+    )
+    @nodes = ::Elasticsearch::Drain::Nodes.new(@drain.client)
   end
 
   def teardown
@@ -19,11 +24,19 @@ class TestNodes < Minitest::Test
     assert_respond_to @nodes.nodes, :each
   end
 
-  def test_asg
-    assert_respond_to @nodes, :asg
+  def test_has_info
+    assert_respond_to @nodes, :info
   end
 
-  def test_region
-    assert_respond_to @nodes, :region
+  def test_info_has_value
+    assert_respond_to @nodes.info, :each
+  end
+
+  def test_has_stats
+    assert_respond_to @nodes, :stats
+  end
+
+  def test_stats_has_value
+    assert_respond_to @nodes.stats, :each
   end
 end

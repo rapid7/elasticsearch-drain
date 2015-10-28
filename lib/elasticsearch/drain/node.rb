@@ -1,6 +1,6 @@
 module Elasticsearch
   class Drain
-    class Node < Drain
+    class Node < Base
       # @!attribute [r]
       # The Elasticsearch node stats json object
       attr_reader :stats
@@ -9,8 +9,8 @@ module Elasticsearch
       # The Elasticsearch node info json object
       attr_reader :info
 
-      def initialize(stats, info, *args)
-        super(*args)
+      def initialize(stats, info, client)
+        super(client)
         @stats = stats
         @info = info
       end

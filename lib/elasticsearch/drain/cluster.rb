@@ -3,7 +3,7 @@
 #
 module Elasticsearch
   class Drain
-    class Cluster < Drain
+    class Cluster < Base
       # Elasticsearch Cluster Object
       def cluster
         client.cluster

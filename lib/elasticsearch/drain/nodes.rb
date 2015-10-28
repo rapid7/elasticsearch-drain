@@ -1,6 +1,6 @@
 module Elasticsearch
   class Drain
-    class Nodes < Drain
+    class Nodes < Base
       # @!attribute [r]
       # The Elasticsearch node stats json object
       attr_reader :stats
@@ -9,9 +9,8 @@ module Elasticsearch
       # The Elasticsearch node info json object
       attr_reader :info
 
-      def initialize(*args)
-        @args = *args
-        super(*args)
+      def initialize(client)
+        super(client)
         load
       end
 
@@ -29,7 +28,7 @@ module Elasticsearch
           Drain::Node.new(
             stats['nodes'].find { |n| n[0] == node[0] },
             node,
-            @args
+            client
           )
         end
       end
