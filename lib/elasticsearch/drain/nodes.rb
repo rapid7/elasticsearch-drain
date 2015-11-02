@@ -9,8 +9,9 @@ module Elasticsearch
       # The Elasticsearch node info json object
       attr_reader :info
 
-      def initialize(client)
+      def initialize(client, asg)
         super(client)
+        @asg = asg
         load
       end
 
@@ -28,13 +29,14 @@ module Elasticsearch
           Drain::Node.new(
             stats['nodes'].find { |n| n[0] == node[0] },
             node,
-            client
+            client,
+            @asg
           )
         end
       end
 
       def nodes_in_asg(reload: false, instances:)
-        nodes(reload).find_all { |n| instances.include? n }
+        nodes(reload: false).find_all { |n| instances.include? n.ipaddress }
       end
     end
   end

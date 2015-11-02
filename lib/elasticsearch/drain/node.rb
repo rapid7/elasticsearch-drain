@@ -9,10 +9,16 @@ module Elasticsearch
       # The Elasticsearch node info json object
       attr_reader :info
 
-      def initialize(stats, info, client)
+      # @!attribute [rw]
+      # The Elasticsearch node Instance ID
+      attr_accessor :instance_id
+
+      def initialize(stats, info, client, asg)
         super(client)
         @stats = stats
         @info = info
+        @asg = asg
+        @instance_id = nil
       end
 
       # The Elasticsearch node id
@@ -47,7 +53,7 @@ module Elasticsearch
       #
       # @return [String] Elasticsearch node ipaddress
       def ipaddress
-        info[1]['ip']
+        address(info[1]['http_address']).split(':')[0]
       end
 
       # The Elasticsearch node Transport Address
@@ -79,13 +85,22 @@ module Elasticsearch
         str.match(/.+\[\/(.+)\]/)[1]
       end
 
-      def nodes_in_asg(reload: false, instances:)
-        nodes(reload).find_all { |n| instances.include? n }
-      end
-
       def in_recovery?
         recovery = client.cat.recovery(format: 'json', v: true).first.values
         [hostname, name].any? { |a| recovery.include?(a) }
+      end
+
+      def terminate
+        @asg.ec2_client.terminate_instances(
+          dry_run: false,
+          instance_ids: [instance_id], # required
+        )
+        # poll for ~5mins seconds
+        @asg.ec2_client.wait_until(:instance_terminated,
+                                   instance_ids: [instance_id]) do |w|
+          w.max_attempts = 10
+          w.delay = 30
+        end
       end
     end
   end

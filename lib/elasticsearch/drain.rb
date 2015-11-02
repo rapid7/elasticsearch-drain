@@ -42,7 +42,7 @@ module Elasticsearch
     #
     # @return [Array<OpenStruct>] Array of node objects
     def nodes
-      Nodes.new(client).nodes
+      Nodes.new(client, asg)
     end
 
     # Convience method to access {Elasticsearch::Drain::Cluster#cluster}

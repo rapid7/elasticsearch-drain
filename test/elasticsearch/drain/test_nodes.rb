@@ -9,7 +9,7 @@ class TestNodes < Minitest::Test
       'esuilogs-razor-d0prod-r01-v000',
       'us-west-2'
     )
-    @nodes = ::Elasticsearch::Drain::Nodes.new(@drain.client)
+    @nodes = ::Elasticsearch::Drain::Nodes.new(@drain.client, @drain.asg)
   end
 
   def teardown
