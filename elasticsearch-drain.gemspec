@@ -8,8 +8,8 @@ Gem::Specification.new do |spec|
   spec.version       = Elasticsearch::Drain::VERSION
   spec.authors       = ['Andrew Thompson']
   spec.email         = ['Andrew_Thompson@rapid7.com']
-  spec.summary       = %q{TODO: Write a short summary. Required.}
-  spec.description   = %q{TODO: Write a longer description. Optional.}
+  spec.summary       = %q{Elasticsearch node replacement utility that tries to keep the cluster healthy}
+  spec.description   = %q{The purpose of this utility is to drain documents from Elasticsearch nodes in an AutoScaling Group}
   spec.homepage      = ''
   spec.license       = 'MIT'
 

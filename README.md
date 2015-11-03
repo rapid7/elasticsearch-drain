@@ -1,35 +1,29 @@
 # Elasticsearch::Drain
 
-The purpose of this script is to drain an existing ASG with ES nodes that are part of a single cluster.
+The purpose of this utility is to drain documents from Elasticsearch nodes in an AutoScaling Group.
 
-Consider the following deployment procecture:
- * Start with an ASG with ES nodes in a cluster
- * Create a new ASG with ES nodes that join the above
- * Drain all data off first(old) ASG and remove instances from ASG and terminate
+This will help you do Elasticsearch node replacement while keeping the cluster healthy.
+
+Consider the following deployment procedure:
+ * Start with an AutoScaling Group with Elasticsearch nodes in a cluster
+ * Create a new AutoScaling Group with Elasticsearch nodes that join the above cluster
+ * Drain all data off older AutoScaling Group and remove instances from the AutoScaling Group and terminate instances
 
 ## Installation
-
-Add this line to your application's Gemfile:
-
-```ruby
-gem 'elasticsearch-drain'
-```
-
-And then execute:
-
-    $ bundle
-
-Or install it yourself as:
 
     $ gem install elasticsearch-drain
 
 ## Usage
 
-TODO: Write usage instructions here
+1. Create a new AutoScaling Group and populate with the same number of instances as the previous AutoScaling Group
+2. Run the tool, to start draining:
+
+
+    $ drain asg --asg="test-asg-0" --region="us-east-1" --host="localhost:9200"
 
 ## Contributing
 
-1. Fork it ( https://github.com/[my-github-username]/elasticsearch-drain/fork )
+1. Fork it ( https://github.com/rapid7/elasticsearch-drain/fork )
 2. Create your feature branch (`git checkout -b my-new-feature`)
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)
