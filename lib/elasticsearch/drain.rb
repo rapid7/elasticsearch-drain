@@ -78,6 +78,7 @@ module Elasticsearch
           instance_id = asg.instance(instance.ipaddress).instance_id
           instance.instance_id = instance_id
 
+          active_nodes = active_nodes_in_asg
           if instance.bytes_stored > 0
             puts "Node #{instance.ipaddress} has #{instance.bytes_stored} bytes to move"
             puts 'Checking the next node...'
