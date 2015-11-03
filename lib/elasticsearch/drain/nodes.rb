@@ -16,8 +16,11 @@ module Elasticsearch
       end
 
       def load
+        tries ||= 3
         @info = client.nodes.info metric: '_all'
         @stats = client.nodes.stats metric: '_all'
+      rescue Faraday::TimeoutError
+        retry unless (tries -= 1).zero?
       end
 
       # Get list of nodes in the cluster
