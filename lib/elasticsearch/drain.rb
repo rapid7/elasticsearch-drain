@@ -52,28 +52,52 @@ module Elasticsearch
       Cluster.new(client)
     end
 
+    def active_nodes_in_asg
+      instances = asg.instances
+      nodes.nodes_in_asg(reload: true, instances: instances)
+    end
+
     def drain
       fail 'Cluster is unhealthy' unless cluster.healthy?
-      instances = asg.instances # need to get the node objects for the instances in the asg
-      puts "Found nodes in AutoScalingGroup: #{instances.join(' ')}"
-      fail 'Cluster is unhealthy' unless cluster.healthy?
-      asg.min_size(0)
-      cluster.drain_nodes(instances)
-      nodes = Nodes.new
-      nodes.nodes_in_asg(reload: true, instances: instances).each do |instance|
-        sleep 30 while cluster.relocating_shards?
-        if instance.bytes_stored > 0
-          sleep 2
-        else
-          puts "Removing #{instance} from Elasticsearch cluster and #{asg} AutoScalingGroup"
-          fail 'Cluster is unhealthy' unless cluster.healthy?
-          #remove_node_from_cluster NYI
-          sleep 5 until instance.in_recovery?
-          fail 'Cluster is unhealthy' unless cluster.healthy?
-          puts 'Sleeping for 1 minute before removing the next node'
-          sleep 60
+      instances = asg.instances
+      nodes_to_drain = nodes.nodes_in_asg(reload: true, instances: instances)
+      if nodes_to_drain.empty?
+        puts 'Nothing to do'
+        exit 0
+      else
+        puts "Found nodes in AutoScalingGroup: #{instances.join(' ')}"
+        fail 'Cluster is unhealthy' unless cluster.healthy?
+        puts 'Setting MinSize in AutoScalingGroup to 0'
+        asg.min_size(0)
+        nodes_to_drain = nodes_to_drain.map(&:id).join(',')
+        cluster.drain_nodes(nodes_to_drain, '_id')
+      end
+      active_nodes = active_nodes_in_asg
+      while active_nodes.length > 0
+        active_nodes.each do |instance|
+          instance_id = asg.instance(instance.ipaddress).instance_id
+          instance.instance_id = instance_id
+
+          if instance.bytes_stored > 0
+            puts "Node #{instance.ipaddress} has #{instance.bytes_stored} bytes to move"
+            puts 'Checking the next node...'
+            sleep 2
+          else
+            puts "Removing #{instance.ipaddress} from Elasticsearch cluster and #{asg.asg} AutoScalingGroup"
+            fail 'Cluster is unhealthy' unless cluster.healthy?
+            sleep 5 unless instance.in_recovery?
+
+            asg.detach_instance(instance.instance_id)
+            fail 'Cluster is unhealthy' unless cluster.healthy?
+            instance.terminate
+            active_nodes = active_nodes_in_asg
+            break if active_nodes.length < 1
+            puts 'Sleeping for 1 minute before removing the next node'
+            sleep 60
+          end
         end
       end
+      puts 'All done!'
     end
   end
 end
