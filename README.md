@@ -1,4 +1,4 @@
-# Elasticsearch::Drain
+# Elasticsearch Drain
 
 The purpose of this utility is to drain documents from Elasticsearch nodes in an AutoScaling Group.
 
@@ -10,16 +10,17 @@ Consider the following deployment procedure:
  * Drain all data off older AutoScaling Group and remove instances from the AutoScaling Group and terminate instances
 
 ## Installation
-
-    $ gem install elasticsearch-drain
+```bash
+$ gem install elasticsearch-drain
+```
 
 ## Usage
 
 1. Create a new AutoScaling Group and populate with the same number of instances as the previous AutoScaling Group
 2. Run the tool, to start draining:
-
-
-    $ drain asg --asg="test-asg-0" --region="us-east-1" --host="localhost:9200"
+```bash
+$ drain asg --asg="test-asg-0" --region="us-east-1" --host="localhost:9200"
+```
 
 ## Contributing
 
