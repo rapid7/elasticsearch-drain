@@ -59,11 +59,15 @@ namespace :elasticsearch do
     end
   end
 
+  desc 'Install a test Elasticsearch Cluster in project directory'
   task install: [:clean, :download, :extract, :install_lock]
 end
 
+desc 'Start/Stop Elasticsearch Cluster to refresh test fixtures'
 task refresh_fixtures: ['elasticsearch:install',
                         'elasticsearch:start',
                         'test',
                         'elasticsearch:stop']
+
+desc 'Run unit and style tests'
 task default: [:test, :rubocop]
