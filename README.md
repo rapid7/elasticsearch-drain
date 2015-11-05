@@ -22,6 +22,48 @@ $ gem install elasticsearch-drain
 $ drain asg --asg="test-asg-0" --region="us-east-1" --host="localhost:9200"
 ```
 
+## Testing
+Install all dependencies:
+```bash
+gem install bundler
+bundle install
+```
+
+Run test tests (unit and style):
+```bash
+rake
+```
+Or on a tight loop with guard:
+```bash
+bundle exec guard
+```
+
+If you need to make a new http request or refresh the fixtures you will need to start a test cluster.
+
+By default the test cluster install is version `1.7.2`, this can be changed by setting the `ES_VERSION` enviroment variable.
+
+Install and Start the Cluster:
+```bash
+rake elasticsearch:install elasticsearch:start
+```
+
+Run the tests:
+```bash
+rake test
+```
+
+Stop the Cluster:
+```bash
+rake elasticsearch:stop
+```
+
+And, to wrap all that up:
+```bash
+rake refresh_fixtures
+```
+
+
+
 ## Contributing
 
 1. Fork it ( https://github.com/rapid7/elasticsearch-drain/fork )

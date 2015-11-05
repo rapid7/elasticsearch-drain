@@ -15,13 +15,14 @@ Rake::TestTask.new do |t|
 end
 
 def elasticsearch_command
-  path = 'tmp/elasticsearch-1.7.2/bin/elasticsearch'
+  path = "tmp/elasticsearch-#{ENV['ES_VERSION']}/bin/elasticsearch"
   path = ::File.expand_path(path, __dir__)
   "bash #{path}"
 end
 
 ENV['TEST_CLUSTER_NODES'] = '1'
 ENV['TEST_CLUSTER_COMMAND'] = elasticsearch_command
+ENV['ES_VERSION'] ||= '1.7.2'
 
 namespace :elasticsearch do
   task :clean do
@@ -41,7 +42,7 @@ namespace :elasticsearch do
   task download: [:tmp] do
     next if File.exist? 'tmp/es.lock'
     Net::HTTP.start('download.elastic.co') do |http|
-      resp = http.get('/elasticsearch/elasticsearch/elasticsearch-1.7.2.zip')
+      resp = http.get("/elasticsearch/elasticsearch/elasticsearch-#{ENV['ES_VERSION']}.zip")
       open('tmp/es.zip', 'w') { |file| file.write(resp.body) }
     end
   end
