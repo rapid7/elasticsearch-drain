@@ -2,12 +2,24 @@
 
 The purpose of this utility is to drain documents from Elasticsearch nodes in an AutoScaling Group.
 
-This will help you do Elasticsearch node replacement while keeping the cluster healthy.
+This will help you do Elasticsearch node replacement while keeping the cluster healthy.  This is useful if you want to change the instance type of your nodes, or if you use custom AMIs and need to rollout a new AMI.
 
 Consider the following deployment procedure:
  * Start with an AutoScaling Group with Elasticsearch nodes in a cluster
  * Create a new AutoScaling Group with Elasticsearch nodes that join the above cluster
  * Drain all data off older AutoScaling Group and remove instances from the AutoScaling Group and terminate instances
+
+
+## How does it work?
+1. Get the list of instances we want to remove from the cluster
+  * In this case it's an entire AutoScaling Group
+2. Ask the cluster for the `_id`(s) of those instances
+3. Then, tell the cluster to exclude these nodes from routing, which effectively removes all documents from the nodes
+4. Loop on these nodes asking the cluster how many documents each node is storing, when one reaches 0 we move on to the next step
+5. Remove the instance from the AutoScaling Group
+6. Terminate the instance
+7. Wait a moment and go back to step 4 and continue until there are 0 instances in the AutoScaling Group
+
 
 ## Installation
 ```bash
@@ -21,6 +33,11 @@ $ gem install elasticsearch-drain
 ```bash
 $ drain asg --asg="test-asg-0" --region="us-east-1" --host="localhost:9200"
 ```
+
+## What's next?
+ * Remove a single node from the cluster
+ * Drain only mode
+
 
 ## Testing
 Install all dependencies:
@@ -61,7 +78,6 @@ And, to wrap all that up:
 ```bash
 rake refresh_fixtures
 ```
-
 
 
 ## Contributing
