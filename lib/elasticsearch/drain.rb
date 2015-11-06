@@ -38,9 +38,7 @@ module Elasticsearch
       AutoScaling.new(@asg_name, @region)
     end
 
-    # Convience method to access {Elasticsearch::Drain::Nodes#nodes}
-    #
-    # @return [Array<OpenStruct>] Array of node objects
+    # Convience method to access {Elasticsearch::Drain::Nodes}
     def nodes
       Nodes.new(client, asg)
     end
