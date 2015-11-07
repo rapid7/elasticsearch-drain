@@ -47,7 +47,7 @@ module Elasticsearch
     #
     # @return [Elasticsearch::API::Cluster] Elasticsearch cluster client
     def cluster
-      Cluster.new(client)
+      @cluster_client ||= Cluster.new(client)
     end
 
     def active_nodes_in_asg
