@@ -35,7 +35,7 @@ module Elasticsearch
 
     # EC2 AutoScaling Client
     def asg
-      AutoScaling.new(@asg_name, @region)
+      @asg_client ||= AutoScaling.new(@asg_name, @region)
     end
 
     # Convience method to access {Elasticsearch::Drain::Nodes}

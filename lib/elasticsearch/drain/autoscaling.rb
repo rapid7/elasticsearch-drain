@@ -15,6 +15,7 @@ module Elasticsearch
         @asg_client = Aws::AutoScaling::Client.new(region: region)
         @ec2_client = Aws::EC2::Client.new(region: region)
         @instances = nil
+        @instance_ids = nil
       end
 
       def find_instances_in_asg
@@ -26,14 +27,14 @@ module Elasticsearch
         end
         instances.flatten!
         instances.compact!
-        @instances = instances
+        @instance_ids = instances
       end
 
       def describe_instances
         instances = []
-        find_instances_in_asg if @instances.nil?
-        return [] if @instances.empty?
-        @ec2_client.describe_instances(instance_ids: @instances).each do |page|
+        find_instances_in_asg if @instance_ids.nil?
+        return [] if @instance_ids.empty?
+        @ec2_client.describe_instances(instance_ids: @instance_ids).each do |page|
           instances << page.reservations.map(&:instances)
         end
         instances.flatten!
@@ -41,7 +42,7 @@ module Elasticsearch
       end
 
       def find_private_ips
-        instances = describe_instances
+        instances = describe_instances.clone
         return [] if instances.nil?
         instances.map!(&:private_ip_address)
         instances.flatten!
@@ -55,7 +56,8 @@ module Elasticsearch
 
       def instance(ipaddress)
         describe_instances if @instances.nil?
-        @instances.find { |i| i.private_ip_address == ipaddress }
+        instances = @instances.clone
+        instances.find { |i| i.private_ip_address == ipaddress }
       end
 
       # Sets the MinSize of an AutoScalingGroup
