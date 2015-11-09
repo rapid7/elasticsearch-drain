@@ -118,6 +118,7 @@ DEPENDENCIES
   rubocop (~> 0.34)
   rubyzip (~> 1.1)
   simplecov (~> 0.10)
+  thor (~> 0.19.1)
   vcr (~> 2.9)
   webmock (~> 1.21)
   yard (~> 0.8)
