@@ -1,0 +1,90 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://localhost:9250/_nodes/_all
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.9.2
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Content-Length:
+      - '3486'
+    body:
+      encoding: UTF-8
+      string: '{"cluster_name":"elasticsearch_test","nodes":{"JwntYesBTV29Yv6TbdTMAg":{"name":"node-1","transport_address":"inet[/10.1.100.57:9300]","host":"cam-mbp-2852.cam.rapid7.com","ip":"10.1.100.57","version":"1.7.2","build":"e43676b","http_address":"inet[/10.1.100.57:9250]","attributes":{"bench":"true","test":"true"},"settings":{"node":{"bench":"true","test":"true","name":"node-1"},"client":{"type":"node"},"http":{"port":"9250"},"name":"node-1","logger":{"level":"DEBUG"},"path":{"work":"/tmp","data":"/tmp","home":"/Users/athompson/code/personal/elasticsearch-drain/tmp/elasticsearch-1.7.2","logs":"/Users/athompson/code/personal/elasticsearch-drain/tmp/elasticsearch-1.7.2/logs"},"config":{"ignore_system_properties":"true"},"cluster":{"routing":{"allocation":{"disk":{"threshold_enabled":"false"}}},"name":"elasticsearch_test"},"script":{"disable_dynamic":"false"},"discovery":{"zen":{"ping":{"multicast":{"enabled":"true"}}}},"foreground":"yes","network":{"host":"0.0.0.0"}},"os":{"refresh_interval_in_millis":1000,"available_processors":8,"cpu":{"vendor":"Intel","model":"MacBookPro11,3","mhz":2500,"total_cores":8,"total_sockets":8,"cores_per_socket":16,"cache_size_in_bytes":256},"mem":{"total_in_bytes":17179869184},"swap":{"total_in_bytes":2147483648}},"process":{"refresh_interval_in_millis":1000,"id":34353,"max_file_descriptors":10240,"mlockall":false},"jvm":{"pid":34353,"version":"1.7.0_79","vm_name":"Java
+        HotSpot(TM) 64-Bit Server VM","vm_version":"24.79-b02","vm_vendor":"Oracle
+        Corporation","start_time_in_millis":1445882456057,"mem":{"heap_init_in_bytes":268435456,"heap_max_in_bytes":1037959168,"non_heap_init_in_bytes":24313856,"non_heap_max_in_bytes":136314880,"direct_max_in_bytes":1037959168},"gc_collectors":["ParNew","ConcurrentMarkSweep"],"memory_pools":["Code
+        Cache","Par Eden Space","Par Survivor Space","CMS Old Gen","CMS Perm Gen"]},"thread_pool":{"generic":{"type":"cached","keep_alive":"30s","queue_size":-1},"index":{"type":"fixed","min":8,"max":8,"queue_size":"200"},"fetch_shard_store":{"type":"scaling","min":1,"max":16,"keep_alive":"5m","queue_size":-1},"get":{"type":"fixed","min":8,"max":8,"queue_size":"1k"},"snapshot":{"type":"scaling","min":1,"max":4,"keep_alive":"5m","queue_size":-1},"merge":{"type":"scaling","min":1,"max":4,"keep_alive":"5m","queue_size":-1},"suggest":{"type":"fixed","min":8,"max":8,"queue_size":"1k"},"bulk":{"type":"fixed","min":8,"max":8,"queue_size":"50"},"optimize":{"type":"fixed","min":1,"max":1,"queue_size":-1},"warmer":{"type":"scaling","min":1,"max":4,"keep_alive":"5m","queue_size":-1},"flush":{"type":"scaling","min":1,"max":4,"keep_alive":"5m","queue_size":-1},"search":{"type":"fixed","min":13,"max":13,"queue_size":"1k"},"fetch_shard_started":{"type":"scaling","min":1,"max":16,"keep_alive":"5m","queue_size":-1},"listener":{"type":"fixed","min":4,"max":4,"queue_size":-1},"percolate":{"type":"fixed","min":8,"max":8,"queue_size":"1k"},"management":{"type":"scaling","min":1,"max":5,"keep_alive":"5m","queue_size":-1},"refresh":{"type":"scaling","min":1,"max":4,"keep_alive":"5m","queue_size":-1}},"network":{"refresh_interval_in_millis":5000,"primary_interface":{"address":"10.1.100.57","name":"en5","mac_address":"14:B1:C8:00:44:3D"}},"transport":{"bound_address":"inet[/0:0:0:0:0:0:0:0:9300]","publish_address":"inet[/10.1.100.57:9300]","profiles":{}},"http":{"bound_address":"inet[/0:0:0:0:0:0:0:0:9250]","publish_address":"inet[/10.1.100.57:9250]","max_content_length_in_bytes":104857600},"plugins":[]}}}'
+    http_version: 
+  recorded_at: Wed, 28 Oct 2015 16:04:15 GMT
+- request:
+    method: get
+    uri: http://localhost:9250/_nodes/stats/_all
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.9.2
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Content-Length:
+      - '6388'
+    body:
+      encoding: UTF-8
+      string: '{"cluster_name":"elasticsearch_test","nodes":{"JwntYesBTV29Yv6TbdTMAg":{"timestamp":1446048255959,"name":"node-1","transport_address":"inet[/10.1.100.57:9300]","host":"cam-mbp-2852.cam.rapid7.com","ip":["inet[/10.1.100.57:9300]","NONE"],"attributes":{"bench":"true","test":"true"},"indices":{"docs":{"count":0,"deleted":0},"store":{"size_in_bytes":720,"throttle_time_in_millis":0},"indexing":{"index_total":0,"index_time_in_millis":0,"index_current":0,"delete_total":0,"delete_time_in_millis":0,"delete_current":0,"noop_update_total":0,"is_throttled":false,"throttle_time_in_millis":0},"get":{"total":0,"time_in_millis":0,"exists_total":0,"exists_time_in_millis":0,"missing_total":0,"missing_time_in_millis":0,"current":0},"search":{"open_contexts":0,"query_total":0,"query_time_in_millis":0,"query_current":0,"fetch_total":0,"fetch_time_in_millis":0,"fetch_current":0},"merges":{"current":0,"current_docs":0,"current_size_in_bytes":0,"total":0,"total_time_in_millis":0,"total_docs":0,"total_size_in_bytes":0},"refresh":{"total":5,"total_time_in_millis":0},"flush":{"total":5,"total_time_in_millis":1},"warmer":{"current":0,"total":10,"total_time_in_millis":12},"filter_cache":{"memory_size_in_bytes":0,"evictions":0},"id_cache":{"memory_size_in_bytes":0},"fielddata":{"memory_size_in_bytes":0,"evictions":0},"percolate":{"total":0,"time_in_millis":0,"current":0,"memory_size_in_bytes":-1,"memory_size":"-1b","queries":0},"completion":{"size_in_bytes":0},"segments":{"count":0,"memory_in_bytes":0,"index_writer_memory_in_bytes":0,"index_writer_max_memory_in_bytes":2560000,"version_map_memory_in_bytes":0,"fixed_bit_set_memory_in_bytes":0},"translog":{"operations":0,"size_in_bytes":17},"suggest":{"total":0,"time_in_millis":0,"current":0},"query_cache":{"memory_size_in_bytes":0,"evictions":0,"hit_count":0,"miss_count":0},"recovery":{"current_as_source":0,"current_as_target":0,"throttle_time_in_millis":0}},"os":{"timestamp":1446048255967,"uptime_in_millis":765153,"load_average":[2.41064453125,2.828125,2.830078125],"cpu":{"sys":1,"user":3,"idle":94,"usage":4,"stolen":0},"mem":{"free_in_bytes":115359744,"used_in_bytes":17064509440,"free_percent":32,"used_percent":67,"actual_free_in_bytes":5560053760,"actual_used_in_bytes":11619815424},"swap":{"used_in_bytes":630980608,"free_in_bytes":1516503040}},"process":{"timestamp":1446048255967,"open_file_descriptors":208,"cpu":{"percent":0,"sys_in_millis":134541,"user_in_millis":97381,"total_in_millis":231922},"mem":{"resident_in_bytes":172290048,"share_in_bytes":-1,"total_virtual_in_bytes":4039327744}},"jvm":{"timestamp":1446048255967,"uptime_in_millis":165799910,"mem":{"heap_used_in_bytes":57039208,"heap_used_percent":5,"heap_committed_in_bytes":259522560,"heap_max_in_bytes":1037959168,"non_heap_used_in_bytes":36488824,"non_heap_committed_in_bytes":37486592,"pools":{"young":{"used_in_bytes":34277112,"max_in_bytes":286326784,"peak_used_in_bytes":71630848,"peak_max_in_bytes":286326784},"survivor":{"used_in_bytes":984544,"max_in_bytes":35782656,"peak_used_in_bytes":8912896,"peak_max_in_bytes":35782656},"old":{"used_in_bytes":21777552,"max_in_bytes":715849728,"peak_used_in_bytes":21777552,"peak_max_in_bytes":715849728}}},"threads":{"count":74,"peak_count":78},"gc":{"collectors":{"young":{"collection_count":5,"collection_time_in_millis":89},"old":{"collection_count":0,"collection_time_in_millis":0}}},"buffer_pools":{"direct":{"count":118,"used_in_bytes":22570005,"total_capacity_in_bytes":22570005},"mapped":{"count":0,"used_in_bytes":0,"total_capacity_in_bytes":0}}},"thread_pool":{"generic":{"threads":2,"queue":0,"active":0,"rejected":0,"largest":5,"completed":4949},"index":{"threads":0,"queue":0,"active":0,"rejected":0,"largest":0,"completed":0},"fetch_shard_store":{"threads":0,"queue":0,"active":0,"rejected":0,"largest":0,"completed":0},"get":{"threads":0,"queue":0,"active":0,"rejected":0,"largest":0,"completed":0},"snapshot":{"threads":0,"queue":0,"active":0,"rejected":0,"largest":0,"completed":0},"merge":{"threads":0,"queue":0,"active":0,"rejected":0,"largest":0,"completed":0},"suggest":{"threads":0,"queue":0,"active":0,"rejected":0,"largest":0,"completed":0},"bulk":{"threads":0,"queue":0,"active":0,"rejected":0,"largest":0,"completed":0},"optimize":{"threads":0,"queue":0,"active":0,"rejected":0,"largest":0,"completed":0},"warmer":{"threads":1,"queue":0,"active":0,"rejected":0,"largest":4,"completed":5},"flush":{"threads":1,"queue":0,"active":0,"rejected":0,"largest":4,"completed":10},"search":{"threads":0,"queue":0,"active":0,"rejected":0,"largest":0,"completed":0},"fetch_shard_started":{"threads":0,"queue":0,"active":0,"rejected":0,"largest":0,"completed":0},"listener":{"threads":4,"queue":0,"active":0,"rejected":0,"largest":4,"completed":12},"percolate":{"threads":0,"queue":0,"active":0,"rejected":0,"largest":0,"completed":0},"management":{"threads":2,"queue":0,"active":1,"rejected":0,"largest":2,"completed":2802},"refresh":{"threads":0,"queue":0,"active":0,"rejected":0,"largest":0,"completed":0}},"network":{"tcp":{"active_opens":112127,"passive_opens":1684,"curr_estab":54,"in_segs":32268310,"out_segs":12523932,"retrans_segs":8280,"estab_resets":4941,"attempt_fails":62688,"in_errs":0,"out_rsts":-1}},"fs":{"timestamp":1446048255967,"total":{"total_in_bytes":499099262976,"free_in_bytes":418756890624,"available_in_bytes":418494746624,"disk_reads":0,"disk_writes":0,"disk_io_op":0,"disk_read_size_in_bytes":0,"disk_write_size_in_bytes":0,"disk_io_size_in_bytes":0},"data":[{"path":"/tmp/elasticsearch_test/nodes/0","mount":"/","dev":"/dev/disk1","type":"hfs","total_in_bytes":499099262976,"free_in_bytes":418756890624,"available_in_bytes":418494746624,"disk_reads":0,"disk_writes":0,"disk_io_op":0,"disk_read_size_in_bytes":0,"disk_write_size_in_bytes":0,"disk_io_size_in_bytes":0}]},"transport":{"server_open":0,"rx_count":6,"rx_size_in_bytes":1908,"tx_count":6,"tx_size_in_bytes":1908},"http":{"current_open":1,"total_opened":25},"breakers":{"fielddata":{"limit_size_in_bytes":622775500,"limit_size":"593.9mb","estimated_size_in_bytes":0,"estimated_size":"0b","overhead":1.03,"tripped":0},"request":{"limit_size_in_bytes":415183667,"limit_size":"395.9mb","estimated_size_in_bytes":0,"estimated_size":"0b","overhead":1.0,"tripped":0},"parent":{"limit_size_in_bytes":726571417,"limit_size":"692.9mb","estimated_size_in_bytes":0,"estimated_size":"0b","overhead":1.0,"tripped":0}}}}}'
+    http_version: 
+  recorded_at: Wed, 28 Oct 2015 16:04:15 GMT
+- request:
+    method: get
+    uri: http://localhost:9250/_nodes/_all
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.9.2
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Content-Length:
+      - '3486'
+    body:
+      encoding: UTF-8
+      string: '{"cluster_name":"elasticsearch_test","nodes":{"JwntYesBTV29Yv6TbdTMAg":{"name":"node-1","transport_address":"inet[/10.1.100.57:9300]","host":"cam-mbp-2852.cam.rapid7.com","ip":"10.1.100.57","version":"1.7.2","build":"e43676b","http_address":"inet[/10.1.100.57:9250]","attributes":{"bench":"true","test":"true"},"settings":{"node":{"bench":"true","test":"true","name":"node-1"},"client":{"type":"node"},"http":{"port":"9250"},"name":"node-1","logger":{"level":"DEBUG"},"path":{"work":"/tmp","data":"/tmp","home":"/Users/athompson/code/personal/elasticsearch-drain/tmp/elasticsearch-1.7.2","logs":"/Users/athompson/code/personal/elasticsearch-drain/tmp/elasticsearch-1.7.2/logs"},"config":{"ignore_system_properties":"true"},"cluster":{"routing":{"allocation":{"disk":{"threshold_enabled":"false"}}},"name":"elasticsearch_test"},"script":{"disable_dynamic":"false"},"discovery":{"zen":{"ping":{"multicast":{"enabled":"true"}}}},"foreground":"yes","network":{"host":"0.0.0.0"}},"os":{"refresh_interval_in_millis":1000,"available_processors":8,"cpu":{"vendor":"Intel","model":"MacBookPro11,3","mhz":2500,"total_cores":8,"total_sockets":8,"cores_per_socket":16,"cache_size_in_bytes":256},"mem":{"total_in_bytes":17179869184},"swap":{"total_in_bytes":2147483648}},"process":{"refresh_interval_in_millis":1000,"id":34353,"max_file_descriptors":10240,"mlockall":false},"jvm":{"pid":34353,"version":"1.7.0_79","vm_name":"Java
+        HotSpot(TM) 64-Bit Server VM","vm_version":"24.79-b02","vm_vendor":"Oracle
+        Corporation","start_time_in_millis":1445882456057,"mem":{"heap_init_in_bytes":268435456,"heap_max_in_bytes":1037959168,"non_heap_init_in_bytes":24313856,"non_heap_max_in_bytes":136314880,"direct_max_in_bytes":1037959168},"gc_collectors":["ParNew","ConcurrentMarkSweep"],"memory_pools":["Code
+        Cache","Par Eden Space","Par Survivor Space","CMS Old Gen","CMS Perm Gen"]},"thread_pool":{"generic":{"type":"cached","keep_alive":"30s","queue_size":-1},"index":{"type":"fixed","min":8,"max":8,"queue_size":"200"},"fetch_shard_store":{"type":"scaling","min":1,"max":16,"keep_alive":"5m","queue_size":-1},"get":{"type":"fixed","min":8,"max":8,"queue_size":"1k"},"snapshot":{"type":"scaling","min":1,"max":4,"keep_alive":"5m","queue_size":-1},"merge":{"type":"scaling","min":1,"max":4,"keep_alive":"5m","queue_size":-1},"suggest":{"type":"fixed","min":8,"max":8,"queue_size":"1k"},"bulk":{"type":"fixed","min":8,"max":8,"queue_size":"50"},"optimize":{"type":"fixed","min":1,"max":1,"queue_size":-1},"warmer":{"type":"scaling","min":1,"max":4,"keep_alive":"5m","queue_size":-1},"flush":{"type":"scaling","min":1,"max":4,"keep_alive":"5m","queue_size":-1},"search":{"type":"fixed","min":13,"max":13,"queue_size":"1k"},"fetch_shard_started":{"type":"scaling","min":1,"max":16,"keep_alive":"5m","queue_size":-1},"listener":{"type":"fixed","min":4,"max":4,"queue_size":-1},"percolate":{"type":"fixed","min":8,"max":8,"queue_size":"1k"},"management":{"type":"scaling","min":1,"max":5,"keep_alive":"5m","queue_size":-1},"refresh":{"type":"scaling","min":1,"max":4,"keep_alive":"5m","queue_size":-1}},"network":{"refresh_interval_in_millis":5000,"primary_interface":{"address":"10.1.100.57","name":"en5","mac_address":"14:B1:C8:00:44:3D"}},"transport":{"bound_address":"inet[/0:0:0:0:0:0:0:0:9300]","publish_address":"inet[/10.1.100.57:9300]","profiles":{}},"http":{"bound_address":"inet[/0:0:0:0:0:0:0:0:9250]","publish_address":"inet[/10.1.100.57:9250]","max_content_length_in_bytes":104857600},"plugins":[]}}}'
+    http_version: 
+  recorded_at: Wed, 28 Oct 2015 16:04:53 GMT
+recorded_with: VCR 2.9.3
