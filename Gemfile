@@ -7,6 +7,7 @@ group :development do
   gem 'rubyzip', '~> 1.1'
   gem 'elasticsearch-extensions', '0.0.18'
   gem 'yard', '~> 0.8'
+  gem 'thor', '~> 0.19.1'
   gem 'guard'
   gem 'guard-minitest'
 end
