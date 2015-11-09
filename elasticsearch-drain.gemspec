@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
   spec.email         = ['Andrew_Thompson@rapid7.com']
   spec.summary       = %q{Elasticsearch node replacement utility that tries to keep the cluster healthy}
   spec.description   = %q{The purpose of this utility is to drain documents from Elasticsearch nodes in an AutoScaling Group}
-  spec.homepage      = ''
+  spec.homepage      = 'https://github.com/rapid7/elasticsearch-drain'
   spec.license       = 'MIT'
 
   spec.files         = `git ls-files -z`.split("\x0")
