@@ -30,6 +30,9 @@ module Elasticsearch
         @instance_ids = instances
       end
 
+      # Describe an AutoScaling Group
+      #
+      # @return [Struct] AutoScaling Group
       def describe_instances
         instances = []
         find_instances_in_asg if @instance_ids.nil?
@@ -39,6 +42,17 @@ module Elasticsearch
         end
         instances.flatten!
         @instances = instances
+      end
+
+      def describe_autoscaling_group
+        group = []
+        groups = @asg_client.describe_auto_scaling_groups(
+          auto_scaling_group_names: [asg]
+        )
+        groups.auto_scaling_groups.each do |page|
+          group << page
+        end
+        group.first
       end
 
       def find_private_ips

@@ -3,7 +3,7 @@ require 'pp'
 
 class TestAutoScaling < Minitest::Test
   def setup
-    VCR.insert_cassette 'autoscaling', record: :once
+    VCR.insert_cassette 'autoscaling', record: :new_episodes
     @asg = ::Elasticsearch::Drain::AutoScaling.new(
       'esuilogs-razor-d0prod-r01-v000',
       'us-east-1'
@@ -33,5 +33,15 @@ class TestAutoScaling < Minitest::Test
   def test_instances_is_private_ipaddresses
     ip = @asg.instances.first
     assert private_ipaddress?(ip)
+  end
+
+  def test_describe_asg_has_desired_capacity
+    VCR.eject_cassette
+    WebMock.allow_net_connect!
+    VCR.turned_off do
+      asg = @asg.describe_autoscaling_group
+      assert_respond_to asg, :desired_capacity
+    end
+    WebMock.disable_net_connect!
   end
 end
