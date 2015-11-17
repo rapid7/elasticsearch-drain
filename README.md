@@ -46,6 +46,8 @@ gem install bundler
 bundle install
 ```
 
+To enable the tests that will hit the AWS APIs pass `ALLOW_DISABLED_VCR=true`
+
 Run test tests (unit and style):
 ```bash
 rake

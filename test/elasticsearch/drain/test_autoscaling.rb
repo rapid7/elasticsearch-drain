@@ -35,13 +35,35 @@ class TestAutoScaling < Minitest::Test
     assert private_ipaddress?(ip)
   end
 
+  # TODO: Figure out how to recode this...
   def test_describe_asg_has_desired_capacity
-    VCR.eject_cassette
-    WebMock.allow_net_connect!
-    VCR.turned_off do
+    disable_vcr do
       asg = @asg.describe_autoscaling_group
       assert_respond_to asg, :desired_capacity
     end
-    WebMock.disable_net_connect!
+  end
+
+  # TODO: Figure out how to recode this...
+  def test_describe_asg_desired_capacity_equals
+    disable_vcr do
+      asg = @asg.describe_autoscaling_group
+      assert_equal 16, asg.desired_capacity
+    end
+  end
+
+  # TODO: Figure out how to recode this...
+  def test_describe_asg_has_min_size
+    disable_vcr do
+      asg = @asg.describe_autoscaling_group
+      assert_respond_to asg, :min_size
+    end
+  end
+
+  # TODO: Figure out how to recode this...
+  def test_describe_asg_has_min_size_equals
+    disable_vcr do
+      asg = @asg.describe_autoscaling_group
+      assert_equal 16, asg.min_size
+    end
   end
 end

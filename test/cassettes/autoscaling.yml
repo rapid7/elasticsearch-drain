@@ -14,15 +14,15 @@ http_interactions:
       User-Agent:
       - aws-sdk-ruby2/2.2.0 ruby/2.1.5 x86_64-darwin12.0
       X-Amz-Date:
-      - 20151113T212221Z
+      - 20151117T164525Z
       Host:
       - autoscaling.us-east-1.amazonaws.com
       X-Amz-Content-Sha256:
       - a491bab697b02179c504975ff7c43308ecfe04a995c46ebfc7244d7ae0151395
       Authorization:
-      - AWS4-HMAC-SHA256 Credential=AKIAIJICIPICLDHMCSBA/20151113/us-east-1/autoscaling/aws4_request,
+      - AWS4-HMAC-SHA256 Credential=AKIAIJICIPICLDHMCSBA/20151117/us-east-1/autoscaling/aws4_request,
         SignedHeaders=content-type;host;user-agent;x-amz-content-sha256;x-amz-date,
-        Signature=28c1a91a575157e530b3e6c50c5102162995f46f19610db80e4aca90d6272c4e
+        Signature=96a28088fd0b5ff3cea225b57166dd2f408dde661e2059c7262fe34d98baad6c
       Content-Length:
       - '54'
       Accept:
@@ -33,13 +33,13 @@ http_interactions:
       message: OK
     headers:
       X-Amzn-Requestid:
-      - a03392ad-8a4c-11e5-8030-cbdb8b045fb0
+      - 99a93f0b-8d4a-11e5-940a-5d09cfd9b7a8
       Content-Type:
       - text/xml
       Content-Length:
-      - '28311'
+      - '25041'
       Date:
-      - Fri, 13 Nov 2015 21:22:21 GMT
+      - Tue, 17 Nov 2015 16:45:25 GMT
     body:
       encoding: UTF-8
       string: |
@@ -47,22 +47,11 @@ http_interactions:
           <DescribeAutoScalingInstancesResult>
             <AutoScalingInstances>
               <member>
-                <LaunchConfigurationName>razorjobservice-razor-d0prod-r01-v013-20151112074004</LaunchConfigurationName>
-                <LifecycleState>InService</LifecycleState>
-                <AutoScalingGroupName>razorjobservice-razor-d0prod-r01-v013</AutoScalingGroupName>
-                <InstanceId>i-005a19b7</InstanceId>
-                <HealthStatus>HEALTHY</HealthStatus>
-                <ProtectedFromHealthCheck>false</ProtectedFromHealthCheck>
-                <ProtectedFromScaleIn>false</ProtectedFromScaleIn>
-                <AvailabilityZone>us-east-1d</AvailabilityZone>
-              </member>
-              <member>
                 <LaunchConfigurationName>collectorbossservice-razor-d0prod-r01-v013-20151110072442</LaunchConfigurationName>
                 <LifecycleState>InService</LifecycleState>
                 <AutoScalingGroupName>collectorbossservice-razor-d0prod-r01-v013</AutoScalingGroupName>
                 <InstanceId>i-008039f9</InstanceId>
                 <HealthStatus>HEALTHY</HealthStatus>
-                <ProtectedFromHealthCheck>false</ProtectedFromHealthCheck>
                 <ProtectedFromScaleIn>false</ProtectedFromScaleIn>
                 <AvailabilityZone>us-east-1e</AvailabilityZone>
               </member>
@@ -72,7 +61,6 @@ http_interactions:
                 <AutoScalingGroupName>provisioningbossservice-razor-d0prod-r01</AutoScalingGroupName>
                 <InstanceId>i-009da0d5</InstanceId>
                 <HealthStatus>HEALTHY</HealthStatus>
-                <ProtectedFromHealthCheck>false</ProtectedFromHealthCheck>
                 <ProtectedFromScaleIn>false</ProtectedFromScaleIn>
                 <AvailabilityZone>us-east-1d</AvailabilityZone>
               </member>
@@ -82,7 +70,6 @@ http_interactions:
                 <AutoScalingGroupName>collectorbossservice-razor-d0prod-r01-v013</AutoScalingGroupName>
                 <InstanceId>i-00d60ab0</InstanceId>
                 <HealthStatus>HEALTHY</HealthStatus>
-                <ProtectedFromHealthCheck>false</ProtectedFromHealthCheck>
                 <ProtectedFromScaleIn>false</ProtectedFromScaleIn>
                 <AvailabilityZone>us-east-1a</AvailabilityZone>
               </member>
@@ -92,7 +79,6 @@ http_interactions:
                 <AutoScalingGroupName>esuilogs-razor-d0prod-r01-v000</AutoScalingGroupName>
                 <InstanceId>i-00fc75bf</InstanceId>
                 <HealthStatus>HEALTHY</HealthStatus>
-                <ProtectedFromHealthCheck>false</ProtectedFromHealthCheck>
                 <ProtectedFromScaleIn>false</ProtectedFromScaleIn>
                 <AvailabilityZone>us-east-1c</AvailabilityZone>
               </member>
@@ -102,7 +88,6 @@ http_interactions:
                 <AutoScalingGroupName>collectorbossservice-razor-d0prod-r01-v013</AutoScalingGroupName>
                 <InstanceId>i-038039fa</InstanceId>
                 <HealthStatus>HEALTHY</HealthStatus>
-                <ProtectedFromHealthCheck>false</ProtectedFromHealthCheck>
                 <ProtectedFromScaleIn>false</ProtectedFromScaleIn>
                 <AvailabilityZone>us-east-1e</AvailabilityZone>
               </member>
@@ -112,29 +97,8 @@ http_interactions:
                 <AutoScalingGroupName>endpointbossapp-razor-d0prod-r01-v001</AutoScalingGroupName>
                 <InstanceId>i-04dc0db4</InstanceId>
                 <HealthStatus>HEALTHY</HealthStatus>
-                <ProtectedFromHealthCheck>false</ProtectedFromHealthCheck>
                 <ProtectedFromScaleIn>false</ProtectedFromScaleIn>
                 <AvailabilityZone>us-east-1a</AvailabilityZone>
-              </member>
-              <member>
-                <LaunchConfigurationName>docnormalizerservice-razor-d0prod-r01-v007-20151112075455</LaunchConfigurationName>
-                <LifecycleState>InService</LifecycleState>
-                <AutoScalingGroupName>docnormalizerservice-razor-d0prod-r01-v007</AutoScalingGroupName>
-                <InstanceId>i-04fa5eba</InstanceId>
-                <HealthStatus>HEALTHY</HealthStatus>
-                <ProtectedFromHealthCheck>false</ProtectedFromHealthCheck>
-                <ProtectedFromScaleIn>false</ProtectedFromScaleIn>
-                <AvailabilityZone>us-east-1c</AvailabilityZone>
-              </member>
-              <member>
-                <LaunchConfigurationName>docnormalizerservice-razor-d0prod-r01-v007-20151112075455</LaunchConfigurationName>
-                <LifecycleState>InService</LifecycleState>
-                <AutoScalingGroupName>docnormalizerservice-razor-d0prod-r01-v007</AutoScalingGroupName>
-                <InstanceId>i-05fa5ebb</InstanceId>
-                <HealthStatus>HEALTHY</HealthStatus>
-                <ProtectedFromHealthCheck>false</ProtectedFromHealthCheck>
-                <ProtectedFromScaleIn>false</ProtectedFromScaleIn>
-                <AvailabilityZone>us-east-1c</AvailabilityZone>
               </member>
               <member>
                 <LaunchConfigurationName>vpc_recursives-v005-20150130071344</LaunchConfigurationName>
@@ -142,7 +106,6 @@ http_interactions:
                 <AutoScalingGroupName>vpc_recursives-v005</AutoScalingGroupName>
                 <InstanceId>i-0cbe4ce3</InstanceId>
                 <HealthStatus>HEALTHY</HealthStatus>
-                <ProtectedFromHealthCheck>false</ProtectedFromHealthCheck>
                 <ProtectedFromScaleIn>false</ProtectedFromScaleIn>
                 <AvailabilityZone>us-east-1a</AvailabilityZone>
               </member>
@@ -152,49 +115,26 @@ http_interactions:
                 <AutoScalingGroupName>assetblobprocessorservice-razor-d0prod-r01-v015</AutoScalingGroupName>
                 <InstanceId>i-0d1ae5bd</InstanceId>
                 <HealthStatus>HEALTHY</HealthStatus>
-                <ProtectedFromHealthCheck>false</ProtectedFromHealthCheck>
                 <ProtectedFromScaleIn>false</ProtectedFromScaleIn>
                 <AvailabilityZone>us-east-1a</AvailabilityZone>
               </member>
               <member>
-                <LaunchConfigurationName>razorjobservice-razor-d0prod-r01-v013-20151112074004</LaunchConfigurationName>
+                <LaunchConfigurationName>docnormalizerservice-razor-d0prod-r01-v008-20151116163253</LaunchConfigurationName>
                 <LifecycleState>InService</LifecycleState>
-                <AutoScalingGroupName>razorjobservice-razor-d0prod-r01-v013</AutoScalingGroupName>
-                <InstanceId>i-0f5a19b8</InstanceId>
+                <AutoScalingGroupName>docnormalizerservice-razor-d0prod-r01-v008</AutoScalingGroupName>
+                <InstanceId>i-0ed554f7</InstanceId>
                 <HealthStatus>HEALTHY</HealthStatus>
-                <ProtectedFromHealthCheck>false</ProtectedFromHealthCheck>
                 <ProtectedFromScaleIn>false</ProtectedFromScaleIn>
-                <AvailabilityZone>us-east-1d</AvailabilityZone>
+                <AvailabilityZone>us-east-1e</AvailabilityZone>
               </member>
               <member>
-                <LaunchConfigurationName>attributionservice-razor-d0prod-r01-v009-20151111094920</LaunchConfigurationName>
+                <LaunchConfigurationName>attributionservice-razor-d0prod-r01-v012-20151117074621</LaunchConfigurationName>
                 <LifecycleState>InService</LifecycleState>
-                <AutoScalingGroupName>attributionservice-razor-d0prod-r01-v009</AutoScalingGroupName>
-                <InstanceId>i-1406daaa</InstanceId>
+                <AutoScalingGroupName>attributionservice-razor-d0prod-r01-v012</AutoScalingGroupName>
+                <InstanceId>i-12f674ac</InstanceId>
                 <HealthStatus>HEALTHY</HealthStatus>
-                <ProtectedFromHealthCheck>false</ProtectedFromHealthCheck>
                 <ProtectedFromScaleIn>false</ProtectedFromScaleIn>
                 <AvailabilityZone>us-east-1c</AvailabilityZone>
-              </member>
-              <member>
-                <LaunchConfigurationName>attributionservice-razor-d0prod-r01-v009-20151111094920</LaunchConfigurationName>
-                <LifecycleState>InService</LifecycleState>
-                <AutoScalingGroupName>attributionservice-razor-d0prod-r01-v009</AutoScalingGroupName>
-                <InstanceId>i-1506daab</InstanceId>
-                <HealthStatus>HEALTHY</HealthStatus>
-                <ProtectedFromHealthCheck>false</ProtectedFromHealthCheck>
-                <ProtectedFromScaleIn>false</ProtectedFromScaleIn>
-                <AvailabilityZone>us-east-1c</AvailabilityZone>
-              </member>
-              <member>
-                <LaunchConfigurationName>endpointforensicsapp-razor-d0prod-r01-20151109105433</LaunchConfigurationName>
-                <LifecycleState>InService</LifecycleState>
-                <AutoScalingGroupName>endpointforensicsapp-razor-d0prod-r01</AutoScalingGroupName>
-                <InstanceId>i-159849a5</InstanceId>
-                <HealthStatus>HEALTHY</HealthStatus>
-                <ProtectedFromHealthCheck>false</ProtectedFromHealthCheck>
-                <ProtectedFromScaleIn>false</ProtectedFromScaleIn>
-                <AvailabilityZone>us-east-1a</AvailabilityZone>
               </member>
               <member>
                 <LaunchConfigurationName>veyronprovisioningservice-razor-d0prod-r01-20151001034909</LaunchConfigurationName>
@@ -202,9 +142,17 @@ http_interactions:
                 <AutoScalingGroupName>veyronprovisioningservice-razor-d0prod-r01</AutoScalingGroupName>
                 <InstanceId>i-15a5a8c0</InstanceId>
                 <HealthStatus>HEALTHY</HealthStatus>
-                <ProtectedFromHealthCheck>false</ProtectedFromHealthCheck>
                 <ProtectedFromScaleIn>false</ProtectedFromScaleIn>
                 <AvailabilityZone>us-east-1d</AvailabilityZone>
+              </member>
+              <member>
+                <LaunchConfigurationName>attributionservice-razor-d0prod-r01-v012-20151117074621</LaunchConfigurationName>
+                <LifecycleState>InService</LifecycleState>
+                <AutoScalingGroupName>attributionservice-razor-d0prod-r01-v012</AutoScalingGroupName>
+                <InstanceId>i-15f674ab</InstanceId>
+                <HealthStatus>HEALTHY</HealthStatus>
+                <ProtectedFromScaleIn>false</ProtectedFromScaleIn>
+                <AvailabilityZone>us-east-1c</AvailabilityZone>
               </member>
               <member>
                 <LaunchConfigurationName>escqrazorcloudmonitor-razor-d0prod-r01-20150729112426</LaunchConfigurationName>
@@ -212,7 +160,6 @@ http_interactions:
                 <AutoScalingGroupName>escqrazorcloudmonitor-razor-d0prod-r01</AutoScalingGroupName>
                 <InstanceId>i-1847cbcd</InstanceId>
                 <HealthStatus>HEALTHY</HealthStatus>
-                <ProtectedFromHealthCheck>false</ProtectedFromHealthCheck>
                 <ProtectedFromScaleIn>false</ProtectedFromScaleIn>
                 <AvailabilityZone>us-east-1d</AvailabilityZone>
               </member>
@@ -222,9 +169,44 @@ http_interactions:
                 <AutoScalingGroupName>platformui-razor-d0prod-r01-v008</AutoScalingGroupName>
                 <InstanceId>i-1875a8ba</InstanceId>
                 <HealthStatus>HEALTHY</HealthStatus>
-                <ProtectedFromHealthCheck>false</ProtectedFromHealthCheck>
                 <ProtectedFromScaleIn>false</ProtectedFromScaleIn>
                 <AvailabilityZone>us-east-1c</AvailabilityZone>
+              </member>
+              <member>
+                <LaunchConfigurationName>attributionservice-razor-d0prod-r01-v012-20151117074621</LaunchConfigurationName>
+                <LifecycleState>InService</LifecycleState>
+                <AutoScalingGroupName>attributionservice-razor-d0prod-r01-v012</AutoScalingGroupName>
+                <InstanceId>i-1cfa7eac</InstanceId>
+                <HealthStatus>HEALTHY</HealthStatus>
+                <ProtectedFromScaleIn>false</ProtectedFromScaleIn>
+                <AvailabilityZone>us-east-1a</AvailabilityZone>
+              </member>
+              <member>
+                <LaunchConfigurationName>attributionservice-razor-d0prod-r01-v012-20151117074621</LaunchConfigurationName>
+                <LifecycleState>InService</LifecycleState>
+                <AutoScalingGroupName>attributionservice-razor-d0prod-r01-v012</AutoScalingGroupName>
+                <InstanceId>i-1dfa7ead</InstanceId>
+                <HealthStatus>HEALTHY</HealthStatus>
+                <ProtectedFromScaleIn>false</ProtectedFromScaleIn>
+                <AvailabilityZone>us-east-1a</AvailabilityZone>
+              </member>
+              <member>
+                <LaunchConfigurationName>attributionservice-razor-d0prod-r01-v012-20151117074621</LaunchConfigurationName>
+                <LifecycleState>InService</LifecycleState>
+                <AutoScalingGroupName>attributionservice-razor-d0prod-r01-v012</AutoScalingGroupName>
+                <InstanceId>i-1ffa7eaf</InstanceId>
+                <HealthStatus>HEALTHY</HealthStatus>
+                <ProtectedFromScaleIn>false</ProtectedFromScaleIn>
+                <AvailabilityZone>us-east-1a</AvailabilityZone>
+              </member>
+              <member>
+                <LaunchConfigurationName>docnormalizerservice-razor-d0prod-r01-v008-20151116163253</LaunchConfigurationName>
+                <LifecycleState>InService</LifecycleState>
+                <AutoScalingGroupName>docnormalizerservice-razor-d0prod-r01-v008</AutoScalingGroupName>
+                <InstanceId>i-25d554dc</InstanceId>
+                <HealthStatus>HEALTHY</HealthStatus>
+                <ProtectedFromScaleIn>false</ProtectedFromScaleIn>
+                <AvailabilityZone>us-east-1e</AvailabilityZone>
               </member>
               <member>
                 <LaunchConfigurationName>escqrazornotableevents-razor-d0prod-r01-20150817093944</LaunchConfigurationName>
@@ -232,9 +214,26 @@ http_interactions:
                 <AutoScalingGroupName>escqrazornotableevents-razor-d0prod-r01</AutoScalingGroupName>
                 <InstanceId>i-25d9e389</InstanceId>
                 <HealthStatus>HEALTHY</HealthStatus>
-                <ProtectedFromHealthCheck>false</ProtectedFromHealthCheck>
                 <ProtectedFromScaleIn>false</ProtectedFromScaleIn>
                 <AvailabilityZone>us-east-1a</AvailabilityZone>
+              </member>
+              <member>
+                <LaunchConfigurationName>docnormalizerservice-razor-d0prod-r01-v008-20151116163253</LaunchConfigurationName>
+                <LifecycleState>InService</LifecycleState>
+                <AutoScalingGroupName>docnormalizerservice-razor-d0prod-r01-v008</AutoScalingGroupName>
+                <InstanceId>i-25daf892</InstanceId>
+                <HealthStatus>HEALTHY</HealthStatus>
+                <ProtectedFromScaleIn>false</ProtectedFromScaleIn>
+                <AvailabilityZone>us-east-1d</AvailabilityZone>
+              </member>
+              <member>
+                <LaunchConfigurationName>docnormalizerservice-razor-d0prod-r01-v008-20151116163253</LaunchConfigurationName>
+                <LifecycleState>InService</LifecycleState>
+                <AutoScalingGroupName>docnormalizerservice-razor-d0prod-r01-v008</AutoScalingGroupName>
+                <InstanceId>i-26d554df</InstanceId>
+                <HealthStatus>HEALTHY</HealthStatus>
+                <ProtectedFromScaleIn>false</ProtectedFromScaleIn>
+                <AvailabilityZone>us-east-1e</AvailabilityZone>
               </member>
               <member>
                 <LaunchConfigurationName>escqrazorcloudmonitor-razor-d0prod-r01-20150729112426</LaunchConfigurationName>
@@ -242,7 +241,6 @@ http_interactions:
                 <AutoScalingGroupName>escqrazorcloudmonitor-razor-d0prod-r01</AutoScalingGroupName>
                 <InstanceId>i-274d668f</InstanceId>
                 <HealthStatus>HEALTHY</HealthStatus>
-                <ProtectedFromHealthCheck>false</ProtectedFromHealthCheck>
                 <ProtectedFromScaleIn>false</ProtectedFromScaleIn>
                 <AvailabilityZone>us-east-1c</AvailabilityZone>
               </member>
@@ -252,7 +250,15 @@ http_interactions:
                 <AutoScalingGroupName>esuilogsclient-razor-d0prod-r01</AutoScalingGroupName>
                 <InstanceId>i-279f28ce</InstanceId>
                 <HealthStatus>HEALTHY</HealthStatus>
-                <ProtectedFromHealthCheck>false</ProtectedFromHealthCheck>
+                <ProtectedFromScaleIn>false</ProtectedFromScaleIn>
+                <AvailabilityZone>us-east-1e</AvailabilityZone>
+              </member>
+              <member>
+                <LaunchConfigurationName>docnormalizerservice-razor-d0prod-r01-v008-20151116163253</LaunchConfigurationName>
+                <LifecycleState>InService</LifecycleState>
+                <AutoScalingGroupName>docnormalizerservice-razor-d0prod-r01-v008</AutoScalingGroupName>
+                <InstanceId>i-27d554de</InstanceId>
+                <HealthStatus>HEALTHY</HealthStatus>
                 <ProtectedFromScaleIn>false</ProtectedFromScaleIn>
                 <AvailabilityZone>us-east-1e</AvailabilityZone>
               </member>
@@ -262,7 +268,6 @@ http_interactions:
                 <AutoScalingGroupName>razorui-razor-d0prod-r01-v026</AutoScalingGroupName>
                 <InstanceId>i-27fc5e97</InstanceId>
                 <HealthStatus>HEALTHY</HealthStatus>
-                <ProtectedFromHealthCheck>false</ProtectedFromHealthCheck>
                 <ProtectedFromScaleIn>false</ProtectedFromScaleIn>
                 <AvailabilityZone>us-east-1a</AvailabilityZone>
               </member>
@@ -272,7 +277,6 @@ http_interactions:
                 <AutoScalingGroupName>escqrazornotableevents-razor-d0prod-r01</AutoScalingGroupName>
                 <InstanceId>i-2897f3c1</InstanceId>
                 <HealthStatus>HEALTHY</HealthStatus>
-                <ProtectedFromHealthCheck>false</ProtectedFromHealthCheck>
                 <ProtectedFromScaleIn>false</ProtectedFromScaleIn>
                 <AvailabilityZone>us-east-1e</AvailabilityZone>
               </member>
@@ -282,9 +286,53 @@ http_interactions:
                 <AutoScalingGroupName>escqrazornotableevents-razor-d0prod-r01</AutoScalingGroupName>
                 <InstanceId>i-28c2f884</InstanceId>
                 <HealthStatus>HEALTHY</HealthStatus>
-                <ProtectedFromHealthCheck>false</ProtectedFromHealthCheck>
                 <ProtectedFromScaleIn>false</ProtectedFromScaleIn>
                 <AvailabilityZone>us-east-1a</AvailabilityZone>
+              </member>
+              <member>
+                <LaunchConfigurationName>docnormalizerservice-razor-d0prod-r01-v008-20151116163253</LaunchConfigurationName>
+                <LifecycleState>InService</LifecycleState>
+                <AutoScalingGroupName>docnormalizerservice-razor-d0prod-r01-v008</AutoScalingGroupName>
+                <InstanceId>i-28daf89f</InstanceId>
+                <HealthStatus>HEALTHY</HealthStatus>
+                <ProtectedFromScaleIn>false</ProtectedFromScaleIn>
+                <AvailabilityZone>us-east-1d</AvailabilityZone>
+              </member>
+              <member>
+                <LaunchConfigurationName>docnormalizerservice-razor-d0prod-r01-v008-20151116163253</LaunchConfigurationName>
+                <LifecycleState>InService</LifecycleState>
+                <AutoScalingGroupName>docnormalizerservice-razor-d0prod-r01-v008</AutoScalingGroupName>
+                <InstanceId>i-2accee9d</InstanceId>
+                <HealthStatus>HEALTHY</HealthStatus>
+                <ProtectedFromScaleIn>false</ProtectedFromScaleIn>
+                <AvailabilityZone>us-east-1d</AvailabilityZone>
+              </member>
+              <member>
+                <LaunchConfigurationName>docnormalizerservice-razor-d0prod-r01-v008-20151116163253</LaunchConfigurationName>
+                <LifecycleState>InService</LifecycleState>
+                <AutoScalingGroupName>docnormalizerservice-razor-d0prod-r01-v008</AutoScalingGroupName>
+                <InstanceId>i-2adaf89d</InstanceId>
+                <HealthStatus>HEALTHY</HealthStatus>
+                <ProtectedFromScaleIn>false</ProtectedFromScaleIn>
+                <AvailabilityZone>us-east-1d</AvailabilityZone>
+              </member>
+              <member>
+                <LaunchConfigurationName>attributionservice-razor-d0prod-r01-v012-20151117074621</LaunchConfigurationName>
+                <LifecycleState>InService</LifecycleState>
+                <AutoScalingGroupName>attributionservice-razor-d0prod-r01-v012</AutoScalingGroupName>
+                <InstanceId>i-2af77594</InstanceId>
+                <HealthStatus>HEALTHY</HealthStatus>
+                <ProtectedFromScaleIn>false</ProtectedFromScaleIn>
+                <AvailabilityZone>us-east-1c</AvailabilityZone>
+              </member>
+              <member>
+                <LaunchConfigurationName>docnormalizerservice-razor-d0prod-r01-v008-20151116163253</LaunchConfigurationName>
+                <LifecycleState>InService</LifecycleState>
+                <AutoScalingGroupName>docnormalizerservice-razor-d0prod-r01-v008</AutoScalingGroupName>
+                <InstanceId>i-2bdaf89c</InstanceId>
+                <HealthStatus>HEALTHY</HealthStatus>
+                <ProtectedFromScaleIn>false</ProtectedFromScaleIn>
+                <AvailabilityZone>us-east-1d</AvailabilityZone>
               </member>
               <member>
                 <LaunchConfigurationName>blobprocessorservice-razor-d0prod-r01-v002-20150929080458</LaunchConfigurationName>
@@ -292,7 +340,6 @@ http_interactions:
                 <AutoScalingGroupName>blobprocessorservice-razor-d0prod-r01-v002</AutoScalingGroupName>
                 <InstanceId>i-2dfcb6c4</InstanceId>
                 <HealthStatus>HEALTHY</HealthStatus>
-                <ProtectedFromHealthCheck>false</ProtectedFromHealthCheck>
                 <ProtectedFromScaleIn>false</ProtectedFromScaleIn>
                 <AvailabilityZone>us-east-1e</AvailabilityZone>
               </member>
@@ -302,19 +349,8 @@ http_interactions:
                 <AutoScalingGroupName>platformui-razor-d0prod-r01-v008</AutoScalingGroupName>
                 <InstanceId>i-2e8c5cfa</InstanceId>
                 <HealthStatus>HEALTHY</HealthStatus>
-                <ProtectedFromHealthCheck>false</ProtectedFromHealthCheck>
                 <ProtectedFromScaleIn>false</ProtectedFromScaleIn>
                 <AvailabilityZone>us-east-1d</AvailabilityZone>
-              </member>
-              <member>
-                <LaunchConfigurationName>razorjobservice-razor-d0prod-r01-v013-20151112074004</LaunchConfigurationName>
-                <LifecycleState>InService</LifecycleState>
-                <AutoScalingGroupName>razorjobservice-razor-d0prod-r01-v013</AutoScalingGroupName>
-                <InstanceId>i-2eec4890</InstanceId>
-                <HealthStatus>HEALTHY</HealthStatus>
-                <ProtectedFromHealthCheck>false</ProtectedFromHealthCheck>
-                <ProtectedFromScaleIn>false</ProtectedFromScaleIn>
-                <AvailabilityZone>us-east-1c</AvailabilityZone>
               </member>
               <member>
                 <LaunchConfigurationName>incidentgenerationservice-razor-d0prod-r01-v000-20151106075428</LaunchConfigurationName>
@@ -322,9 +358,26 @@ http_interactions:
                 <AutoScalingGroupName>incidentgenerationservice-razor-d0prod-r01-v000</AutoScalingGroupName>
                 <InstanceId>i-2f73e798</InstanceId>
                 <HealthStatus>HEALTHY</HealthStatus>
-                <ProtectedFromHealthCheck>false</ProtectedFromHealthCheck>
                 <ProtectedFromScaleIn>false</ProtectedFromScaleIn>
                 <AvailabilityZone>us-east-1d</AvailabilityZone>
+              </member>
+              <member>
+                <LaunchConfigurationName>attributionservice-razor-d0prod-r01-v012-20151117074621</LaunchConfigurationName>
+                <LifecycleState>InService</LifecycleState>
+                <AutoScalingGroupName>attributionservice-razor-d0prod-r01-v012</AutoScalingGroupName>
+                <InstanceId>i-301c9dc9</InstanceId>
+                <HealthStatus>HEALTHY</HealthStatus>
+                <ProtectedFromScaleIn>false</ProtectedFromScaleIn>
+                <AvailabilityZone>us-east-1e</AvailabilityZone>
+              </member>
+              <member>
+                <LaunchConfigurationName>attributionservice-razor-d0prod-r01-v012-20151117074621</LaunchConfigurationName>
+                <LifecycleState>InService</LifecycleState>
+                <AutoScalingGroupName>attributionservice-razor-d0prod-r01-v012</AutoScalingGroupName>
+                <InstanceId>i-311c9dc8</InstanceId>
+                <HealthStatus>HEALTHY</HealthStatus>
+                <ProtectedFromScaleIn>false</ProtectedFromScaleIn>
+                <AvailabilityZone>us-east-1e</AvailabilityZone>
               </member>
               <member>
                 <LaunchConfigurationName>escqrazorinvestigation-razor-d0prod-r01-v000-20150908115244</LaunchConfigurationName>
@@ -332,7 +385,6 @@ http_interactions:
                 <AutoScalingGroupName>escqrazorinvestigation-razor-d0prod-r01-v000</AutoScalingGroupName>
                 <InstanceId>i-33377a8c</InstanceId>
                 <HealthStatus>HEALTHY</HealthStatus>
-                <ProtectedFromHealthCheck>false</ProtectedFromHealthCheck>
                 <ProtectedFromScaleIn>false</ProtectedFromScaleIn>
                 <AvailabilityZone>us-east-1c</AvailabilityZone>
               </member>
@@ -342,7 +394,6 @@ http_interactions:
                 <AutoScalingGroupName>endpointconverterapp-razor-d0prod-r01</AutoScalingGroupName>
                 <InstanceId>i-355dd8e1</InstanceId>
                 <HealthStatus>HEALTHY</HealthStatus>
-                <ProtectedFromHealthCheck>false</ProtectedFromHealthCheck>
                 <ProtectedFromScaleIn>false</ProtectedFromScaleIn>
                 <AvailabilityZone>us-east-1d</AvailabilityZone>
               </member>
@@ -352,7 +403,6 @@ http_interactions:
                 <AutoScalingGroupName>statisticsservice-razor-d0prod-r01-v000</AutoScalingGroupName>
                 <InstanceId>i-370154de</InstanceId>
                 <HealthStatus>HEALTHY</HealthStatus>
-                <ProtectedFromHealthCheck>false</ProtectedFromHealthCheck>
                 <ProtectedFromScaleIn>false</ProtectedFromScaleIn>
                 <AvailabilityZone>us-east-1e</AvailabilityZone>
               </member>
@@ -362,27 +412,6 @@ http_interactions:
                 <AutoScalingGroupName>behaviorgenerationservice-razor-d0prod-r01-v009</AutoScalingGroupName>
                 <InstanceId>i-3b2c94c2</InstanceId>
                 <HealthStatus>HEALTHY</HealthStatus>
-                <ProtectedFromHealthCheck>false</ProtectedFromHealthCheck>
-                <ProtectedFromScaleIn>false</ProtectedFromScaleIn>
-                <AvailabilityZone>us-east-1e</AvailabilityZone>
-              </member>
-              <member>
-                <LaunchConfigurationName>attributionservice-razor-d0prod-r01-v009-20151111094920</LaunchConfigurationName>
-                <LifecycleState>InService</LifecycleState>
-                <AutoScalingGroupName>attributionservice-razor-d0prod-r01-v009</AutoScalingGroupName>
-                <InstanceId>i-3c04bcc5</InstanceId>
-                <HealthStatus>HEALTHY</HealthStatus>
-                <ProtectedFromHealthCheck>false</ProtectedFromHealthCheck>
-                <ProtectedFromScaleIn>false</ProtectedFromScaleIn>
-                <AvailabilityZone>us-east-1e</AvailabilityZone>
-              </member>
-              <member>
-                <LaunchConfigurationName>attributionservice-razor-d0prod-r01-v009-20151111094920</LaunchConfigurationName>
-                <LifecycleState>InService</LifecycleState>
-                <AutoScalingGroupName>attributionservice-razor-d0prod-r01-v009</AutoScalingGroupName>
-                <InstanceId>i-3d04bcc4</InstanceId>
-                <HealthStatus>HEALTHY</HealthStatus>
-                <ProtectedFromHealthCheck>false</ProtectedFromHealthCheck>
                 <ProtectedFromScaleIn>false</ProtectedFromScaleIn>
                 <AvailabilityZone>us-east-1e</AvailabilityZone>
               </member>
@@ -392,19 +421,8 @@ http_interactions:
                 <AutoScalingGroupName>escqrazornotableevents-razor-d0prod-r01</AutoScalingGroupName>
                 <InstanceId>i-3e4433ec</InstanceId>
                 <HealthStatus>HEALTHY</HealthStatus>
-                <ProtectedFromHealthCheck>false</ProtectedFromHealthCheck>
                 <ProtectedFromScaleIn>false</ProtectedFromScaleIn>
                 <AvailabilityZone>us-east-1d</AvailabilityZone>
-              </member>
-              <member>
-                <LaunchConfigurationName>attributionservice-razor-d0prod-r01-v009-20151111094920</LaunchConfigurationName>
-                <LifecycleState>InService</LifecycleState>
-                <AutoScalingGroupName>attributionservice-razor-d0prod-r01-v009</AutoScalingGroupName>
-                <InstanceId>i-3f04bcc6</InstanceId>
-                <HealthStatus>HEALTHY</HealthStatus>
-                <ProtectedFromHealthCheck>false</ProtectedFromHealthCheck>
-                <ProtectedFromScaleIn>false</ProtectedFromScaleIn>
-                <AvailabilityZone>us-east-1e</AvailabilityZone>
               </member>
               <member>
                 <LaunchConfigurationName>razormanageproxy-razor-d0prod-r01-v000-20151112125923</LaunchConfigurationName>
@@ -412,19 +430,8 @@ http_interactions:
                 <AutoScalingGroupName>razormanageproxy-razor-d0prod-r01-v000</AutoScalingGroupName>
                 <InstanceId>i-4048eaf0</InstanceId>
                 <HealthStatus>HEALTHY</HealthStatus>
-                <ProtectedFromHealthCheck>false</ProtectedFromHealthCheck>
                 <ProtectedFromScaleIn>false</ProtectedFromScaleIn>
                 <AvailabilityZone>us-east-1a</AvailabilityZone>
-              </member>
-              <member>
-                <LaunchConfigurationName>docnormalizerservice-razor-d0prod-r01-v007-20151112075455</LaunchConfigurationName>
-                <LifecycleState>InService</LifecycleState>
-                <AutoScalingGroupName>docnormalizerservice-razor-d0prod-r01-v007</AutoScalingGroupName>
-                <InstanceId>i-40f95dfe</InstanceId>
-                <HealthStatus>HEALTHY</HealthStatus>
-                <ProtectedFromHealthCheck>false</ProtectedFromHealthCheck>
-                <ProtectedFromScaleIn>false</ProtectedFromScaleIn>
-                <AvailabilityZone>us-east-1c</AvailabilityZone>
               </member>
               <member>
                 <LaunchConfigurationName>vpc_recursives-v005-20150130071344</LaunchConfigurationName>
@@ -432,7 +439,6 @@ http_interactions:
                 <AutoScalingGroupName>vpc_recursives-v005</AutoScalingGroupName>
                 <InstanceId>i-41729bbb</InstanceId>
                 <HealthStatus>HEALTHY</HealthStatus>
-                <ProtectedFromHealthCheck>false</ProtectedFromHealthCheck>
                 <ProtectedFromScaleIn>false</ProtectedFromScaleIn>
                 <AvailabilityZone>us-east-1d</AvailabilityZone>
               </member>
@@ -442,7 +448,6 @@ http_interactions:
                 <AutoScalingGroupName>esuilogs-razor-d0prod-r01-v000</AutoScalingGroupName>
                 <InstanceId>i-41aacee2</InstanceId>
                 <HealthStatus>HEALTHY</HealthStatus>
-                <ProtectedFromHealthCheck>false</ProtectedFromHealthCheck>
                 <ProtectedFromScaleIn>false</ProtectedFromScaleIn>
                 <AvailabilityZone>us-east-1c</AvailabilityZone>
               </member>
@@ -452,7 +457,6 @@ http_interactions:
                 <AutoScalingGroupName>esuilogsclient-razor-d0prod-r01</AutoScalingGroupName>
                 <InstanceId>i-43042feb</InstanceId>
                 <HealthStatus>HEALTHY</HealthStatus>
-                <ProtectedFromHealthCheck>false</ProtectedFromHealthCheck>
                 <ProtectedFromScaleIn>false</ProtectedFromScaleIn>
                 <AvailabilityZone>us-east-1c</AvailabilityZone>
               </member>
@@ -462,7 +466,6 @@ http_interactions:
                 <AutoScalingGroupName>razorschedulerservice-razor-d0prod-r01-v002</AutoScalingGroupName>
                 <InstanceId>i-4576a9fb</InstanceId>
                 <HealthStatus>HEALTHY</HealthStatus>
-                <ProtectedFromHealthCheck>false</ProtectedFromHealthCheck>
                 <ProtectedFromScaleIn>false</ProtectedFromScaleIn>
                 <AvailabilityZone>us-east-1c</AvailabilityZone>
               </member>
@@ -472,19 +475,8 @@ http_interactions:
                 <AutoScalingGroupName>esuilogs-razor-d0prod-r01-v000</AutoScalingGroupName>
                 <InstanceId>i-4618b6bf</InstanceId>
                 <HealthStatus>HEALTHY</HealthStatus>
-                <ProtectedFromHealthCheck>false</ProtectedFromHealthCheck>
                 <ProtectedFromScaleIn>false</ProtectedFromScaleIn>
                 <AvailabilityZone>us-east-1e</AvailabilityZone>
-              </member>
-              <member>
-                <LaunchConfigurationName>razorjobservice-razor-d0prod-r01-v013-20151112074004</LaunchConfigurationName>
-                <LifecycleState>InService</LifecycleState>
-                <AutoScalingGroupName>razorjobservice-razor-d0prod-r01-v013</AutoScalingGroupName>
-                <InstanceId>i-46f655f6</InstanceId>
-                <HealthStatus>HEALTHY</HealthStatus>
-                <ProtectedFromHealthCheck>false</ProtectedFromHealthCheck>
-                <ProtectedFromScaleIn>false</ProtectedFromScaleIn>
-                <AvailabilityZone>us-east-1a</AvailabilityZone>
               </member>
               <member>
                 <LaunchConfigurationName>mobilisafelinkservice-razor-d0prod-r01-v000-20150831130213</LaunchConfigurationName>
@@ -492,9 +484,81 @@ http_interactions:
                 <AutoScalingGroupName>mobilisafelinkservice-razor-d0prod-r01-v000</AutoScalingGroupName>
                 <InstanceId>i-47c97ee4</InstanceId>
                 <HealthStatus>HEALTHY</HealthStatus>
-                <ProtectedFromHealthCheck>false</ProtectedFromHealthCheck>
                 <ProtectedFromScaleIn>false</ProtectedFromScaleIn>
                 <AvailabilityZone>us-east-1c</AvailabilityZone>
+              </member>
+              <member>
+                <LaunchConfigurationName>attributionservice-razor-d0prod-r01-v012-20151117074621</LaunchConfigurationName>
+                <LifecycleState>InService</LifecycleState>
+                <AutoScalingGroupName>attributionservice-razor-d0prod-r01-v012</AutoScalingGroupName>
+                <InstanceId>i-497951fe</InstanceId>
+                <HealthStatus>HEALTHY</HealthStatus>
+                <ProtectedFromScaleIn>false</ProtectedFromScaleIn>
+                <AvailabilityZone>us-east-1d</AvailabilityZone>
+              </member>
+            </AutoScalingInstances>
+            <NextToken>d61b8fd7-a2f6-4c96-b878-fe137d47b594</NextToken>
+          </DescribeAutoScalingInstancesResult>
+          <ResponseMetadata>
+            <RequestId>99a93f0b-8d4a-11e5-940a-5d09cfd9b7a8</RequestId>
+          </ResponseMetadata>
+        </DescribeAutoScalingInstancesResponse>
+    http_version: 
+  recorded_at: Tue, 17 Nov 2015 16:45:26 GMT
+- request:
+    method: post
+    uri: https://autoscaling.us-east-1.amazonaws.com/
+    body:
+      encoding: UTF-8
+      string: Action=DescribeAutoScalingInstances&NextToken=d61b8fd7-a2f6-4c96-b878-fe137d47b594&Version=2011-01-01
+    headers:
+      Content-Type:
+      - application/x-www-form-urlencoded; charset=utf-8
+      Accept-Encoding:
+      - ''
+      User-Agent:
+      - aws-sdk-ruby2/2.2.0 ruby/2.1.5 x86_64-darwin12.0
+      X-Amz-Date:
+      - 20151117T164526Z
+      Host:
+      - autoscaling.us-east-1.amazonaws.com
+      X-Amz-Content-Sha256:
+      - ac4bb80207b42831505977e411990bf8eb4253f0f73eef5377c192276004ebeb
+      Authorization:
+      - AWS4-HMAC-SHA256 Credential=AKIAIJICIPICLDHMCSBA/20151117/us-east-1/autoscaling/aws4_request,
+        SignedHeaders=content-type;host;user-agent;x-amz-content-sha256;x-amz-date,
+        Signature=a42a5ae1ec4a0fded217f8813b00422785147b788bbd5b7f237942af229a9f65
+      Content-Length:
+      - '101'
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Amzn-Requestid:
+      - 9a1f0a97-8d4a-11e5-8b0a-afa831abffd0
+      Content-Type:
+      - text/xml
+      Content-Length:
+      - '24987'
+      Date:
+      - Tue, 17 Nov 2015 16:45:25 GMT
+    body:
+      encoding: UTF-8
+      string: |
+        <DescribeAutoScalingInstancesResponse xmlns="http://autoscaling.amazonaws.com/doc/2011-01-01/">
+          <DescribeAutoScalingInstancesResult>
+            <AutoScalingInstances>
+              <member>
+                <LaunchConfigurationName>attributionservice-razor-d0prod-r01-v012-20151117074621</LaunchConfigurationName>
+                <LifecycleState>InService</LifecycleState>
+                <AutoScalingGroupName>attributionservice-razor-d0prod-r01-v012</AutoScalingGroupName>
+                <InstanceId>i-4a7951fd</InstanceId>
+                <HealthStatus>HEALTHY</HealthStatus>
+                <ProtectedFromScaleIn>false</ProtectedFromScaleIn>
+                <AvailabilityZone>us-east-1d</AvailabilityZone>
               </member>
               <member>
                 <LaunchConfigurationName>assetgroupui-razor-d0prod-r01-v002-20151102214002</LaunchConfigurationName>
@@ -502,7 +566,6 @@ http_interactions:
                 <AutoScalingGroupName>assetgroupui-razor-d0prod-r01-v002</AutoScalingGroupName>
                 <InstanceId>i-4bacbdf4</InstanceId>
                 <HealthStatus>HEALTHY</HealthStatus>
-                <ProtectedFromHealthCheck>false</ProtectedFromHealthCheck>
                 <ProtectedFromScaleIn>false</ProtectedFromScaleIn>
                 <AvailabilityZone>us-east-1c</AvailabilityZone>
               </member>
@@ -512,7 +575,6 @@ http_interactions:
                 <AutoScalingGroupName>escqrazorcloudmonitor-razor-d0prod-r01</AutoScalingGroupName>
                 <InstanceId>i-4bba5799</InstanceId>
                 <HealthStatus>HEALTHY</HealthStatus>
-                <ProtectedFromHealthCheck>false</ProtectedFromHealthCheck>
                 <ProtectedFromScaleIn>false</ProtectedFromScaleIn>
                 <AvailabilityZone>us-east-1d</AvailabilityZone>
               </member>
@@ -522,7 +584,6 @@ http_interactions:
                 <AutoScalingGroupName>nexposeuserblobprocessor-razor-d0prod-r01-v005</AutoScalingGroupName>
                 <InstanceId>i-4be85eb2</InstanceId>
                 <HealthStatus>HEALTHY</HealthStatus>
-                <ProtectedFromHealthCheck>false</ProtectedFromHealthCheck>
                 <ProtectedFromScaleIn>false</ProtectedFromScaleIn>
                 <AvailabilityZone>us-east-1e</AvailabilityZone>
               </member>
@@ -532,7 +593,6 @@ http_interactions:
                 <AutoScalingGroupName>esuilogs-razor-d0prod-r01-v000</AutoScalingGroupName>
                 <InstanceId>i-4d60499f</InstanceId>
                 <HealthStatus>HEALTHY</HealthStatus>
-                <ProtectedFromHealthCheck>false</ProtectedFromHealthCheck>
                 <ProtectedFromScaleIn>false</ProtectedFromScaleIn>
                 <AvailabilityZone>us-east-1d</AvailabilityZone>
               </member>
@@ -542,84 +602,17 @@ http_interactions:
                 <AutoScalingGroupName>monolithbridgeapp-razor-d0prod-r01-v002</AutoScalingGroupName>
                 <InstanceId>i-51e35ea8</InstanceId>
                 <HealthStatus>HEALTHY</HealthStatus>
-                <ProtectedFromHealthCheck>false</ProtectedFromHealthCheck>
                 <ProtectedFromScaleIn>false</ProtectedFromScaleIn>
                 <AvailabilityZone>us-east-1e</AvailabilityZone>
               </member>
-            </AutoScalingInstances>
-            <NextToken>fab2c3f3-62ef-4e25-9bb5-4f70ad84c8cf</NextToken>
-          </DescribeAutoScalingInstancesResult>
-          <ResponseMetadata>
-            <RequestId>a03392ad-8a4c-11e5-8030-cbdb8b045fb0</RequestId>
-          </ResponseMetadata>
-        </DescribeAutoScalingInstancesResponse>
-    http_version: 
-  recorded_at: Fri, 13 Nov 2015 21:22:21 GMT
-- request:
-    method: post
-    uri: https://autoscaling.us-east-1.amazonaws.com/
-    body:
-      encoding: UTF-8
-      string: Action=DescribeAutoScalingInstances&NextToken=fab2c3f3-62ef-4e25-9bb5-4f70ad84c8cf&Version=2011-01-01
-    headers:
-      Content-Type:
-      - application/x-www-form-urlencoded; charset=utf-8
-      Accept-Encoding:
-      - ''
-      User-Agent:
-      - aws-sdk-ruby2/2.2.0 ruby/2.1.5 x86_64-darwin12.0
-      X-Amz-Date:
-      - 20151113T212221Z
-      Host:
-      - autoscaling.us-east-1.amazonaws.com
-      X-Amz-Content-Sha256:
-      - 16d2e2afaa26348d23de8c6f05ad2338f246203d69093a3a568412e994fd8974
-      Authorization:
-      - AWS4-HMAC-SHA256 Credential=AKIAIJICIPICLDHMCSBA/20151113/us-east-1/autoscaling/aws4_request,
-        SignedHeaders=content-type;host;user-agent;x-amz-content-sha256;x-amz-date,
-        Signature=9af760e483f33e2f06ae3a80453c6b7e06ab4765ebbd258db231242a022ae965
-      Content-Length:
-      - '101'
-      Accept:
-      - "*/*"
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      X-Amzn-Requestid:
-      - a091b7c2-8a4c-11e5-98cd-9d32d62584f2
-      Content-Type:
-      - text/xml
-      Content-Length:
-      - '28369'
-      Date:
-      - Fri, 13 Nov 2015 21:22:22 GMT
-    body:
-      encoding: UTF-8
-      string: |
-        <DescribeAutoScalingInstancesResponse xmlns="http://autoscaling.amazonaws.com/doc/2011-01-01/">
-          <DescribeAutoScalingInstancesResult>
-            <AutoScalingInstances>
               <member>
                 <LaunchConfigurationName>esuilogs-razor-d0prod-r01-v000-20150825104116</LaunchConfigurationName>
                 <LifecycleState>InService</LifecycleState>
                 <AutoScalingGroupName>esuilogs-razor-d0prod-r01-v000</AutoScalingGroupName>
                 <InstanceId>i-52604980</InstanceId>
                 <HealthStatus>HEALTHY</HealthStatus>
-                <ProtectedFromHealthCheck>false</ProtectedFromHealthCheck>
                 <ProtectedFromScaleIn>false</ProtectedFromScaleIn>
                 <AvailabilityZone>us-east-1d</AvailabilityZone>
-              </member>
-              <member>
-                <LaunchConfigurationName>attributionservice-razor-d0prod-r01-v009-20151111094920</LaunchConfigurationName>
-                <LifecycleState>InService</LifecycleState>
-                <AutoScalingGroupName>attributionservice-razor-d0prod-r01-v009</AutoScalingGroupName>
-                <InstanceId>i-529d38e2</InstanceId>
-                <HealthStatus>HEALTHY</HealthStatus>
-                <ProtectedFromHealthCheck>false</ProtectedFromHealthCheck>
-                <ProtectedFromScaleIn>false</ProtectedFromScaleIn>
-                <AvailabilityZone>us-east-1a</AvailabilityZone>
               </member>
               <member>
                 <LaunchConfigurationName>esuilogs-razor-d0prod-r01-v000-20150825104116</LaunchConfigurationName>
@@ -627,7 +620,6 @@ http_interactions:
                 <AutoScalingGroupName>esuilogs-razor-d0prod-r01-v000</AutoScalingGroupName>
                 <InstanceId>i-53604981</InstanceId>
                 <HealthStatus>HEALTHY</HealthStatus>
-                <ProtectedFromHealthCheck>false</ProtectedFromHealthCheck>
                 <ProtectedFromScaleIn>false</ProtectedFromScaleIn>
                 <AvailabilityZone>us-east-1d</AvailabilityZone>
               </member>
@@ -637,7 +629,6 @@ http_interactions:
                 <AutoScalingGroupName>esuilogsclient-razor-d0prod-r01</AutoScalingGroupName>
                 <InstanceId>i-53f01bf0</InstanceId>
                 <HealthStatus>HEALTHY</HealthStatus>
-                <ProtectedFromHealthCheck>false</ProtectedFromHealthCheck>
                 <ProtectedFromScaleIn>false</ProtectedFromScaleIn>
                 <AvailabilityZone>us-east-1a</AvailabilityZone>
               </member>
@@ -647,7 +638,6 @@ http_interactions:
                 <AutoScalingGroupName>escqendpointforensics-razor-d0prod-r01-v000</AutoScalingGroupName>
                 <InstanceId>i-564f19bf</InstanceId>
                 <HealthStatus>HEALTHY</HealthStatus>
-                <ProtectedFromHealthCheck>false</ProtectedFromHealthCheck>
                 <ProtectedFromScaleIn>false</ProtectedFromScaleIn>
                 <AvailabilityZone>us-east-1e</AvailabilityZone>
               </member>
@@ -657,7 +647,6 @@ http_interactions:
                 <AutoScalingGroupName>cloudmonitoringserviceui-razor-d0prod-r01-v001</AutoScalingGroupName>
                 <InstanceId>i-584669f8</InstanceId>
                 <HealthStatus>HEALTHY</HealthStatus>
-                <ProtectedFromHealthCheck>false</ProtectedFromHealthCheck>
                 <ProtectedFromScaleIn>false</ProtectedFromScaleIn>
                 <AvailabilityZone>us-east-1a</AvailabilityZone>
               </member>
@@ -667,7 +656,6 @@ http_interactions:
                 <AutoScalingGroupName>endpointingressapp-razor-d0prod-r01-v000</AutoScalingGroupName>
                 <InstanceId>i-58d03ee6</InstanceId>
                 <HealthStatus>HEALTHY</HealthStatus>
-                <ProtectedFromHealthCheck>false</ProtectedFromHealthCheck>
                 <ProtectedFromScaleIn>false</ProtectedFromScaleIn>
                 <AvailabilityZone>us-east-1c</AvailabilityZone>
               </member>
@@ -677,7 +665,6 @@ http_interactions:
                 <AutoScalingGroupName>escqrazornotableevents-razor-d0prod-r01</AutoScalingGroupName>
                 <InstanceId>i-5951268b</InstanceId>
                 <HealthStatus>HEALTHY</HealthStatus>
-                <ProtectedFromHealthCheck>false</ProtectedFromHealthCheck>
                 <ProtectedFromScaleIn>false</ProtectedFromScaleIn>
                 <AvailabilityZone>us-east-1d</AvailabilityZone>
               </member>
@@ -687,19 +674,8 @@ http_interactions:
                 <AutoScalingGroupName>razormanageproxy-razor-d0prod-r01-v000</AutoScalingGroupName>
                 <InstanceId>i-59713cee</InstanceId>
                 <HealthStatus>HEALTHY</HealthStatus>
-                <ProtectedFromHealthCheck>false</ProtectedFromHealthCheck>
                 <ProtectedFromScaleIn>false</ProtectedFromScaleIn>
                 <AvailabilityZone>us-east-1d</AvailabilityZone>
-              </member>
-              <member>
-                <LaunchConfigurationName>attributionservice-razor-d0prod-r01-v009-20151111094920</LaunchConfigurationName>
-                <LifecycleState>InService</LifecycleState>
-                <AutoScalingGroupName>attributionservice-razor-d0prod-r01-v009</AutoScalingGroupName>
-                <InstanceId>i-5a05bda3</InstanceId>
-                <HealthStatus>HEALTHY</HealthStatus>
-                <ProtectedFromHealthCheck>false</ProtectedFromHealthCheck>
-                <ProtectedFromScaleIn>false</ProtectedFromScaleIn>
-                <AvailabilityZone>us-east-1e</AvailabilityZone>
               </member>
               <member>
                 <LaunchConfigurationName>esuilogs-razor-d0prod-r01-v000-20150825104116</LaunchConfigurationName>
@@ -707,19 +683,8 @@ http_interactions:
                 <AutoScalingGroupName>esuilogs-razor-d0prod-r01-v000</AutoScalingGroupName>
                 <InstanceId>i-5a6d87f9</InstanceId>
                 <HealthStatus>HEALTHY</HealthStatus>
-                <ProtectedFromHealthCheck>false</ProtectedFromHealthCheck>
                 <ProtectedFromScaleIn>false</ProtectedFromScaleIn>
                 <AvailabilityZone>us-east-1a</AvailabilityZone>
-              </member>
-              <member>
-                <LaunchConfigurationName>attributionservice-razor-d0prod-r01-v009-20151111094920</LaunchConfigurationName>
-                <LifecycleState>InService</LifecycleState>
-                <AutoScalingGroupName>attributionservice-razor-d0prod-r01-v009</AutoScalingGroupName>
-                <InstanceId>i-5b05bda2</InstanceId>
-                <HealthStatus>HEALTHY</HealthStatus>
-                <ProtectedFromHealthCheck>false</ProtectedFromHealthCheck>
-                <ProtectedFromScaleIn>false</ProtectedFromScaleIn>
-                <AvailabilityZone>us-east-1e</AvailabilityZone>
               </member>
               <member>
                 <LaunchConfigurationName>pockibana-razor-d0prod-r01-v000-20150909091007</LaunchConfigurationName>
@@ -727,7 +692,6 @@ http_interactions:
                 <AutoScalingGroupName>pockibana-razor-d0prod-r01-v000</AutoScalingGroupName>
                 <InstanceId>i-5cee44ff</InstanceId>
                 <HealthStatus>HEALTHY</HealthStatus>
-                <ProtectedFromHealthCheck>false</ProtectedFromHealthCheck>
                 <ProtectedFromScaleIn>false</ProtectedFromScaleIn>
                 <AvailabilityZone>us-east-1c</AvailabilityZone>
               </member>
@@ -737,7 +701,6 @@ http_interactions:
                 <AutoScalingGroupName>virustotalintegrationservice-razor-d0prod-r01-v001</AutoScalingGroupName>
                 <InstanceId>i-5d4904ea</InstanceId>
                 <HealthStatus>HEALTHY</HealthStatus>
-                <ProtectedFromHealthCheck>false</ProtectedFromHealthCheck>
                 <ProtectedFromScaleIn>false</ProtectedFromScaleIn>
                 <AvailabilityZone>us-east-1d</AvailabilityZone>
               </member>
@@ -747,7 +710,6 @@ http_interactions:
                 <AutoScalingGroupName>rabbitmq-razor-d0prod-r01-v003</AutoScalingGroupName>
                 <InstanceId>i-5d5826b4</InstanceId>
                 <HealthStatus>HEALTHY</HealthStatus>
-                <ProtectedFromHealthCheck>false</ProtectedFromHealthCheck>
                 <ProtectedFromScaleIn>false</ProtectedFromScaleIn>
                 <AvailabilityZone>us-east-1e</AvailabilityZone>
               </member>
@@ -757,29 +719,8 @@ http_interactions:
                 <AutoScalingGroupName>assetsearchservice-razor-d0prod-r01-v021</AutoScalingGroupName>
                 <InstanceId>i-5d9c6aed</InstanceId>
                 <HealthStatus>HEALTHY</HealthStatus>
-                <ProtectedFromHealthCheck>false</ProtectedFromHealthCheck>
                 <ProtectedFromScaleIn>false</ProtectedFromScaleIn>
                 <AvailabilityZone>us-east-1a</AvailabilityZone>
-              </member>
-              <member>
-                <LaunchConfigurationName>docnormalizerservice-razor-d0prod-r01-v007-20151112075455</LaunchConfigurationName>
-                <LifecycleState>InService</LifecycleState>
-                <AutoScalingGroupName>docnormalizerservice-razor-d0prod-r01-v007</AutoScalingGroupName>
-                <InstanceId>i-5e7330e9</InstanceId>
-                <HealthStatus>HEALTHY</HealthStatus>
-                <ProtectedFromHealthCheck>false</ProtectedFromHealthCheck>
-                <ProtectedFromScaleIn>false</ProtectedFromScaleIn>
-                <AvailabilityZone>us-east-1d</AvailabilityZone>
-              </member>
-              <member>
-                <LaunchConfigurationName>docnormalizerservice-razor-d0prod-r01-v007-20151112075455</LaunchConfigurationName>
-                <LifecycleState>InService</LifecycleState>
-                <AutoScalingGroupName>docnormalizerservice-razor-d0prod-r01-v007</AutoScalingGroupName>
-                <InstanceId>i-5f7330e8</InstanceId>
-                <HealthStatus>HEALTHY</HealthStatus>
-                <ProtectedFromHealthCheck>false</ProtectedFromHealthCheck>
-                <ProtectedFromScaleIn>false</ProtectedFromScaleIn>
-                <AvailabilityZone>us-east-1d</AvailabilityZone>
               </member>
               <member>
                 <LaunchConfigurationName>escqrazorinvestigation-razor-d0prod-r01-v000-20150908115244</LaunchConfigurationName>
@@ -787,7 +728,6 @@ http_interactions:
                 <AutoScalingGroupName>escqrazorinvestigation-razor-d0prod-r01-v000</AutoScalingGroupName>
                 <InstanceId>i-6049eac0</InstanceId>
                 <HealthStatus>HEALTHY</HealthStatus>
-                <ProtectedFromHealthCheck>false</ProtectedFromHealthCheck>
                 <ProtectedFromScaleIn>false</ProtectedFromScaleIn>
                 <AvailabilityZone>us-east-1a</AvailabilityZone>
               </member>
@@ -797,7 +737,6 @@ http_interactions:
                 <AutoScalingGroupName>blobprocessorservice-razor-d0prod-r01-v002</AutoScalingGroupName>
                 <InstanceId>i-60a6a8c3</InstanceId>
                 <HealthStatus>HEALTHY</HealthStatus>
-                <ProtectedFromHealthCheck>false</ProtectedFromHealthCheck>
                 <ProtectedFromScaleIn>false</ProtectedFromScaleIn>
                 <AvailabilityZone>us-east-1c</AvailabilityZone>
               </member>
@@ -807,7 +746,6 @@ http_interactions:
                 <AutoScalingGroupName>escqnexposeassetsearch-razor-d0prod-r01-v012</AutoScalingGroupName>
                 <InstanceId>i-6709a69e</InstanceId>
                 <HealthStatus>HEALTHY</HealthStatus>
-                <ProtectedFromHealthCheck>false</ProtectedFromHealthCheck>
                 <ProtectedFromScaleIn>false</ProtectedFromScaleIn>
                 <AvailabilityZone>us-east-1e</AvailabilityZone>
               </member>
@@ -817,29 +755,17 @@ http_interactions:
                 <AutoScalingGroupName>blobprocessorservice-razor-d0prod-r01-v002</AutoScalingGroupName>
                 <InstanceId>i-67a6a8c4</InstanceId>
                 <HealthStatus>HEALTHY</HealthStatus>
-                <ProtectedFromHealthCheck>false</ProtectedFromHealthCheck>
                 <ProtectedFromScaleIn>false</ProtectedFromScaleIn>
                 <AvailabilityZone>us-east-1c</AvailabilityZone>
               </member>
               <member>
-                <LaunchConfigurationName>attributionservice-razor-d0prod-r01-v009-20151111094920</LaunchConfigurationName>
+                <LaunchConfigurationName>razorjobservice-razor-d0prod-r01-v014-20151116094907</LaunchConfigurationName>
                 <LifecycleState>InService</LifecycleState>
-                <AutoScalingGroupName>attributionservice-razor-d0prod-r01-v009</AutoScalingGroupName>
-                <InstanceId>i-6a9d38da</InstanceId>
+                <AutoScalingGroupName>razorjobservice-razor-d0prod-r01-v014</AutoScalingGroupName>
+                <InstanceId>i-726fe98b</InstanceId>
                 <HealthStatus>HEALTHY</HealthStatus>
-                <ProtectedFromHealthCheck>false</ProtectedFromHealthCheck>
                 <ProtectedFromScaleIn>false</ProtectedFromScaleIn>
-                <AvailabilityZone>us-east-1a</AvailabilityZone>
-              </member>
-              <member>
-                <LaunchConfigurationName>attributionservice-razor-d0prod-r01-v009-20151111094920</LaunchConfigurationName>
-                <LifecycleState>InService</LifecycleState>
-                <AutoScalingGroupName>attributionservice-razor-d0prod-r01-v009</AutoScalingGroupName>
-                <InstanceId>i-6b9d38db</InstanceId>
-                <HealthStatus>HEALTHY</HealthStatus>
-                <ProtectedFromHealthCheck>false</ProtectedFromHealthCheck>
-                <ProtectedFromScaleIn>false</ProtectedFromScaleIn>
-                <AvailabilityZone>us-east-1a</AvailabilityZone>
+                <AvailabilityZone>us-east-1e</AvailabilityZone>
               </member>
               <member>
                 <LaunchConfigurationName>nexposeuserui-razor-d0prod-r01-v001-20151102171801</LaunchConfigurationName>
@@ -847,7 +773,33 @@ http_interactions:
                 <AutoScalingGroupName>nexposeuserui-razor-d0prod-r01-v001</AutoScalingGroupName>
                 <InstanceId>i-733bd0c3</InstanceId>
                 <HealthStatus>HEALTHY</HealthStatus>
-                <ProtectedFromHealthCheck>false</ProtectedFromHealthCheck>
+                <ProtectedFromScaleIn>false</ProtectedFromScaleIn>
+                <AvailabilityZone>us-east-1a</AvailabilityZone>
+              </member>
+              <member>
+                <LaunchConfigurationName>razorjobservice-razor-d0prod-r01-v014-20151116094907</LaunchConfigurationName>
+                <LifecycleState>InService</LifecycleState>
+                <AutoScalingGroupName>razorjobservice-razor-d0prod-r01-v014</AutoScalingGroupName>
+                <InstanceId>i-7559e7c5</InstanceId>
+                <HealthStatus>HEALTHY</HealthStatus>
+                <ProtectedFromScaleIn>false</ProtectedFromScaleIn>
+                <AvailabilityZone>us-east-1a</AvailabilityZone>
+              </member>
+              <member>
+                <LaunchConfigurationName>docnormalizerservice-razor-d0prod-r01-v008-20151116163253</LaunchConfigurationName>
+                <LifecycleState>InService</LifecycleState>
+                <AutoScalingGroupName>docnormalizerservice-razor-d0prod-r01-v008</AutoScalingGroupName>
+                <InstanceId>i-755be3c5</InstanceId>
+                <HealthStatus>HEALTHY</HealthStatus>
+                <ProtectedFromScaleIn>false</ProtectedFromScaleIn>
+                <AvailabilityZone>us-east-1a</AvailabilityZone>
+              </member>
+              <member>
+                <LaunchConfigurationName>docnormalizerservice-razor-d0prod-r01-v008-20151116163253</LaunchConfigurationName>
+                <LifecycleState>InService</LifecycleState>
+                <AutoScalingGroupName>docnormalizerservice-razor-d0prod-r01-v008</AutoScalingGroupName>
+                <InstanceId>i-765be3c6</InstanceId>
+                <HealthStatus>HEALTHY</HealthStatus>
                 <ProtectedFromScaleIn>false</ProtectedFromScaleIn>
                 <AvailabilityZone>us-east-1a</AvailabilityZone>
               </member>
@@ -857,7 +809,15 @@ http_interactions:
                 <AutoScalingGroupName>incidentgenerationservice-razor-d0prod-r01-v000</AutoScalingGroupName>
                 <InstanceId>i-7742b6c9</InstanceId>
                 <HealthStatus>HEALTHY</HealthStatus>
-                <ProtectedFromHealthCheck>false</ProtectedFromHealthCheck>
+                <ProtectedFromScaleIn>false</ProtectedFromScaleIn>
+                <AvailabilityZone>us-east-1c</AvailabilityZone>
+              </member>
+              <member>
+                <LaunchConfigurationName>razorjobservice-razor-d0prod-r01-v014-20151116094907</LaunchConfigurationName>
+                <LifecycleState>InService</LifecycleState>
+                <AutoScalingGroupName>razorjobservice-razor-d0prod-r01-v014</AutoScalingGroupName>
+                <InstanceId>i-798e34c7</InstanceId>
+                <HealthStatus>HEALTHY</HealthStatus>
                 <ProtectedFromScaleIn>false</ProtectedFromScaleIn>
                 <AvailabilityZone>us-east-1c</AvailabilityZone>
               </member>
@@ -867,7 +827,6 @@ http_interactions:
                 <AutoScalingGroupName>escqrazorinvestigation-razor-d0prod-r01-v000</AutoScalingGroupName>
                 <InstanceId>i-79993480</InstanceId>
                 <HealthStatus>HEALTHY</HealthStatus>
-                <ProtectedFromHealthCheck>false</ProtectedFromHealthCheck>
                 <ProtectedFromScaleIn>false</ProtectedFromScaleIn>
                 <AvailabilityZone>us-east-1e</AvailabilityZone>
               </member>
@@ -877,7 +836,6 @@ http_interactions:
                 <AutoScalingGroupName>esuilogs-razor-d0prod-r01-v000</AutoScalingGroupName>
                 <InstanceId>i-7abeffd1</InstanceId>
                 <HealthStatus>HEALTHY</HealthStatus>
-                <ProtectedFromHealthCheck>false</ProtectedFromHealthCheck>
                 <ProtectedFromScaleIn>false</ProtectedFromScaleIn>
                 <AvailabilityZone>us-east-1c</AvailabilityZone>
               </member>
@@ -887,7 +845,6 @@ http_interactions:
                 <AutoScalingGroupName>escqendpointforensics-razor-d0prod-r01-v000</AutoScalingGroupName>
                 <InstanceId>i-7b5c4fae</InstanceId>
                 <HealthStatus>HEALTHY</HealthStatus>
-                <ProtectedFromHealthCheck>false</ProtectedFromHealthCheck>
                 <ProtectedFromScaleIn>false</ProtectedFromScaleIn>
                 <AvailabilityZone>us-east-1d</AvailabilityZone>
               </member>
@@ -897,19 +854,8 @@ http_interactions:
                 <AutoScalingGroupName>esuilogs-razor-d0prod-r01-v000</AutoScalingGroupName>
                 <InstanceId>i-7b92ce92</InstanceId>
                 <HealthStatus>HEALTHY</HealthStatus>
-                <ProtectedFromHealthCheck>false</ProtectedFromHealthCheck>
                 <ProtectedFromScaleIn>false</ProtectedFromScaleIn>
                 <AvailabilityZone>us-east-1e</AvailabilityZone>
-              </member>
-              <member>
-                <LaunchConfigurationName>attributionservice-razor-d0prod-r01-v009-20151111094920</LaunchConfigurationName>
-                <LifecycleState>InService</LifecycleState>
-                <AutoScalingGroupName>attributionservice-razor-d0prod-r01-v009</AutoScalingGroupName>
-                <InstanceId>i-7c9d38cc</InstanceId>
-                <HealthStatus>HEALTHY</HealthStatus>
-                <ProtectedFromHealthCheck>false</ProtectedFromHealthCheck>
-                <ProtectedFromScaleIn>false</ProtectedFromScaleIn>
-                <AvailabilityZone>us-east-1a</AvailabilityZone>
               </member>
               <member>
                 <LaunchConfigurationName>esuilogs-razor-d0prod-r01-v000-20150825104116</LaunchConfigurationName>
@@ -917,19 +863,8 @@ http_interactions:
                 <AutoScalingGroupName>esuilogs-razor-d0prod-r01-v000</AutoScalingGroupName>
                 <InstanceId>i-7d5f3194</InstanceId>
                 <HealthStatus>HEALTHY</HealthStatus>
-                <ProtectedFromHealthCheck>false</ProtectedFromHealthCheck>
                 <ProtectedFromScaleIn>false</ProtectedFromScaleIn>
                 <AvailabilityZone>us-east-1e</AvailabilityZone>
-              </member>
-              <member>
-                <LaunchConfigurationName>attributionservice-razor-d0prod-r01-v009-20151111094920</LaunchConfigurationName>
-                <LifecycleState>InService</LifecycleState>
-                <AutoScalingGroupName>attributionservice-razor-d0prod-r01-v009</AutoScalingGroupName>
-                <InstanceId>i-7d9d38cd</InstanceId>
-                <HealthStatus>HEALTHY</HealthStatus>
-                <ProtectedFromHealthCheck>false</ProtectedFromHealthCheck>
-                <ProtectedFromScaleIn>false</ProtectedFromScaleIn>
-                <AvailabilityZone>us-east-1a</AvailabilityZone>
               </member>
               <member>
                 <LaunchConfigurationName>rabbitmq-razor-d0prod-r01-v003-20150909125949</LaunchConfigurationName>
@@ -937,7 +872,6 @@ http_interactions:
                 <AutoScalingGroupName>rabbitmq-razor-d0prod-r01-v003</AutoScalingGroupName>
                 <InstanceId>i-7dbc6aa8</InstanceId>
                 <HealthStatus>HEALTHY</HealthStatus>
-                <ProtectedFromHealthCheck>false</ProtectedFromHealthCheck>
                 <ProtectedFromScaleIn>false</ProtectedFromScaleIn>
                 <AvailabilityZone>us-east-1d</AvailabilityZone>
               </member>
@@ -947,7 +881,6 @@ http_interactions:
                 <AutoScalingGroupName>escqrazorcloudmonitor-razor-d0prod-r01</AutoScalingGroupName>
                 <InstanceId>i-811e7d68</InstanceId>
                 <HealthStatus>HEALTHY</HealthStatus>
-                <ProtectedFromHealthCheck>false</ProtectedFromHealthCheck>
                 <ProtectedFromScaleIn>false</ProtectedFromScaleIn>
                 <AvailabilityZone>us-east-1e</AvailabilityZone>
               </member>
@@ -957,7 +890,6 @@ http_interactions:
                 <AutoScalingGroupName>escqnexposeassetsearch-razor-d0prod-r01-v012</AutoScalingGroupName>
                 <InstanceId>i-81c7983e</InstanceId>
                 <HealthStatus>HEALTHY</HealthStatus>
-                <ProtectedFromHealthCheck>false</ProtectedFromHealthCheck>
                 <ProtectedFromScaleIn>false</ProtectedFromScaleIn>
                 <AvailabilityZone>us-east-1c</AvailabilityZone>
               </member>
@@ -967,7 +899,15 @@ http_interactions:
                 <AutoScalingGroupName>esuilogsclient-razor-d0prod-r01</AutoScalingGroupName>
                 <InstanceId>i-839b1857</InstanceId>
                 <HealthStatus>HEALTHY</HealthStatus>
-                <ProtectedFromHealthCheck>false</ProtectedFromHealthCheck>
+                <ProtectedFromScaleIn>false</ProtectedFromScaleIn>
+                <AvailabilityZone>us-east-1d</AvailabilityZone>
+              </member>
+              <member>
+                <LaunchConfigurationName>docnormalizerservice-razor-d0prod-r01-v008-20151116163253</LaunchConfigurationName>
+                <LifecycleState>InService</LifecycleState>
+                <AutoScalingGroupName>docnormalizerservice-razor-d0prod-r01-v008</AutoScalingGroupName>
+                <InstanceId>i-83daf834</InstanceId>
+                <HealthStatus>HEALTHY</HealthStatus>
                 <ProtectedFromScaleIn>false</ProtectedFromScaleIn>
                 <AvailabilityZone>us-east-1d</AvailabilityZone>
               </member>
@@ -977,7 +917,6 @@ http_interactions:
                 <AutoScalingGroupName>escqendpointforensics-razor-d0prod-r01-v000</AutoScalingGroupName>
                 <InstanceId>i-848a6926</InstanceId>
                 <HealthStatus>HEALTHY</HealthStatus>
-                <ProtectedFromHealthCheck>false</ProtectedFromHealthCheck>
                 <ProtectedFromScaleIn>false</ProtectedFromScaleIn>
                 <AvailabilityZone>us-east-1c</AvailabilityZone>
               </member>
@@ -987,7 +926,6 @@ http_interactions:
                 <AutoScalingGroupName>blobprocessorservice-razor-d0prod-r01-v002</AutoScalingGroupName>
                 <InstanceId>i-84a28135</InstanceId>
                 <HealthStatus>HEALTHY</HealthStatus>
-                <ProtectedFromHealthCheck>false</ProtectedFromHealthCheck>
                 <ProtectedFromScaleIn>false</ProtectedFromScaleIn>
                 <AvailabilityZone>us-east-1a</AvailabilityZone>
               </member>
@@ -997,7 +935,6 @@ http_interactions:
                 <AutoScalingGroupName>behaviorgenerationservice-razor-d0prod-r01-v009</AutoScalingGroupName>
                 <InstanceId>i-8547843b</InstanceId>
                 <HealthStatus>HEALTHY</HealthStatus>
-                <ProtectedFromHealthCheck>false</ProtectedFromHealthCheck>
                 <ProtectedFromScaleIn>false</ProtectedFromScaleIn>
                 <AvailabilityZone>us-east-1c</AvailabilityZone>
               </member>
@@ -1007,7 +944,6 @@ http_interactions:
                 <AutoScalingGroupName>scanui-razor-d0prod-r01-v001</AutoScalingGroupName>
                 <InstanceId>i-86dc3736</InstanceId>
                 <HealthStatus>HEALTHY</HealthStatus>
-                <ProtectedFromHealthCheck>false</ProtectedFromHealthCheck>
                 <ProtectedFromScaleIn>false</ProtectedFromScaleIn>
                 <AvailabilityZone>us-east-1a</AvailabilityZone>
               </member>
@@ -1017,7 +953,6 @@ http_interactions:
                 <AutoScalingGroupName>blobprocessorservice-razor-d0prod-r01-v002</AutoScalingGroupName>
                 <InstanceId>i-87a28136</InstanceId>
                 <HealthStatus>HEALTHY</HealthStatus>
-                <ProtectedFromHealthCheck>false</ProtectedFromHealthCheck>
                 <ProtectedFromScaleIn>false</ProtectedFromScaleIn>
                 <AvailabilityZone>us-east-1a</AvailabilityZone>
               </member>
@@ -1027,7 +962,6 @@ http_interactions:
                 <AutoScalingGroupName>endpointattributionapp-razor-d0prod-r01-v000</AutoScalingGroupName>
                 <InstanceId>i-88cd5c3f</InstanceId>
                 <HealthStatus>HEALTHY</HealthStatus>
-                <ProtectedFromHealthCheck>false</ProtectedFromHealthCheck>
                 <ProtectedFromScaleIn>false</ProtectedFromScaleIn>
                 <AvailabilityZone>us-east-1d</AvailabilityZone>
               </member>
@@ -1037,7 +971,6 @@ http_interactions:
                 <AutoScalingGroupName>behaviorgenerationservice-razor-d0prod-r01-v009</AutoScalingGroupName>
                 <InstanceId>i-89ddb13e</InstanceId>
                 <HealthStatus>HEALTHY</HealthStatus>
-                <ProtectedFromHealthCheck>false</ProtectedFromHealthCheck>
                 <ProtectedFromScaleIn>false</ProtectedFromScaleIn>
                 <AvailabilityZone>us-east-1d</AvailabilityZone>
               </member>
@@ -1047,7 +980,6 @@ http_interactions:
                 <AutoScalingGroupName>esuilogs-razor-d0prod-r01-v000</AutoScalingGroupName>
                 <InstanceId>i-8c816932</InstanceId>
                 <HealthStatus>HEALTHY</HealthStatus>
-                <ProtectedFromHealthCheck>false</ProtectedFromHealthCheck>
                 <ProtectedFromScaleIn>false</ProtectedFromScaleIn>
                 <AvailabilityZone>us-east-1c</AvailabilityZone>
               </member>
@@ -1057,7 +989,6 @@ http_interactions:
                 <AutoScalingGroupName>assetui-razor-d0prod-r01-v012</AutoScalingGroupName>
                 <InstanceId>i-92ef1245</InstanceId>
                 <HealthStatus>HEALTHY</HealthStatus>
-                <ProtectedFromHealthCheck>false</ProtectedFromHealthCheck>
                 <ProtectedFromScaleIn>false</ProtectedFromScaleIn>
                 <AvailabilityZone>us-east-1d</AvailabilityZone>
               </member>
@@ -1067,27 +998,70 @@ http_interactions:
                 <AutoScalingGroupName>esuilogs-razor-d0prod-r01-v000</AutoScalingGroupName>
                 <InstanceId>i-935e307a</InstanceId>
                 <HealthStatus>HEALTHY</HealthStatus>
-                <ProtectedFromHealthCheck>false</ProtectedFromHealthCheck>
                 <ProtectedFromScaleIn>false</ProtectedFromScaleIn>
                 <AvailabilityZone>us-east-1e</AvailabilityZone>
               </member>
-              <member>
-                <LaunchConfigurationName>docnormalizerservice-razor-d0prod-r01-v007-20151112075455</LaunchConfigurationName>
-                <LifecycleState>InService</LifecycleState>
-                <AutoScalingGroupName>docnormalizerservice-razor-d0prod-r01-v007</AutoScalingGroupName>
-                <InstanceId>i-93c56623</InstanceId>
-                <HealthStatus>HEALTHY</HealthStatus>
-                <ProtectedFromHealthCheck>false</ProtectedFromHealthCheck>
-                <ProtectedFromScaleIn>false</ProtectedFromScaleIn>
-                <AvailabilityZone>us-east-1a</AvailabilityZone>
-              </member>
+            </AutoScalingInstances>
+            <NextToken>c9696b10-bf26-4b92-a4ac-f3e183b078c1</NextToken>
+          </DescribeAutoScalingInstancesResult>
+          <ResponseMetadata>
+            <RequestId>9a1f0a97-8d4a-11e5-8b0a-afa831abffd0</RequestId>
+          </ResponseMetadata>
+        </DescribeAutoScalingInstancesResponse>
+    http_version: 
+  recorded_at: Tue, 17 Nov 2015 16:45:27 GMT
+- request:
+    method: post
+    uri: https://autoscaling.us-east-1.amazonaws.com/
+    body:
+      encoding: UTF-8
+      string: Action=DescribeAutoScalingInstances&NextToken=c9696b10-bf26-4b92-a4ac-f3e183b078c1&Version=2011-01-01
+    headers:
+      Content-Type:
+      - application/x-www-form-urlencoded; charset=utf-8
+      Accept-Encoding:
+      - ''
+      User-Agent:
+      - aws-sdk-ruby2/2.2.0 ruby/2.1.5 x86_64-darwin12.0
+      X-Amz-Date:
+      - 20151117T164527Z
+      Host:
+      - autoscaling.us-east-1.amazonaws.com
+      X-Amz-Content-Sha256:
+      - d2a62572c913e126473a5a29a33736e7cf067af5a82bd1e0c6d49adc2cb435e8
+      Authorization:
+      - AWS4-HMAC-SHA256 Credential=AKIAIJICIPICLDHMCSBA/20151117/us-east-1/autoscaling/aws4_request,
+        SignedHeaders=content-type;host;user-agent;x-amz-content-sha256;x-amz-date,
+        Signature=7d702409edce2e911c77f5f0a9beef38be8980ff1f73859eca46d4a127f6483c
+      Content-Length:
+      - '101'
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Amzn-Requestid:
+      - 9a7cbb9a-8d4a-11e5-9ea6-f99c0d171644
+      Content-Type:
+      - text/xml
+      Content-Length:
+      - '24989'
+      Date:
+      - Tue, 17 Nov 2015 16:45:26 GMT
+    body:
+      encoding: UTF-8
+      string: |
+        <DescribeAutoScalingInstancesResponse xmlns="http://autoscaling.amazonaws.com/doc/2011-01-01/">
+          <DescribeAutoScalingInstancesResult>
+            <AutoScalingInstances>
               <member>
                 <LaunchConfigurationName>tagblobprocessorservice-razor-d0prod-r01-v009-20151102192012</LaunchConfigurationName>
                 <LifecycleState>InService</LifecycleState>
                 <AutoScalingGroupName>tagblobprocessorservice-razor-d0prod-r01-v009</AutoScalingGroupName>
                 <InstanceId>i-95b7016c</InstanceId>
                 <HealthStatus>HEALTHY</HealthStatus>
-                <ProtectedFromHealthCheck>false</ProtectedFromHealthCheck>
                 <ProtectedFromScaleIn>false</ProtectedFromScaleIn>
                 <AvailabilityZone>us-east-1e</AvailabilityZone>
               </member>
@@ -1097,72 +1071,24 @@ http_interactions:
                 <AutoScalingGroupName>razorui-razor-d0prod-r01-v026</AutoScalingGroupName>
                 <InstanceId>i-97802729</InstanceId>
                 <HealthStatus>HEALTHY</HealthStatus>
-                <ProtectedFromHealthCheck>false</ProtectedFromHealthCheck>
                 <ProtectedFromScaleIn>false</ProtectedFromScaleIn>
                 <AvailabilityZone>us-east-1c</AvailabilityZone>
               </member>
-            </AutoScalingInstances>
-            <NextToken>052477f5-70fa-4789-bdaa-24efae765148</NextToken>
-          </DescribeAutoScalingInstancesResult>
-          <ResponseMetadata>
-            <RequestId>a091b7c2-8a4c-11e5-98cd-9d32d62584f2</RequestId>
-          </ResponseMetadata>
-        </DescribeAutoScalingInstancesResponse>
-    http_version: 
-  recorded_at: Fri, 13 Nov 2015 21:22:22 GMT
-- request:
-    method: post
-    uri: https://autoscaling.us-east-1.amazonaws.com/
-    body:
-      encoding: UTF-8
-      string: Action=DescribeAutoScalingInstances&NextToken=052477f5-70fa-4789-bdaa-24efae765148&Version=2011-01-01
-    headers:
-      Content-Type:
-      - application/x-www-form-urlencoded; charset=utf-8
-      Accept-Encoding:
-      - ''
-      User-Agent:
-      - aws-sdk-ruby2/2.2.0 ruby/2.1.5 x86_64-darwin12.0
-      X-Amz-Date:
-      - 20151113T212222Z
-      Host:
-      - autoscaling.us-east-1.amazonaws.com
-      X-Amz-Content-Sha256:
-      - c00f856d5e5065cf720c157cc92083a722b81b741c800db888dc47d637486015
-      Authorization:
-      - AWS4-HMAC-SHA256 Credential=AKIAIJICIPICLDHMCSBA/20151113/us-east-1/autoscaling/aws4_request,
-        SignedHeaders=content-type;host;user-agent;x-amz-content-sha256;x-amz-date,
-        Signature=c168369ae744470fcec25a07d12434df54bd5c8c3955859403c9505f2b3b1591
-      Content-Length:
-      - '101'
-      Accept:
-      - "*/*"
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      X-Amzn-Requestid:
-      - a0e9c303-8a4c-11e5-a971-493c131e2a8a
-      Content-Type:
-      - text/xml
-      Content-Length:
-      - '28325'
-      Date:
-      - Fri, 13 Nov 2015 21:22:22 GMT
-    body:
-      encoding: UTF-8
-      string: |
-        <DescribeAutoScalingInstancesResponse xmlns="http://autoscaling.amazonaws.com/doc/2011-01-01/">
-          <DescribeAutoScalingInstancesResult>
-            <AutoScalingInstances>
+              <member>
+                <LaunchConfigurationName>docnormalizerservice-razor-d0prod-r01-v008-20151116163253</LaunchConfigurationName>
+                <LifecycleState>InService</LifecycleState>
+                <AutoScalingGroupName>docnormalizerservice-razor-d0prod-r01-v008</AutoScalingGroupName>
+                <InstanceId>i-985ce428</InstanceId>
+                <HealthStatus>HEALTHY</HealthStatus>
+                <ProtectedFromScaleIn>false</ProtectedFromScaleIn>
+                <AvailabilityZone>us-east-1a</AvailabilityZone>
+              </member>
               <member>
                 <LaunchConfigurationName>escqnexposeassetsearch-razor-d0prod-r01-v012-20151026071207</LaunchConfigurationName>
                 <LifecycleState>InService</LifecycleState>
                 <AutoScalingGroupName>escqnexposeassetsearch-razor-d0prod-r01-v012</AutoScalingGroupName>
                 <InstanceId>i-98dff14c</InstanceId>
                 <HealthStatus>HEALTHY</HealthStatus>
-                <ProtectedFromHealthCheck>false</ProtectedFromHealthCheck>
                 <ProtectedFromScaleIn>false</ProtectedFromScaleIn>
                 <AvailabilityZone>us-east-1d</AvailabilityZone>
               </member>
@@ -1172,7 +1098,6 @@ http_interactions:
                 <AutoScalingGroupName>processregistryapp-razor-d0prod-r01</AutoScalingGroupName>
                 <InstanceId>i-9985da70</InstanceId>
                 <HealthStatus>HEALTHY</HealthStatus>
-                <ProtectedFromHealthCheck>false</ProtectedFromHealthCheck>
                 <ProtectedFromScaleIn>false</ProtectedFromScaleIn>
                 <AvailabilityZone>us-east-1e</AvailabilityZone>
               </member>
@@ -1182,7 +1107,15 @@ http_interactions:
                 <AutoScalingGroupName>eadashboardservice-razor-d0prod-r01-v003</AutoScalingGroupName>
                 <InstanceId>i-99df3429</InstanceId>
                 <HealthStatus>HEALTHY</HealthStatus>
-                <ProtectedFromHealthCheck>false</ProtectedFromHealthCheck>
+                <ProtectedFromScaleIn>false</ProtectedFromScaleIn>
+                <AvailabilityZone>us-east-1a</AvailabilityZone>
+              </member>
+              <member>
+                <LaunchConfigurationName>docnormalizerservice-razor-d0prod-r01-v008-20151116163253</LaunchConfigurationName>
+                <LifecycleState>InService</LifecycleState>
+                <AutoScalingGroupName>docnormalizerservice-razor-d0prod-r01-v008</AutoScalingGroupName>
+                <InstanceId>i-9b5ce42b</InstanceId>
+                <HealthStatus>HEALTHY</HealthStatus>
                 <ProtectedFromScaleIn>false</ProtectedFromScaleIn>
                 <AvailabilityZone>us-east-1a</AvailabilityZone>
               </member>
@@ -1192,19 +1125,8 @@ http_interactions:
                 <AutoScalingGroupName>collectorbossservice-razor-d0prod-r01-v013</AutoScalingGroupName>
                 <InstanceId>i-9bf4822c</InstanceId>
                 <HealthStatus>HEALTHY</HealthStatus>
-                <ProtectedFromHealthCheck>false</ProtectedFromHealthCheck>
                 <ProtectedFromScaleIn>false</ProtectedFromScaleIn>
                 <AvailabilityZone>us-east-1d</AvailabilityZone>
-              </member>
-              <member>
-                <LaunchConfigurationName>docnormalizerservice-razor-d0prod-r01-v007-20151112075455</LaunchConfigurationName>
-                <LifecycleState>InService</LifecycleState>
-                <AutoScalingGroupName>docnormalizerservice-razor-d0prod-r01-v007</AutoScalingGroupName>
-                <InstanceId>i-9cc5662c</InstanceId>
-                <HealthStatus>HEALTHY</HealthStatus>
-                <ProtectedFromHealthCheck>false</ProtectedFromHealthCheck>
-                <ProtectedFromScaleIn>false</ProtectedFromScaleIn>
-                <AvailabilityZone>us-east-1a</AvailabilityZone>
               </member>
               <member>
                 <LaunchConfigurationName>collectorbossservice-razor-d0prod-r01-v013-20151110072442</LaunchConfigurationName>
@@ -1212,19 +1134,8 @@ http_interactions:
                 <AutoScalingGroupName>collectorbossservice-razor-d0prod-r01-v013</AutoScalingGroupName>
                 <InstanceId>i-9cf4822b</InstanceId>
                 <HealthStatus>HEALTHY</HealthStatus>
-                <ProtectedFromHealthCheck>false</ProtectedFromHealthCheck>
                 <ProtectedFromScaleIn>false</ProtectedFromScaleIn>
                 <AvailabilityZone>us-east-1d</AvailabilityZone>
-              </member>
-              <member>
-                <LaunchConfigurationName>docnormalizerservice-razor-d0prod-r01-v007-20151112075455</LaunchConfigurationName>
-                <LifecycleState>InService</LifecycleState>
-                <AutoScalingGroupName>docnormalizerservice-razor-d0prod-r01-v007</AutoScalingGroupName>
-                <InstanceId>i-9dc5662d</InstanceId>
-                <HealthStatus>HEALTHY</HealthStatus>
-                <ProtectedFromHealthCheck>false</ProtectedFromHealthCheck>
-                <ProtectedFromScaleIn>false</ProtectedFromScaleIn>
-                <AvailabilityZone>us-east-1a</AvailabilityZone>
               </member>
               <member>
                 <LaunchConfigurationName>devportal-razor-d0prod-r01-v000-20151026132827</LaunchConfigurationName>
@@ -1232,7 +1143,6 @@ http_interactions:
                 <AutoScalingGroupName>devportal-razor-d0prod-r01-v000</AutoScalingGroupName>
                 <InstanceId>i-9deded2c</InstanceId>
                 <HealthStatus>HEALTHY</HealthStatus>
-                <ProtectedFromHealthCheck>false</ProtectedFromHealthCheck>
                 <ProtectedFromScaleIn>false</ProtectedFromScaleIn>
                 <AvailabilityZone>us-east-1a</AvailabilityZone>
               </member>
@@ -1242,7 +1152,6 @@ http_interactions:
                 <AutoScalingGroupName>escqrazorinvestigation-razor-d0prod-r01-v000</AutoScalingGroupName>
                 <InstanceId>i-9e2c5377</InstanceId>
                 <HealthStatus>HEALTHY</HealthStatus>
-                <ProtectedFromHealthCheck>false</ProtectedFromHealthCheck>
                 <ProtectedFromScaleIn>false</ProtectedFromScaleIn>
                 <AvailabilityZone>us-east-1e</AvailabilityZone>
               </member>
@@ -1252,7 +1161,6 @@ http_interactions:
                 <AutoScalingGroupName>opscenter-razor-d0prod-r01</AutoScalingGroupName>
                 <InstanceId>i-9e70664c</InstanceId>
                 <HealthStatus>HEALTHY</HealthStatus>
-                <ProtectedFromHealthCheck>false</ProtectedFromHealthCheck>
                 <ProtectedFromScaleIn>false</ProtectedFromScaleIn>
                 <AvailabilityZone>us-east-1d</AvailabilityZone>
               </member>
@@ -1262,7 +1170,6 @@ http_interactions:
                 <AutoScalingGroupName>esuilogs-razor-d0prod-r01-v000</AutoScalingGroupName>
                 <InstanceId>i-a055b000</InstanceId>
                 <HealthStatus>HEALTHY</HealthStatus>
-                <ProtectedFromHealthCheck>false</ProtectedFromHealthCheck>
                 <ProtectedFromScaleIn>false</ProtectedFromScaleIn>
                 <AvailabilityZone>us-east-1a</AvailabilityZone>
               </member>
@@ -1272,7 +1179,6 @@ http_interactions:
                 <AutoScalingGroupName>razorui-razor-d0prod-r01-v026</AutoScalingGroupName>
                 <InstanceId>i-a0b30959</InstanceId>
                 <HealthStatus>HEALTHY</HealthStatus>
-                <ProtectedFromHealthCheck>false</ProtectedFromHealthCheck>
                 <ProtectedFromScaleIn>false</ProtectedFromScaleIn>
                 <AvailabilityZone>us-east-1e</AvailabilityZone>
               </member>
@@ -1282,7 +1188,6 @@ http_interactions:
                 <AutoScalingGroupName>esuilogs-razor-d0prod-r01-v000</AutoScalingGroupName>
                 <InstanceId>i-a155b001</InstanceId>
                 <HealthStatus>HEALTHY</HealthStatus>
-                <ProtectedFromHealthCheck>false</ProtectedFromHealthCheck>
                 <ProtectedFromScaleIn>false</ProtectedFromScaleIn>
                 <AvailabilityZone>us-east-1a</AvailabilityZone>
               </member>
@@ -1292,9 +1197,17 @@ http_interactions:
                 <AutoScalingGroupName>escqrazorinvestigation-razor-d0prod-r01-v000</AutoScalingGroupName>
                 <InstanceId>i-a581b114</InstanceId>
                 <HealthStatus>HEALTHY</HealthStatus>
-                <ProtectedFromHealthCheck>false</ProtectedFromHealthCheck>
                 <ProtectedFromScaleIn>false</ProtectedFromScaleIn>
                 <AvailabilityZone>us-east-1a</AvailabilityZone>
+              </member>
+              <member>
+                <LaunchConfigurationName>docnormalizerservice-razor-d0prod-r01-v008-20151116163253</LaunchConfigurationName>
+                <LifecycleState>InService</LifecycleState>
+                <AutoScalingGroupName>docnormalizerservice-razor-d0prod-r01-v008</AutoScalingGroupName>
+                <InstanceId>i-a5e7601b</InstanceId>
+                <HealthStatus>HEALTHY</HealthStatus>
+                <ProtectedFromScaleIn>false</ProtectedFromScaleIn>
+                <AvailabilityZone>us-east-1c</AvailabilityZone>
               </member>
               <member>
                 <LaunchConfigurationName>razorschedulerservice-razor-d0prod-r01-v002-20151111130554</LaunchConfigurationName>
@@ -1302,9 +1215,17 @@ http_interactions:
                 <AutoScalingGroupName>razorschedulerservice-razor-d0prod-r01-v002</AutoScalingGroupName>
                 <InstanceId>i-a6d3685f</InstanceId>
                 <HealthStatus>HEALTHY</HealthStatus>
-                <ProtectedFromHealthCheck>false</ProtectedFromHealthCheck>
                 <ProtectedFromScaleIn>false</ProtectedFromScaleIn>
                 <AvailabilityZone>us-east-1e</AvailabilityZone>
+              </member>
+              <member>
+                <LaunchConfigurationName>docnormalizerservice-razor-d0prod-r01-v008-20151116163253</LaunchConfigurationName>
+                <LifecycleState>InService</LifecycleState>
+                <AutoScalingGroupName>docnormalizerservice-razor-d0prod-r01-v008</AutoScalingGroupName>
+                <InstanceId>i-a6e76018</InstanceId>
+                <HealthStatus>HEALTHY</HealthStatus>
+                <ProtectedFromScaleIn>false</ProtectedFromScaleIn>
+                <AvailabilityZone>us-east-1c</AvailabilityZone>
               </member>
               <member>
                 <LaunchConfigurationName>vulnsolutionmatcherservice-razor-d0prod-r01-v005-20151019083128</LaunchConfigurationName>
@@ -1312,7 +1233,6 @@ http_interactions:
                 <AutoScalingGroupName>vulnsolutionmatcherservice-razor-d0prod-r01-v005</AutoScalingGroupName>
                 <InstanceId>i-a8015b19</InstanceId>
                 <HealthStatus>HEALTHY</HealthStatus>
-                <ProtectedFromHealthCheck>false</ProtectedFromHealthCheck>
                 <ProtectedFromScaleIn>false</ProtectedFromScaleIn>
                 <AvailabilityZone>us-east-1a</AvailabilityZone>
               </member>
@@ -1322,7 +1242,6 @@ http_interactions:
                 <AutoScalingGroupName>scanblobprocessorservice-razor-d0prod-r01-v005</AutoScalingGroupName>
                 <InstanceId>i-a8cf7451</InstanceId>
                 <HealthStatus>HEALTHY</HealthStatus>
-                <ProtectedFromHealthCheck>false</ProtectedFromHealthCheck>
                 <ProtectedFromScaleIn>false</ProtectedFromScaleIn>
                 <AvailabilityZone>us-east-1e</AvailabilityZone>
               </member>
@@ -1332,7 +1251,6 @@ http_interactions:
                 <AutoScalingGroupName>mobilisafelinkservice-razor-d0prod-r01-v000</AutoScalingGroupName>
                 <InstanceId>i-a94de509</InstanceId>
                 <HealthStatus>HEALTHY</HealthStatus>
-                <ProtectedFromHealthCheck>false</ProtectedFromHealthCheck>
                 <ProtectedFromScaleIn>false</ProtectedFromScaleIn>
                 <AvailabilityZone>us-east-1a</AvailabilityZone>
               </member>
@@ -1342,19 +1260,8 @@ http_interactions:
                 <AutoScalingGroupName>siteui-razor-d0prod-r01-v000</AutoScalingGroupName>
                 <InstanceId>i-abb84f7c</InstanceId>
                 <HealthStatus>HEALTHY</HealthStatus>
-                <ProtectedFromHealthCheck>false</ProtectedFromHealthCheck>
                 <ProtectedFromScaleIn>false</ProtectedFromScaleIn>
                 <AvailabilityZone>us-east-1d</AvailabilityZone>
-              </member>
-              <member>
-                <LaunchConfigurationName>docnormalizerservice-razor-d0prod-r01-v007-20151112075455</LaunchConfigurationName>
-                <LifecycleState>InService</LifecycleState>
-                <AutoScalingGroupName>docnormalizerservice-razor-d0prod-r01-v007</AutoScalingGroupName>
-                <InstanceId>i-abcb681b</InstanceId>
-                <HealthStatus>HEALTHY</HealthStatus>
-                <ProtectedFromHealthCheck>false</ProtectedFromHealthCheck>
-                <ProtectedFromScaleIn>false</ProtectedFromScaleIn>
-                <AvailabilityZone>us-east-1a</AvailabilityZone>
               </member>
               <member>
                 <LaunchConfigurationName>cloudmonitoringservice-razor-d0prod-r01-20150817161750</LaunchConfigurationName>
@@ -1362,47 +1269,15 @@ http_interactions:
                 <AutoScalingGroupName>cloudmonitoringservice-razor-d0prod-r01</AutoScalingGroupName>
                 <InstanceId>i-af48e30f</InstanceId>
                 <HealthStatus>HEALTHY</HealthStatus>
-                <ProtectedFromHealthCheck>false</ProtectedFromHealthCheck>
                 <ProtectedFromScaleIn>false</ProtectedFromScaleIn>
                 <AvailabilityZone>us-east-1a</AvailabilityZone>
               </member>
               <member>
-                <LaunchConfigurationName>attributionservice-razor-d0prod-r01-v009-20151111094920</LaunchConfigurationName>
+                <LaunchConfigurationName>docnormalizerservice-razor-d0prod-r01-v008-20151116163253</LaunchConfigurationName>
                 <LifecycleState>InService</LifecycleState>
-                <AutoScalingGroupName>attributionservice-razor-d0prod-r01-v009</AutoScalingGroupName>
-                <InstanceId>i-b006da0e</InstanceId>
+                <AutoScalingGroupName>docnormalizerservice-razor-d0prod-r01-v008</AutoScalingGroupName>
+                <InstanceId>i-b2e6610c</InstanceId>
                 <HealthStatus>HEALTHY</HealthStatus>
-                <ProtectedFromHealthCheck>false</ProtectedFromHealthCheck>
-                <ProtectedFromScaleIn>false</ProtectedFromScaleIn>
-                <AvailabilityZone>us-east-1c</AvailabilityZone>
-              </member>
-              <member>
-                <LaunchConfigurationName>attributionservice-razor-d0prod-r01-v009-20151111094920</LaunchConfigurationName>
-                <LifecycleState>InService</LifecycleState>
-                <AutoScalingGroupName>attributionservice-razor-d0prod-r01-v009</AutoScalingGroupName>
-                <InstanceId>i-b106da0f</InstanceId>
-                <HealthStatus>HEALTHY</HealthStatus>
-                <ProtectedFromHealthCheck>false</ProtectedFromHealthCheck>
-                <ProtectedFromScaleIn>false</ProtectedFromScaleIn>
-                <AvailabilityZone>us-east-1c</AvailabilityZone>
-              </member>
-              <member>
-                <LaunchConfigurationName>docnormalizerservice-razor-d0prod-r01-v007-20151112075455</LaunchConfigurationName>
-                <LifecycleState>InService</LifecycleState>
-                <AutoScalingGroupName>docnormalizerservice-razor-d0prod-r01-v007</AutoScalingGroupName>
-                <InstanceId>i-b1f95d0f</InstanceId>
-                <HealthStatus>HEALTHY</HealthStatus>
-                <ProtectedFromHealthCheck>false</ProtectedFromHealthCheck>
-                <ProtectedFromScaleIn>false</ProtectedFromScaleIn>
-                <AvailabilityZone>us-east-1c</AvailabilityZone>
-              </member>
-              <member>
-                <LaunchConfigurationName>attributionservice-razor-d0prod-r01-v009-20151111094920</LaunchConfigurationName>
-                <LifecycleState>InService</LifecycleState>
-                <AutoScalingGroupName>attributionservice-razor-d0prod-r01-v009</AutoScalingGroupName>
-                <InstanceId>i-b206da0c</InstanceId>
-                <HealthStatus>HEALTHY</HealthStatus>
-                <ProtectedFromHealthCheck>false</ProtectedFromHealthCheck>
                 <ProtectedFromScaleIn>false</ProtectedFromScaleIn>
                 <AvailabilityZone>us-east-1c</AvailabilityZone>
               </member>
@@ -1412,7 +1287,6 @@ http_interactions:
                 <AutoScalingGroupName>scanblobprocessorservice-razor-d0prod-r01-v004</AutoScalingGroupName>
                 <InstanceId>i-b5768362</InstanceId>
                 <HealthStatus>HEALTHY</HealthStatus>
-                <ProtectedFromHealthCheck>false</ProtectedFromHealthCheck>
                 <ProtectedFromScaleIn>false</ProtectedFromScaleIn>
                 <AvailabilityZone>us-east-1d</AvailabilityZone>
               </member>
@@ -1422,7 +1296,6 @@ http_interactions:
                 <AutoScalingGroupName>endpointingressapp-razor-d0prod-r01-v000</AutoScalingGroupName>
                 <InstanceId>i-b5807a05</InstanceId>
                 <HealthStatus>HEALTHY</HealthStatus>
-                <ProtectedFromHealthCheck>false</ProtectedFromHealthCheck>
                 <ProtectedFromScaleIn>false</ProtectedFromScaleIn>
                 <AvailabilityZone>us-east-1a</AvailabilityZone>
               </member>
@@ -1432,29 +1305,8 @@ http_interactions:
                 <AutoScalingGroupName>aws_hound</AutoScalingGroupName>
                 <InstanceId>i-b62f6a16</InstanceId>
                 <HealthStatus>HEALTHY</HealthStatus>
-                <ProtectedFromHealthCheck>false</ProtectedFromHealthCheck>
                 <ProtectedFromScaleIn>false</ProtectedFromScaleIn>
                 <AvailabilityZone>us-east-1a</AvailabilityZone>
-              </member>
-              <member>
-                <LaunchConfigurationName>docnormalizerservice-razor-d0prod-r01-v007-20151112075455</LaunchConfigurationName>
-                <LifecycleState>InService</LifecycleState>
-                <AutoScalingGroupName>docnormalizerservice-razor-d0prod-r01-v007</AutoScalingGroupName>
-                <InstanceId>i-b6c46706</InstanceId>
-                <HealthStatus>HEALTHY</HealthStatus>
-                <ProtectedFromHealthCheck>false</ProtectedFromHealthCheck>
-                <ProtectedFromScaleIn>false</ProtectedFromScaleIn>
-                <AvailabilityZone>us-east-1a</AvailabilityZone>
-              </member>
-              <member>
-                <LaunchConfigurationName>docnormalizerservice-razor-d0prod-r01-v007-20151112075455</LaunchConfigurationName>
-                <LifecycleState>InService</LifecycleState>
-                <AutoScalingGroupName>docnormalizerservice-razor-d0prod-r01-v007</AutoScalingGroupName>
-                <InstanceId>i-b6f95d08</InstanceId>
-                <HealthStatus>HEALTHY</HealthStatus>
-                <ProtectedFromHealthCheck>false</ProtectedFromHealthCheck>
-                <ProtectedFromScaleIn>false</ProtectedFromScaleIn>
-                <AvailabilityZone>us-east-1c</AvailabilityZone>
               </member>
               <member>
                 <LaunchConfigurationName>escqrazorinvestigation-razor-d0prod-r01-v000-20150908115244</LaunchConfigurationName>
@@ -1462,27 +1314,6 @@ http_interactions:
                 <AutoScalingGroupName>escqrazorinvestigation-razor-d0prod-r01-v000</AutoScalingGroupName>
                 <InstanceId>i-b7be1c14</InstanceId>
                 <HealthStatus>HEALTHY</HealthStatus>
-                <ProtectedFromHealthCheck>false</ProtectedFromHealthCheck>
-                <ProtectedFromScaleIn>false</ProtectedFromScaleIn>
-                <AvailabilityZone>us-east-1c</AvailabilityZone>
-              </member>
-              <member>
-                <LaunchConfigurationName>docnormalizerservice-razor-d0prod-r01-v007-20151112075455</LaunchConfigurationName>
-                <LifecycleState>InService</LifecycleState>
-                <AutoScalingGroupName>docnormalizerservice-razor-d0prod-r01-v007</AutoScalingGroupName>
-                <InstanceId>i-b7c46707</InstanceId>
-                <HealthStatus>HEALTHY</HealthStatus>
-                <ProtectedFromHealthCheck>false</ProtectedFromHealthCheck>
-                <ProtectedFromScaleIn>false</ProtectedFromScaleIn>
-                <AvailabilityZone>us-east-1a</AvailabilityZone>
-              </member>
-              <member>
-                <LaunchConfigurationName>docnormalizerservice-razor-d0prod-r01-v007-20151112075455</LaunchConfigurationName>
-                <LifecycleState>InService</LifecycleState>
-                <AutoScalingGroupName>docnormalizerservice-razor-d0prod-r01-v007</AutoScalingGroupName>
-                <InstanceId>i-b7f95d09</InstanceId>
-                <HealthStatus>HEALTHY</HealthStatus>
-                <ProtectedFromHealthCheck>false</ProtectedFromHealthCheck>
                 <ProtectedFromScaleIn>false</ProtectedFromScaleIn>
                 <AvailabilityZone>us-east-1c</AvailabilityZone>
               </member>
@@ -1492,7 +1323,15 @@ http_interactions:
                 <AutoScalingGroupName>endpointbridgeapp-razor-d0prod-r01</AutoScalingGroupName>
                 <InstanceId>i-b8248c6c</InstanceId>
                 <HealthStatus>HEALTHY</HealthStatus>
-                <ProtectedFromHealthCheck>false</ProtectedFromHealthCheck>
+                <ProtectedFromScaleIn>false</ProtectedFromScaleIn>
+                <AvailabilityZone>us-east-1d</AvailabilityZone>
+              </member>
+              <member>
+                <LaunchConfigurationName>behaviorgenerationservice-razor-d0prod-r01-v009-20151106135128</LaunchConfigurationName>
+                <LifecycleState>InService</LifecycleState>
+                <AutoScalingGroupName>behaviorgenerationservice-razor-d0prod-r01-v009</AutoScalingGroupName>
+                <InstanceId>i-be2a0209</InstanceId>
+                <HealthStatus>HEALTHY</HealthStatus>
                 <ProtectedFromScaleIn>false</ProtectedFromScaleIn>
                 <AvailabilityZone>us-east-1d</AvailabilityZone>
               </member>
@@ -1502,29 +1341,8 @@ http_interactions:
                 <AutoScalingGroupName>esuilogs-razor-d0prod-r01-v000</AutoScalingGroupName>
                 <InstanceId>i-be55b01e</InstanceId>
                 <HealthStatus>HEALTHY</HealthStatus>
-                <ProtectedFromHealthCheck>false</ProtectedFromHealthCheck>
                 <ProtectedFromScaleIn>false</ProtectedFromScaleIn>
                 <AvailabilityZone>us-east-1a</AvailabilityZone>
-              </member>
-              <member>
-                <LaunchConfigurationName>docnormalizerservice-razor-d0prod-r01-v007-20151112075455</LaunchConfigurationName>
-                <LifecycleState>InService</LifecycleState>
-                <AutoScalingGroupName>docnormalizerservice-razor-d0prod-r01-v007</AutoScalingGroupName>
-                <InstanceId>i-c0e75d39</InstanceId>
-                <HealthStatus>HEALTHY</HealthStatus>
-                <ProtectedFromHealthCheck>false</ProtectedFromHealthCheck>
-                <ProtectedFromScaleIn>false</ProtectedFromScaleIn>
-                <AvailabilityZone>us-east-1e</AvailabilityZone>
-              </member>
-              <member>
-                <LaunchConfigurationName>docnormalizerservice-razor-d0prod-r01-v007-20151112075455</LaunchConfigurationName>
-                <LifecycleState>InService</LifecycleState>
-                <AutoScalingGroupName>docnormalizerservice-razor-d0prod-r01-v007</AutoScalingGroupName>
-                <InstanceId>i-c1e75d38</InstanceId>
-                <HealthStatus>HEALTHY</HealthStatus>
-                <ProtectedFromHealthCheck>false</ProtectedFromHealthCheck>
-                <ProtectedFromScaleIn>false</ProtectedFromScaleIn>
-                <AvailabilityZone>us-east-1e</AvailabilityZone>
               </member>
               <member>
                 <LaunchConfigurationName>behaviorgenerationservice-razor-d0prod-r01-v009-20151106135128</LaunchConfigurationName>
@@ -1532,7 +1350,6 @@ http_interactions:
                 <AutoScalingGroupName>behaviorgenerationservice-razor-d0prod-r01-v009</AutoScalingGroupName>
                 <InstanceId>i-c2d31372</InstanceId>
                 <HealthStatus>HEALTHY</HealthStatus>
-                <ProtectedFromHealthCheck>false</ProtectedFromHealthCheck>
                 <ProtectedFromScaleIn>false</ProtectedFromScaleIn>
                 <AvailabilityZone>us-east-1a</AvailabilityZone>
               </member>
@@ -1542,7 +1359,6 @@ http_interactions:
                 <AutoScalingGroupName>escqrazorcloudmonitor-razor-d0prod-r01</AutoScalingGroupName>
                 <InstanceId>i-c4810a2d</InstanceId>
                 <HealthStatus>HEALTHY</HealthStatus>
-                <ProtectedFromHealthCheck>false</ProtectedFromHealthCheck>
                 <ProtectedFromScaleIn>false</ProtectedFromScaleIn>
                 <AvailabilityZone>us-east-1e</AvailabilityZone>
               </member>
@@ -1552,7 +1368,6 @@ http_interactions:
                 <AutoScalingGroupName>lsuilogs-razor-d0prod-r01</AutoScalingGroupName>
                 <InstanceId>i-c53ae03c</InstanceId>
                 <HealthStatus>HEALTHY</HealthStatus>
-                <ProtectedFromHealthCheck>false</ProtectedFromHealthCheck>
                 <ProtectedFromScaleIn>false</ProtectedFromScaleIn>
                 <AvailabilityZone>us-east-1e</AvailabilityZone>
               </member>
@@ -1562,7 +1377,6 @@ http_interactions:
                 <AutoScalingGroupName>monolithbridgeapp-razor-d0prod-r01-v002</AutoScalingGroupName>
                 <InstanceId>i-c5c30375</InstanceId>
                 <HealthStatus>HEALTHY</HealthStatus>
-                <ProtectedFromHealthCheck>false</ProtectedFromHealthCheck>
                 <ProtectedFromScaleIn>false</ProtectedFromScaleIn>
                 <AvailabilityZone>us-east-1a</AvailabilityZone>
               </member>
@@ -1572,7 +1386,6 @@ http_interactions:
                 <AutoScalingGroupName>escqrazornotableevents-razor-d0prod-r01</AutoScalingGroupName>
                 <InstanceId>i-c871f163</InstanceId>
                 <HealthStatus>HEALTHY</HealthStatus>
-                <ProtectedFromHealthCheck>false</ProtectedFromHealthCheck>
                 <ProtectedFromScaleIn>false</ProtectedFromScaleIn>
                 <AvailabilityZone>us-east-1c</AvailabilityZone>
               </member>
@@ -1582,7 +1395,6 @@ http_interactions:
                 <AutoScalingGroupName>vpc_recursives-v005</AutoScalingGroupName>
                 <InstanceId>i-c8ef7e39</InstanceId>
                 <HealthStatus>HEALTHY</HealthStatus>
-                <ProtectedFromHealthCheck>false</ProtectedFromHealthCheck>
                 <ProtectedFromScaleIn>false</ProtectedFromScaleIn>
                 <AvailabilityZone>us-east-1c</AvailabilityZone>
               </member>
@@ -1592,7 +1404,6 @@ http_interactions:
                 <AutoScalingGroupName>conqueso-razor-d0prod-r01-v003</AutoScalingGroupName>
                 <InstanceId>i-c9991e6a</InstanceId>
                 <HealthStatus>HEALTHY</HealthStatus>
-                <ProtectedFromHealthCheck>false</ProtectedFromHealthCheck>
                 <ProtectedFromScaleIn>false</ProtectedFromScaleIn>
                 <AvailabilityZone>us-east-1c</AvailabilityZone>
               </member>
@@ -1602,17 +1413,6 @@ http_interactions:
                 <AutoScalingGroupName>assetblobprocessorservice-razor-d0prod-r01-v015</AutoScalingGroupName>
                 <InstanceId>i-cc2f9f35</InstanceId>
                 <HealthStatus>HEALTHY</HealthStatus>
-                <ProtectedFromHealthCheck>false</ProtectedFromHealthCheck>
-                <ProtectedFromScaleIn>false</ProtectedFromScaleIn>
-                <AvailabilityZone>us-east-1e</AvailabilityZone>
-              </member>
-              <member>
-                <LaunchConfigurationName>razorjobservice-razor-d0prod-r01-v013-20151112074004</LaunchConfigurationName>
-                <LifecycleState>InService</LifecycleState>
-                <AutoScalingGroupName>razorjobservice-razor-d0prod-r01-v013</AutoScalingGroupName>
-                <InstanceId>i-cce15b35</InstanceId>
-                <HealthStatus>HEALTHY</HealthStatus>
-                <ProtectedFromHealthCheck>false</ProtectedFromHealthCheck>
                 <ProtectedFromScaleIn>false</ProtectedFromScaleIn>
                 <AvailabilityZone>us-east-1e</AvailabilityZone>
               </member>
@@ -1622,7 +1422,6 @@ http_interactions:
                 <AutoScalingGroupName>remediationui-razor-d0prod-r01</AutoScalingGroupName>
                 <InstanceId>i-cdbaa56e</InstanceId>
                 <HealthStatus>HEALTHY</HealthStatus>
-                <ProtectedFromHealthCheck>false</ProtectedFromHealthCheck>
                 <ProtectedFromScaleIn>false</ProtectedFromScaleIn>
                 <AvailabilityZone>us-east-1c</AvailabilityZone>
               </member>
@@ -1632,9 +1431,17 @@ http_interactions:
                 <AutoScalingGroupName>behaviorgenerationservice-razor-d0prod-r01-v009</AutoScalingGroupName>
                 <InstanceId>i-cdd3137d</InstanceId>
                 <HealthStatus>HEALTHY</HealthStatus>
-                <ProtectedFromHealthCheck>false</ProtectedFromHealthCheck>
                 <ProtectedFromScaleIn>false</ProtectedFromScaleIn>
                 <AvailabilityZone>us-east-1a</AvailabilityZone>
+              </member>
+              <member>
+                <LaunchConfigurationName>razorjobservice-razor-d0prod-r01-v014-20151116094907</LaunchConfigurationName>
+                <LifecycleState>InService</LifecycleState>
+                <AutoScalingGroupName>razorjobservice-razor-d0prod-r01-v014</AutoScalingGroupName>
+                <InstanceId>i-ce87a679</InstanceId>
+                <HealthStatus>HEALTHY</HealthStatus>
+                <ProtectedFromScaleIn>false</ProtectedFromScaleIn>
+                <AvailabilityZone>us-east-1d</AvailabilityZone>
               </member>
               <member>
                 <LaunchConfigurationName>lsuilogs-razor-d0prod-r01-20150722064258</LaunchConfigurationName>
@@ -1642,7 +1449,6 @@ http_interactions:
                 <AutoScalingGroupName>lsuilogs-razor-d0prod-r01</AutoScalingGroupName>
                 <InstanceId>i-cef17f71</InstanceId>
                 <HealthStatus>HEALTHY</HealthStatus>
-                <ProtectedFromHealthCheck>false</ProtectedFromHealthCheck>
                 <ProtectedFromScaleIn>false</ProtectedFromScaleIn>
                 <AvailabilityZone>us-east-1c</AvailabilityZone>
               </member>
@@ -1652,25 +1458,69 @@ http_interactions:
                 <AutoScalingGroupName>collectorbossservice-razor-d0prod-r01-v013</AutoScalingGroupName>
                 <InstanceId>i-cf21eb71</InstanceId>
                 <HealthStatus>HEALTHY</HealthStatus>
-                <ProtectedFromHealthCheck>false</ProtectedFromHealthCheck>
+                <ProtectedFromScaleIn>false</ProtectedFromScaleIn>
+                <AvailabilityZone>us-east-1c</AvailabilityZone>
+              </member>
+              <member>
+                <LaunchConfigurationName>razorjobservice-razor-d0prod-r01-v014-20151116094907</LaunchConfigurationName>
+                <LifecycleState>InService</LifecycleState>
+                <AutoScalingGroupName>razorjobservice-razor-d0prod-r01-v014</AutoScalingGroupName>
+                <InstanceId>i-cf87a678</InstanceId>
+                <HealthStatus>HEALTHY</HealthStatus>
+                <ProtectedFromScaleIn>false</ProtectedFromScaleIn>
+                <AvailabilityZone>us-east-1d</AvailabilityZone>
+              </member>
+              <member>
+                <LaunchConfigurationName>escqrazorcloudmonitor-razor-d0prod-r01-20150729112426</LaunchConfigurationName>
+                <LifecycleState>InService</LifecycleState>
+                <AutoScalingGroupName>escqrazorcloudmonitor-razor-d0prod-r01</AutoScalingGroupName>
+                <InstanceId>i-d17a157d</InstanceId>
+                <HealthStatus>HEALTHY</HealthStatus>
+                <ProtectedFromScaleIn>false</ProtectedFromScaleIn>
+                <AvailabilityZone>us-east-1a</AvailabilityZone>
+              </member>
+              <member>
+                <LaunchConfigurationName>razor-prod-1-consul-ConsulServerLaunchConfig-OLB3T5CPRPNQ</LaunchConfigurationName>
+                <LifecycleState>InService</LifecycleState>
+                <AutoScalingGroupName>razor-prod-1-consul-ConsulServerAutoScalingGroup-1PZWTW8RHNJFD</AutoScalingGroupName>
+                <InstanceId>i-d1a42128</InstanceId>
+                <HealthStatus>HEALTHY</HealthStatus>
+                <ProtectedFromScaleIn>false</ProtectedFromScaleIn>
+                <AvailabilityZone>us-east-1e</AvailabilityZone>
+              </member>
+              <member>
+                <LaunchConfigurationName>incidentgenerationservice-razor-d0prod-r01-v000-20151106075428</LaunchConfigurationName>
+                <LifecycleState>InService</LifecycleState>
+                <AutoScalingGroupName>incidentgenerationservice-razor-d0prod-r01-v000</AutoScalingGroupName>
+                <InstanceId>i-d233f562</InstanceId>
+                <HealthStatus>HEALTHY</HealthStatus>
+                <ProtectedFromScaleIn>false</ProtectedFromScaleIn>
+                <AvailabilityZone>us-east-1a</AvailabilityZone>
+              </member>
+              <member>
+                <LaunchConfigurationName>docnormalizerservice-razor-d0prod-r01-v008-20151116163253</LaunchConfigurationName>
+                <LifecycleState>InService</LifecycleState>
+                <AutoScalingGroupName>docnormalizerservice-razor-d0prod-r01-v008</AutoScalingGroupName>
+                <InstanceId>i-d2d95e6c</InstanceId>
+                <HealthStatus>HEALTHY</HealthStatus>
                 <ProtectedFromScaleIn>false</ProtectedFromScaleIn>
                 <AvailabilityZone>us-east-1c</AvailabilityZone>
               </member>
             </AutoScalingInstances>
-            <NextToken>c20df944-b1ab-4b25-82f9-1ffdb8b39ec7</NextToken>
+            <NextToken>901e72d2-560e-4a95-99ab-614aefaff4b1</NextToken>
           </DescribeAutoScalingInstancesResult>
           <ResponseMetadata>
-            <RequestId>a0e9c303-8a4c-11e5-a971-493c131e2a8a</RequestId>
+            <RequestId>9a7cbb9a-8d4a-11e5-9ea6-f99c0d171644</RequestId>
           </ResponseMetadata>
         </DescribeAutoScalingInstancesResponse>
     http_version: 
-  recorded_at: Fri, 13 Nov 2015 21:22:22 GMT
+  recorded_at: Tue, 17 Nov 2015 16:45:28 GMT
 - request:
     method: post
     uri: https://autoscaling.us-east-1.amazonaws.com/
     body:
       encoding: UTF-8
-      string: Action=DescribeAutoScalingInstances&NextToken=c20df944-b1ab-4b25-82f9-1ffdb8b39ec7&Version=2011-01-01
+      string: Action=DescribeAutoScalingInstances&NextToken=901e72d2-560e-4a95-99ab-614aefaff4b1&Version=2011-01-01
     headers:
       Content-Type:
       - application/x-www-form-urlencoded; charset=utf-8
@@ -1679,15 +1529,15 @@ http_interactions:
       User-Agent:
       - aws-sdk-ruby2/2.2.0 ruby/2.1.5 x86_64-darwin12.0
       X-Amz-Date:
-      - 20151113T212222Z
+      - 20151117T164528Z
       Host:
       - autoscaling.us-east-1.amazonaws.com
       X-Amz-Content-Sha256:
-      - db0adb9861d58b9b0334239e30ee174c9c62023a374a19d64ed25ac8218fdaf1
+      - d8fa9fc3acf92cf5250762c0651751615a1dddcf5fce9edb532fdfc542ec067d
       Authorization:
-      - AWS4-HMAC-SHA256 Credential=AKIAIJICIPICLDHMCSBA/20151113/us-east-1/autoscaling/aws4_request,
+      - AWS4-HMAC-SHA256 Credential=AKIAIJICIPICLDHMCSBA/20151117/us-east-1/autoscaling/aws4_request,
         SignedHeaders=content-type;host;user-agent;x-amz-content-sha256;x-amz-date,
-        Signature=2f07d95a0c0a3863a99b35fe9431ec8756284ec35730391a5a58c5c612b25d7b
+        Signature=717d26e133c0e94169f4c98d924795d4545449551947d712ac10ff543d53fc81
       Content-Length:
       - '101'
       Accept:
@@ -1698,13 +1548,13 @@ http_interactions:
       message: OK
     headers:
       X-Amzn-Requestid:
-      - a1441858-8a4c-11e5-ad70-a3509e2cf8d4
+      - 9ae34573-8d4a-11e5-a3f4-19cfe2f1d418
       Content-Type:
       - text/xml
       Content-Length:
-      - '22317'
+      - '16692'
       Date:
-      - Fri, 13 Nov 2015 21:22:23 GMT
+      - Tue, 17 Nov 2015 16:45:27 GMT
     body:
       encoding: UTF-8
       string: |
@@ -1712,64 +1562,40 @@ http_interactions:
           <DescribeAutoScalingInstancesResult>
             <AutoScalingInstances>
               <member>
-                <LaunchConfigurationName>escqrazorcloudmonitor-razor-d0prod-r01-20150729112426</LaunchConfigurationName>
+                <LaunchConfigurationName>docnormalizerservice-razor-d0prod-r01-v008-20151116163253</LaunchConfigurationName>
                 <LifecycleState>InService</LifecycleState>
-                <AutoScalingGroupName>escqrazorcloudmonitor-razor-d0prod-r01</AutoScalingGroupName>
-                <InstanceId>i-d17a157d</InstanceId>
+                <AutoScalingGroupName>docnormalizerservice-razor-d0prod-r01-v008</AutoScalingGroupName>
+                <InstanceId>i-d3d95e6d</InstanceId>
                 <HealthStatus>HEALTHY</HealthStatus>
-                <ProtectedFromHealthCheck>false</ProtectedFromHealthCheck>
                 <ProtectedFromScaleIn>false</ProtectedFromScaleIn>
-                <AvailabilityZone>us-east-1a</AvailabilityZone>
+                <AvailabilityZone>us-east-1c</AvailabilityZone>
               </member>
               <member>
-                <LaunchConfigurationName>razor-prod-1-consul-ConsulServerLaunchConfig-OLB3T5CPRPNQ</LaunchConfigurationName>
+                <LaunchConfigurationName>exposureanaltyicsui-razor-d0prod-r01-v026-20151116215235</LaunchConfigurationName>
                 <LifecycleState>InService</LifecycleState>
-                <AutoScalingGroupName>razor-prod-1-consul-ConsulServerAutoScalingGroup-1PZWTW8RHNJFD</AutoScalingGroupName>
-                <InstanceId>i-d1a42128</InstanceId>
+                <AutoScalingGroupName>exposureanaltyicsui-razor-d0prod-r01-v026</AutoScalingGroupName>
+                <InstanceId>i-d3e5c964</InstanceId>
                 <HealthStatus>HEALTHY</HealthStatus>
-                <ProtectedFromHealthCheck>false</ProtectedFromHealthCheck>
-                <ProtectedFromScaleIn>false</ProtectedFromScaleIn>
-                <AvailabilityZone>us-east-1e</AvailabilityZone>
-              </member>
-              <member>
-                <LaunchConfigurationName>docnormalizerservice-razor-d0prod-r01-v007-20151112075455</LaunchConfigurationName>
-                <LifecycleState>InService</LifecycleState>
-                <AutoScalingGroupName>docnormalizerservice-razor-d0prod-r01-v007</AutoScalingGroupName>
-                <InstanceId>i-d1e75d28</InstanceId>
-                <HealthStatus>HEALTHY</HealthStatus>
-                <ProtectedFromHealthCheck>false</ProtectedFromHealthCheck>
-                <ProtectedFromScaleIn>false</ProtectedFromScaleIn>
-                <AvailabilityZone>us-east-1e</AvailabilityZone>
-              </member>
-              <member>
-                <LaunchConfigurationName>incidentgenerationservice-razor-d0prod-r01-v000-20151106075428</LaunchConfigurationName>
-                <LifecycleState>InService</LifecycleState>
-                <AutoScalingGroupName>incidentgenerationservice-razor-d0prod-r01-v000</AutoScalingGroupName>
-                <InstanceId>i-d233f562</InstanceId>
-                <HealthStatus>HEALTHY</HealthStatus>
-                <ProtectedFromHealthCheck>false</ProtectedFromHealthCheck>
-                <ProtectedFromScaleIn>false</ProtectedFromScaleIn>
-                <AvailabilityZone>us-east-1a</AvailabilityZone>
-              </member>
-              <member>
-                <LaunchConfigurationName>docnormalizerservice-razor-d0prod-r01-v007-20151112075455</LaunchConfigurationName>
-                <LifecycleState>InService</LifecycleState>
-                <AutoScalingGroupName>docnormalizerservice-razor-d0prod-r01-v007</AutoScalingGroupName>
-                <InstanceId>i-d2e75d2b</InstanceId>
-                <HealthStatus>HEALTHY</HealthStatus>
-                <ProtectedFromHealthCheck>false</ProtectedFromHealthCheck>
-                <ProtectedFromScaleIn>false</ProtectedFromScaleIn>
-                <AvailabilityZone>us-east-1e</AvailabilityZone>
-              </member>
-              <member>
-                <LaunchConfigurationName>attributionservice-razor-d0prod-r01-v009-20151111094920</LaunchConfigurationName>
-                <LifecycleState>InService</LifecycleState>
-                <AutoScalingGroupName>attributionservice-razor-d0prod-r01-v009</AutoScalingGroupName>
-                <InstanceId>i-d4681363</InstanceId>
-                <HealthStatus>HEALTHY</HealthStatus>
-                <ProtectedFromHealthCheck>false</ProtectedFromHealthCheck>
                 <ProtectedFromScaleIn>false</ProtectedFromScaleIn>
                 <AvailabilityZone>us-east-1d</AvailabilityZone>
+              </member>
+              <member>
+                <LaunchConfigurationName>behaviorgenerationservice-razor-d0prod-r01-v009-20151106135128</LaunchConfigurationName>
+                <LifecycleState>InService</LifecycleState>
+                <AutoScalingGroupName>behaviorgenerationservice-razor-d0prod-r01-v009</AutoScalingGroupName>
+                <InstanceId>i-d400836a</InstanceId>
+                <HealthStatus>HEALTHY</HealthStatus>
+                <ProtectedFromScaleIn>false</ProtectedFromScaleIn>
+                <AvailabilityZone>us-east-1c</AvailabilityZone>
+              </member>
+              <member>
+                <LaunchConfigurationName>docnormalizerservice-razor-d0prod-r01-v008-20151116163253</LaunchConfigurationName>
+                <LifecycleState>InService</LifecycleState>
+                <AutoScalingGroupName>docnormalizerservice-razor-d0prod-r01-v008</AutoScalingGroupName>
+                <InstanceId>i-d4d95e6a</InstanceId>
+                <HealthStatus>HEALTHY</HealthStatus>
+                <ProtectedFromScaleIn>false</ProtectedFromScaleIn>
+                <AvailabilityZone>us-east-1c</AvailabilityZone>
               </member>
               <member>
                 <LaunchConfigurationName>escqrazorcloudmonitor-razor-d0prod-r01-20150729112426</LaunchConfigurationName>
@@ -1777,7 +1603,6 @@ http_interactions:
                 <AutoScalingGroupName>escqrazorcloudmonitor-razor-d0prod-r01</AutoScalingGroupName>
                 <InstanceId>i-d67a157a</InstanceId>
                 <HealthStatus>HEALTHY</HealthStatus>
-                <ProtectedFromHealthCheck>false</ProtectedFromHealthCheck>
                 <ProtectedFromScaleIn>false</ProtectedFromScaleIn>
                 <AvailabilityZone>us-east-1a</AvailabilityZone>
               </member>
@@ -1787,7 +1612,6 @@ http_interactions:
                 <AutoScalingGroupName>vpc_recursives-v005</AutoScalingGroupName>
                 <InstanceId>i-d82f5df7</InstanceId>
                 <HealthStatus>HEALTHY</HealthStatus>
-                <ProtectedFromHealthCheck>false</ProtectedFromHealthCheck>
                 <ProtectedFromScaleIn>false</ProtectedFromScaleIn>
                 <AvailabilityZone>us-east-1e</AvailabilityZone>
               </member>
@@ -1797,49 +1621,35 @@ http_interactions:
                 <AutoScalingGroupName>bakery-v000</AutoScalingGroupName>
                 <InstanceId>i-d8bc5437</InstanceId>
                 <HealthStatus>HEALTHY</HealthStatus>
-                <ProtectedFromHealthCheck>false</ProtectedFromHealthCheck>
                 <ProtectedFromScaleIn>false</ProtectedFromScaleIn>
                 <AvailabilityZone>us-east-1a</AvailabilityZone>
               </member>
               <member>
-                <LaunchConfigurationName>docnormalizerservice-razor-d0prod-r01-v007-20151112075455</LaunchConfigurationName>
+                <LaunchConfigurationName>docnormalizerservice-razor-d0prod-r01-v008-20151116163253</LaunchConfigurationName>
                 <LifecycleState>InService</LifecycleState>
-                <AutoScalingGroupName>docnormalizerservice-razor-d0prod-r01-v007</AutoScalingGroupName>
-                <InstanceId>i-d9e75d20</InstanceId>
+                <AutoScalingGroupName>docnormalizerservice-razor-d0prod-r01-v008</AutoScalingGroupName>
+                <InstanceId>i-dcd55425</InstanceId>
                 <HealthStatus>HEALTHY</HealthStatus>
-                <ProtectedFromHealthCheck>false</ProtectedFromHealthCheck>
                 <ProtectedFromScaleIn>false</ProtectedFromScaleIn>
                 <AvailabilityZone>us-east-1e</AvailabilityZone>
               </member>
               <member>
-                <LaunchConfigurationName>docnormalizerservice-razor-d0prod-r01-v007-20151112075455</LaunchConfigurationName>
+                <LaunchConfigurationName>attributionservice-razor-d0prod-r01-v012-20151117074621</LaunchConfigurationName>
                 <LifecycleState>InService</LifecycleState>
-                <AutoScalingGroupName>docnormalizerservice-razor-d0prod-r01-v007</AutoScalingGroupName>
-                <InstanceId>i-dae75d23</InstanceId>
+                <AutoScalingGroupName>attributionservice-razor-d0prod-r01-v012</AutoScalingGroupName>
+                <InstanceId>i-dd1c9d24</InstanceId>
                 <HealthStatus>HEALTHY</HealthStatus>
-                <ProtectedFromHealthCheck>false</ProtectedFromHealthCheck>
                 <ProtectedFromScaleIn>false</ProtectedFromScaleIn>
                 <AvailabilityZone>us-east-1e</AvailabilityZone>
               </member>
               <member>
-                <LaunchConfigurationName>attributionservice-razor-d0prod-r01-v009-20151111094920</LaunchConfigurationName>
+                <LaunchConfigurationName>docnormalizerservice-razor-d0prod-r01-v008-20151116163253</LaunchConfigurationName>
                 <LifecycleState>InService</LifecycleState>
-                <AutoScalingGroupName>attributionservice-razor-d0prod-r01-v009</AutoScalingGroupName>
-                <InstanceId>i-db68136c</InstanceId>
+                <AutoScalingGroupName>docnormalizerservice-razor-d0prod-r01-v008</AutoScalingGroupName>
+                <InstanceId>i-dd5be36d</InstanceId>
                 <HealthStatus>HEALTHY</HealthStatus>
-                <ProtectedFromHealthCheck>false</ProtectedFromHealthCheck>
                 <ProtectedFromScaleIn>false</ProtectedFromScaleIn>
-                <AvailabilityZone>us-east-1d</AvailabilityZone>
-              </member>
-              <member>
-                <LaunchConfigurationName>docnormalizerservice-razor-d0prod-r01-v007-20151112075455</LaunchConfigurationName>
-                <LifecycleState>InService</LifecycleState>
-                <AutoScalingGroupName>docnormalizerservice-razor-d0prod-r01-v007</AutoScalingGroupName>
-                <InstanceId>i-dbe75d22</InstanceId>
-                <HealthStatus>HEALTHY</HealthStatus>
-                <ProtectedFromHealthCheck>false</ProtectedFromHealthCheck>
-                <ProtectedFromScaleIn>false</ProtectedFromScaleIn>
-                <AvailabilityZone>us-east-1e</AvailabilityZone>
+                <AvailabilityZone>us-east-1a</AvailabilityZone>
               </member>
               <member>
                 <LaunchConfigurationName>remediationvulnsolution-razor-d0prod-r01-v009-20151020070127</LaunchConfigurationName>
@@ -1847,9 +1657,35 @@ http_interactions:
                 <AutoScalingGroupName>remediationvulnsolution-razor-d0prod-r01-v009</AutoScalingGroupName>
                 <InstanceId>i-ddafd909</InstanceId>
                 <HealthStatus>HEALTHY</HealthStatus>
-                <ProtectedFromHealthCheck>false</ProtectedFromHealthCheck>
                 <ProtectedFromScaleIn>false</ProtectedFromScaleIn>
                 <AvailabilityZone>us-east-1d</AvailabilityZone>
+              </member>
+              <member>
+                <LaunchConfigurationName>docnormalizerservice-razor-d0prod-r01-v008-20151116163253</LaunchConfigurationName>
+                <LifecycleState>InService</LifecycleState>
+                <AutoScalingGroupName>docnormalizerservice-razor-d0prod-r01-v008</AutoScalingGroupName>
+                <InstanceId>i-ddd55424</InstanceId>
+                <HealthStatus>HEALTHY</HealthStatus>
+                <ProtectedFromScaleIn>false</ProtectedFromScaleIn>
+                <AvailabilityZone>us-east-1e</AvailabilityZone>
+              </member>
+              <member>
+                <LaunchConfigurationName>attributionservice-razor-d0prod-r01-v012-20151117074621</LaunchConfigurationName>
+                <LifecycleState>InService</LifecycleState>
+                <AutoScalingGroupName>attributionservice-razor-d0prod-r01-v012</AutoScalingGroupName>
+                <InstanceId>i-de1c9d27</InstanceId>
+                <HealthStatus>HEALTHY</HealthStatus>
+                <ProtectedFromScaleIn>false</ProtectedFromScaleIn>
+                <AvailabilityZone>us-east-1e</AvailabilityZone>
+              </member>
+              <member>
+                <LaunchConfigurationName>docnormalizerservice-razor-d0prod-r01-v008-20151116163253</LaunchConfigurationName>
+                <LifecycleState>InService</LifecycleState>
+                <AutoScalingGroupName>docnormalizerservice-razor-d0prod-r01-v008</AutoScalingGroupName>
+                <InstanceId>i-de5be36e</InstanceId>
+                <HealthStatus>HEALTHY</HealthStatus>
+                <ProtectedFromScaleIn>false</ProtectedFromScaleIn>
+                <AvailabilityZone>us-east-1a</AvailabilityZone>
               </member>
               <member>
                 <LaunchConfigurationName>cloudtraillogger-razor-d0prod-r01-v000-20150713150330</LaunchConfigurationName>
@@ -1857,29 +1693,17 @@ http_interactions:
                 <AutoScalingGroupName>cloudtraillogger-razor-d0prod-r01-v000</AutoScalingGroupName>
                 <InstanceId>i-de833576</InstanceId>
                 <HealthStatus>HEALTHY</HealthStatus>
-                <ProtectedFromHealthCheck>false</ProtectedFromHealthCheck>
                 <ProtectedFromScaleIn>false</ProtectedFromScaleIn>
                 <AvailabilityZone>us-east-1c</AvailabilityZone>
               </member>
               <member>
-                <LaunchConfigurationName>docnormalizerservice-razor-d0prod-r01-v007-20151112075455</LaunchConfigurationName>
+                <LaunchConfigurationName>docnormalizerservice-razor-d0prod-r01-v008-20151116163253</LaunchConfigurationName>
                 <LifecycleState>InService</LifecycleState>
-                <AutoScalingGroupName>docnormalizerservice-razor-d0prod-r01-v007</AutoScalingGroupName>
-                <InstanceId>i-e0713257</InstanceId>
+                <AutoScalingGroupName>docnormalizerservice-razor-d0prod-r01-v008</AutoScalingGroupName>
+                <InstanceId>i-df5be36f</InstanceId>
                 <HealthStatus>HEALTHY</HealthStatus>
-                <ProtectedFromHealthCheck>false</ProtectedFromHealthCheck>
                 <ProtectedFromScaleIn>false</ProtectedFromScaleIn>
-                <AvailabilityZone>us-east-1d</AvailabilityZone>
-              </member>
-              <member>
-                <LaunchConfigurationName>docnormalizerservice-razor-d0prod-r01-v007-20151112075455</LaunchConfigurationName>
-                <LifecycleState>InService</LifecycleState>
-                <AutoScalingGroupName>docnormalizerservice-razor-d0prod-r01-v007</AutoScalingGroupName>
-                <InstanceId>i-e1713256</InstanceId>
-                <HealthStatus>HEALTHY</HealthStatus>
-                <ProtectedFromHealthCheck>false</ProtectedFromHealthCheck>
-                <ProtectedFromScaleIn>false</ProtectedFromScaleIn>
-                <AvailabilityZone>us-east-1d</AvailabilityZone>
+                <AvailabilityZone>us-east-1a</AvailabilityZone>
               </member>
               <member>
                 <LaunchConfigurationName>eaprovisioningservice-razor-d0prod-r01-v001-20151102213027</LaunchConfigurationName>
@@ -1887,7 +1711,6 @@ http_interactions:
                 <AutoScalingGroupName>eaprovisioningservice-razor-d0prod-r01-v001</AutoScalingGroupName>
                 <InstanceId>i-e1bfae5e</InstanceId>
                 <HealthStatus>HEALTHY</HealthStatus>
-                <ProtectedFromHealthCheck>false</ProtectedFromHealthCheck>
                 <ProtectedFromScaleIn>false</ProtectedFromScaleIn>
                 <AvailabilityZone>us-east-1c</AvailabilityZone>
               </member>
@@ -1897,7 +1720,6 @@ http_interactions:
                 <AutoScalingGroupName>siteblobprocessorservice-razor-d0prod-r01-v004</AutoScalingGroupName>
                 <InstanceId>i-e22b3a5d</InstanceId>
                 <HealthStatus>HEALTHY</HealthStatus>
-                <ProtectedFromHealthCheck>false</ProtectedFromHealthCheck>
                 <ProtectedFromScaleIn>false</ProtectedFromScaleIn>
                 <AvailabilityZone>us-east-1c</AvailabilityZone>
               </member>
@@ -1907,19 +1729,8 @@ http_interactions:
                 <AutoScalingGroupName>assetgroupblobprocessor-razor-d0prod-r01-v007</AutoScalingGroupName>
                 <InstanceId>i-e3b5a45c</InstanceId>
                 <HealthStatus>HEALTHY</HealthStatus>
-                <ProtectedFromHealthCheck>false</ProtectedFromHealthCheck>
                 <ProtectedFromScaleIn>false</ProtectedFromScaleIn>
                 <AvailabilityZone>us-east-1c</AvailabilityZone>
-              </member>
-              <member>
-                <LaunchConfigurationName>docnormalizerservice-razor-d0prod-r01-v007-20151112075455</LaunchConfigurationName>
-                <LifecycleState>InService</LifecycleState>
-                <AutoScalingGroupName>docnormalizerservice-razor-d0prod-r01-v007</AutoScalingGroupName>
-                <InstanceId>i-e46e2d53</InstanceId>
-                <HealthStatus>HEALTHY</HealthStatus>
-                <ProtectedFromHealthCheck>false</ProtectedFromHealthCheck>
-                <ProtectedFromScaleIn>false</ProtectedFromScaleIn>
-                <AvailabilityZone>us-east-1d</AvailabilityZone>
               </member>
               <member>
                 <LaunchConfigurationName>razor-prod-1-consul-ConsulServerLaunchConfig-OLB3T5CPRPNQ</LaunchConfigurationName>
@@ -1927,7 +1738,6 @@ http_interactions:
                 <AutoScalingGroupName>razor-prod-1-consul-ConsulServerAutoScalingGroup-1PZWTW8RHNJFD</AutoScalingGroupName>
                 <InstanceId>i-e49d3454</InstanceId>
                 <HealthStatus>HEALTHY</HealthStatus>
-                <ProtectedFromHealthCheck>false</ProtectedFromHealthCheck>
                 <ProtectedFromScaleIn>false</ProtectedFromScaleIn>
                 <AvailabilityZone>us-east-1a</AvailabilityZone>
               </member>
@@ -1937,7 +1747,6 @@ http_interactions:
                 <AutoScalingGroupName>razor-prod-1-consul-ConsulServerAutoScalingGroup-1PZWTW8RHNJFD</AutoScalingGroupName>
                 <InstanceId>i-e4e3a853</InstanceId>
                 <HealthStatus>HEALTHY</HealthStatus>
-                <ProtectedFromHealthCheck>false</ProtectedFromHealthCheck>
                 <ProtectedFromScaleIn>false</ProtectedFromScaleIn>
                 <AvailabilityZone>us-east-1d</AvailabilityZone>
               </member>
@@ -1947,7 +1756,6 @@ http_interactions:
                 <AutoScalingGroupName>platformcertificatemgmtapp-razor-d0prod-r01</AutoScalingGroupName>
                 <InstanceId>i-e611c544</InstanceId>
                 <HealthStatus>HEALTHY</HealthStatus>
-                <ProtectedFromHealthCheck>false</ProtectedFromHealthCheck>
                 <ProtectedFromScaleIn>false</ProtectedFromScaleIn>
                 <AvailabilityZone>us-east-1c</AvailabilityZone>
               </member>
@@ -1957,17 +1765,6 @@ http_interactions:
                 <AutoScalingGroupName>blobprocessorservice-razor-d0prod-r01-v002</AutoScalingGroupName>
                 <InstanceId>i-e7e3d132</InstanceId>
                 <HealthStatus>HEALTHY</HealthStatus>
-                <ProtectedFromHealthCheck>false</ProtectedFromHealthCheck>
-                <ProtectedFromScaleIn>false</ProtectedFromScaleIn>
-                <AvailabilityZone>us-east-1d</AvailabilityZone>
-              </member>
-              <member>
-                <LaunchConfigurationName>attributionservice-razor-d0prod-r01-v009-20151111094920</LaunchConfigurationName>
-                <LifecycleState>InService</LifecycleState>
-                <AutoScalingGroupName>attributionservice-razor-d0prod-r01-v009</AutoScalingGroupName>
-                <InstanceId>i-e868135f</InstanceId>
-                <HealthStatus>HEALTHY</HealthStatus>
-                <ProtectedFromHealthCheck>false</ProtectedFromHealthCheck>
                 <ProtectedFromScaleIn>false</ProtectedFromScaleIn>
                 <AvailabilityZone>us-east-1d</AvailabilityZone>
               </member>
@@ -1977,47 +1774,6 @@ http_interactions:
                 <AutoScalingGroupName>provisioningservice-razor-d0prod-r01</AutoScalingGroupName>
                 <InstanceId>i-e8bcc65f</InstanceId>
                 <HealthStatus>HEALTHY</HealthStatus>
-                <ProtectedFromHealthCheck>false</ProtectedFromHealthCheck>
-                <ProtectedFromScaleIn>false</ProtectedFromScaleIn>
-                <AvailabilityZone>us-east-1d</AvailabilityZone>
-              </member>
-              <member>
-                <LaunchConfigurationName>attributionservice-razor-d0prod-r01-v009-20151111094920</LaunchConfigurationName>
-                <LifecycleState>InService</LifecycleState>
-                <AutoScalingGroupName>attributionservice-razor-d0prod-r01-v009</AutoScalingGroupName>
-                <InstanceId>i-e968135e</InstanceId>
-                <HealthStatus>HEALTHY</HealthStatus>
-                <ProtectedFromHealthCheck>false</ProtectedFromHealthCheck>
-                <ProtectedFromScaleIn>false</ProtectedFromScaleIn>
-                <AvailabilityZone>us-east-1d</AvailabilityZone>
-              </member>
-              <member>
-                <LaunchConfigurationName>attributionservice-razor-d0prod-r01-v009-20151111094920</LaunchConfigurationName>
-                <LifecycleState>InService</LifecycleState>
-                <AutoScalingGroupName>attributionservice-razor-d0prod-r01-v009</AutoScalingGroupName>
-                <InstanceId>i-ea68135d</InstanceId>
-                <HealthStatus>HEALTHY</HealthStatus>
-                <ProtectedFromHealthCheck>false</ProtectedFromHealthCheck>
-                <ProtectedFromScaleIn>false</ProtectedFromScaleIn>
-                <AvailabilityZone>us-east-1d</AvailabilityZone>
-              </member>
-              <member>
-                <LaunchConfigurationName>docnormalizerservice-razor-d0prod-r01-v007-20151112075455</LaunchConfigurationName>
-                <LifecycleState>InService</LifecycleState>
-                <AutoScalingGroupName>docnormalizerservice-razor-d0prod-r01-v007</AutoScalingGroupName>
-                <InstanceId>i-ea6e2d5d</InstanceId>
-                <HealthStatus>HEALTHY</HealthStatus>
-                <ProtectedFromHealthCheck>false</ProtectedFromHealthCheck>
-                <ProtectedFromScaleIn>false</ProtectedFromScaleIn>
-                <AvailabilityZone>us-east-1d</AvailabilityZone>
-              </member>
-              <member>
-                <LaunchConfigurationName>docnormalizerservice-razor-d0prod-r01-v007-20151112075455</LaunchConfigurationName>
-                <LifecycleState>InService</LifecycleState>
-                <AutoScalingGroupName>docnormalizerservice-razor-d0prod-r01-v007</AutoScalingGroupName>
-                <InstanceId>i-eb6e2d5c</InstanceId>
-                <HealthStatus>HEALTHY</HealthStatus>
-                <ProtectedFromHealthCheck>false</ProtectedFromHealthCheck>
                 <ProtectedFromScaleIn>false</ProtectedFromScaleIn>
                 <AvailabilityZone>us-east-1d</AvailabilityZone>
               </member>
@@ -2027,19 +1783,8 @@ http_interactions:
                 <AutoScalingGroupName>esuilogs-razor-d0prod-r01-v000</AutoScalingGroupName>
                 <InstanceId>i-ec49c05b</InstanceId>
                 <HealthStatus>HEALTHY</HealthStatus>
-                <ProtectedFromHealthCheck>false</ProtectedFromHealthCheck>
                 <ProtectedFromScaleIn>false</ProtectedFromScaleIn>
                 <AvailabilityZone>us-east-1d</AvailabilityZone>
-              </member>
-              <member>
-                <LaunchConfigurationName>exposureanaltyicsui-razor-d0prod-r01-v024-20151102180941</LaunchConfigurationName>
-                <LifecycleState>InService</LifecycleState>
-                <AutoScalingGroupName>exposureanaltyicsui-razor-d0prod-r01-v024</AutoScalingGroupName>
-                <InstanceId>i-ee6c875e</InstanceId>
-                <HealthStatus>HEALTHY</HealthStatus>
-                <ProtectedFromHealthCheck>false</ProtectedFromHealthCheck>
-                <ProtectedFromScaleIn>false</ProtectedFromScaleIn>
-                <AvailabilityZone>us-east-1a</AvailabilityZone>
               </member>
               <member>
                 <LaunchConfigurationName>tagui-razor-d0prod-r01-v001-20151102192033</LaunchConfigurationName>
@@ -2047,7 +1792,6 @@ http_interactions:
                 <AutoScalingGroupName>tagui-razor-d0prod-r01-v001</AutoScalingGroupName>
                 <InstanceId>i-f3778324</InstanceId>
                 <HealthStatus>HEALTHY</HealthStatus>
-                <ProtectedFromHealthCheck>false</ProtectedFromHealthCheck>
                 <ProtectedFromScaleIn>false</ProtectedFromScaleIn>
                 <AvailabilityZone>us-east-1d</AvailabilityZone>
               </member>
@@ -2057,7 +1801,6 @@ http_interactions:
                 <AutoScalingGroupName>behaviorgenerationservice-razor-d0prod-r01-v009</AutoScalingGroupName>
                 <InstanceId>i-f4de630d</InstanceId>
                 <HealthStatus>HEALTHY</HealthStatus>
-                <ProtectedFromHealthCheck>false</ProtectedFromHealthCheck>
                 <ProtectedFromScaleIn>false</ProtectedFromScaleIn>
                 <AvailabilityZone>us-east-1e</AvailabilityZone>
               </member>
@@ -2067,7 +1810,6 @@ http_interactions:
                 <AutoScalingGroupName>remediationblobprocessor-razor-d0prod-r01-v007</AutoScalingGroupName>
                 <InstanceId>i-f61cbd0f</InstanceId>
                 <HealthStatus>HEALTHY</HealthStatus>
-                <ProtectedFromHealthCheck>false</ProtectedFromHealthCheck>
                 <ProtectedFromScaleIn>false</ProtectedFromScaleIn>
                 <AvailabilityZone>us-east-1e</AvailabilityZone>
               </member>
@@ -2077,17 +1819,24 @@ http_interactions:
                 <AutoScalingGroupName>statisticsservice-razor-d0prod-r01-v000</AutoScalingGroupName>
                 <InstanceId>i-f8a6592c</InstanceId>
                 <HealthStatus>HEALTHY</HealthStatus>
-                <ProtectedFromHealthCheck>false</ProtectedFromHealthCheck>
                 <ProtectedFromScaleIn>false</ProtectedFromScaleIn>
                 <AvailabilityZone>us-east-1d</AvailabilityZone>
               </member>
               <member>
-                <LaunchConfigurationName>docnormalizerservice-razor-d0prod-r01-v007-20151112075455</LaunchConfigurationName>
+                <LaunchConfigurationName>attributionservice-razor-d0prod-r01-v012-20151117074621</LaunchConfigurationName>
                 <LifecycleState>InService</LifecycleState>
-                <AutoScalingGroupName>docnormalizerservice-razor-d0prod-r01-v007</AutoScalingGroupName>
-                <InstanceId>i-fcfa5e42</InstanceId>
+                <AutoScalingGroupName>attributionservice-razor-d0prod-r01-v012</AutoScalingGroupName>
+                <InstanceId>i-f979514e</InstanceId>
                 <HealthStatus>HEALTHY</HealthStatus>
-                <ProtectedFromHealthCheck>false</ProtectedFromHealthCheck>
+                <ProtectedFromScaleIn>false</ProtectedFromScaleIn>
+                <AvailabilityZone>us-east-1d</AvailabilityZone>
+              </member>
+              <member>
+                <LaunchConfigurationName>endpointforensicsapp-razor-d0prod-r01-20151116113613</LaunchConfigurationName>
+                <LifecycleState>InService</LifecycleState>
+                <AutoScalingGroupName>endpointforensicsapp-razor-d0prod-r01</AutoScalingGroupName>
+                <InstanceId>i-fce06542</InstanceId>
+                <HealthStatus>HEALTHY</HealthStatus>
                 <ProtectedFromScaleIn>false</ProtectedFromScaleIn>
                 <AvailabilityZone>us-east-1c</AvailabilityZone>
               </member>
@@ -2097,18 +1846,26 @@ http_interactions:
                 <AutoScalingGroupName>platformui-razor-d0prod-r01-v008</AutoScalingGroupName>
                 <InstanceId>i-fe792617</InstanceId>
                 <HealthStatus>HEALTHY</HealthStatus>
-                <ProtectedFromHealthCheck>false</ProtectedFromHealthCheck>
                 <ProtectedFromScaleIn>false</ProtectedFromScaleIn>
                 <AvailabilityZone>us-east-1e</AvailabilityZone>
+              </member>
+              <member>
+                <LaunchConfigurationName>attributionservice-razor-d0prod-r01-v012-20151117074621</LaunchConfigurationName>
+                <LifecycleState>InService</LifecycleState>
+                <AutoScalingGroupName>attributionservice-razor-d0prod-r01-v012</AutoScalingGroupName>
+                <InstanceId>i-fe795149</InstanceId>
+                <HealthStatus>HEALTHY</HealthStatus>
+                <ProtectedFromScaleIn>false</ProtectedFromScaleIn>
+                <AvailabilityZone>us-east-1d</AvailabilityZone>
               </member>
             </AutoScalingInstances>
           </DescribeAutoScalingInstancesResult>
           <ResponseMetadata>
-            <RequestId>a1441858-8a4c-11e5-ad70-a3509e2cf8d4</RequestId>
+            <RequestId>9ae34573-8d4a-11e5-a3f4-19cfe2f1d418</RequestId>
           </ResponseMetadata>
         </DescribeAutoScalingInstancesResponse>
     http_version: 
-  recorded_at: Fri, 13 Nov 2015 21:22:23 GMT
+  recorded_at: Tue, 17 Nov 2015 16:45:28 GMT
 - request:
     method: post
     uri: https://ec2.us-east-1.amazonaws.com/
@@ -2123,15 +1880,15 @@ http_interactions:
       User-Agent:
       - aws-sdk-ruby2/2.2.0 ruby/2.1.5 x86_64-darwin12.0
       X-Amz-Date:
-      - 20151113T212223Z
+      - 20151117T164528Z
       Host:
       - ec2.us-east-1.amazonaws.com
       X-Amz-Content-Sha256:
       - 8a08156fe75f10ef5559cf312d5c4da2380c3fe81a0a67ca06c5c2cff5329abf
       Authorization:
-      - AWS4-HMAC-SHA256 Credential=AKIAIJICIPICLDHMCSBA/20151113/us-east-1/ec2/aws4_request,
+      - AWS4-HMAC-SHA256 Credential=AKIAIJICIPICLDHMCSBA/20151117/us-east-1/ec2/aws4_request,
         SignedHeaders=content-type;host;user-agent;x-amz-content-sha256;x-amz-date,
-        Signature=2f3359acc0e2bb4d05d2b744997b88830622924b69be5b9481bee8ef2782a59f
+        Signature=ff14b25a95e4a5ee1e57e0fac1000cde26df5c6941571a3d1d16f484984954dc
       Content-Length:
       - '434'
       Accept:
@@ -2148,7 +1905,7 @@ http_interactions:
       Vary:
       - Accept-Encoding
       Date:
-      - Fri, 13 Nov 2015 21:22:23 GMT
+      - Tue, 17 Nov 2015 16:45:27 GMT
       Server:
       - AmazonEC2
     body:
@@ -2156,7 +1913,7 @@ http_interactions:
       string: |-
         <?xml version="1.0" encoding="UTF-8"?>
         <DescribeInstancesResponse xmlns="http://ec2.amazonaws.com/doc/2015-10-01/">
-            <requestId>bc7ff0cd-44d9-4fc3-8b51-208d0e923205</requestId>
+            <requestId>9b30ea28-7e8f-4936-a225-f06ce249a715</requestId>
             <reservationSet>
                 <item>
                     <reservationId>r-152caffc</reservationId>
@@ -4241,5 +3998,5 @@ http_interactions:
             </reservationSet>
         </DescribeInstancesResponse>
     http_version: 
-  recorded_at: Fri, 13 Nov 2015 21:22:23 GMT
-recorded_with: VCR 2.9.3
+  recorded_at: Tue, 17 Nov 2015 16:45:29 GMT
+recorded_with: VCR 3.0.0
