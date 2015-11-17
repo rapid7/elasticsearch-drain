@@ -14,6 +14,8 @@ Rake::TestTask.new do |t|
   t.pattern = 'test/**/test_*.rb'
 end
 
+ENV['ES_VERSION'] ||= '1.7.2'
+
 def elasticsearch_command
   path = "tmp/elasticsearch-#{ENV['ES_VERSION']}/bin/elasticsearch"
   path = ::File.expand_path(path, __dir__)
@@ -22,7 +24,6 @@ end
 
 ENV['TEST_CLUSTER_NODES'] = '1'
 ENV['TEST_CLUSTER_COMMAND'] = elasticsearch_command
-ENV['ES_VERSION'] ||= '1.7.2'
 
 namespace :elasticsearch do
   task :clean do
