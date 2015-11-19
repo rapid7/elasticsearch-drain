@@ -1,6 +1,7 @@
 module Elasticsearch
   class Drain
     class AutoScaling
+      include Drain::Util
 
       # @attribute [r]
       # EC2 AutoScaling Group name
@@ -83,6 +84,10 @@ module Elasticsearch
           auto_scaling_group_name: asg,
           min_size: count
         )
+        Util.wait_until(0) do
+          group = describe_autoscaling_group
+          group
+        end
       end
 
       def detach_instance(instance_id)

@@ -54,9 +54,18 @@ module Elasticsearch
       instances = asg.instances
       nodes.nodes_in_asg(reload: true, instances: instances)
     end
+
+    module Errors
+      class WaiterExpired < RuntimeError
+        def new(_msg = nil)
+          'Waiter Expired' + $ERROR_INFO
+        end
+      end
+    end
   end
 end
 
+require_relative 'drain/util'
 require_relative 'drain/autoscaling'
 require_relative 'drain/version'
 require_relative 'drain/base'
