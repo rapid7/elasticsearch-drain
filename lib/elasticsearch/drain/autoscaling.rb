@@ -79,24 +79,42 @@ module Elasticsearch
       #
       # @option [FixNum] count (0) The new MinSize of the AutoScalingGroup
       # @return [Struct] Empty response from the sdk
-      def min_size(count = 0)
+      def min_size=(count = 0)
         @asg_client.update_auto_scaling_group(
           auto_scaling_group_name: asg,
           min_size: count
         )
-        Util.wait_until(0) do
-          group = describe_autoscaling_group
-          group
+        wait_until(0) do
+          min_size
         end
       end
 
+      # Gets the MinSize of an AutoScalingGroup
+      #
+      # @return [Integer] Value of MinSize of an AutoScalingGroup
+      def min_size
+        group = describe_autoscaling_group
+        group.min_size
+      end
+
+      # Gets the DesiredCapacity of an AutoScalingGroup
+      #
+      # @return [Integer] Value of DesiredCapacity of an AutoScalingGroup
+      def desired_capacity
+        group = describe_autoscaling_group
+        group.desired_capacity
+      end
+
       def detach_instance(instance_id)
-        resp = @asg_client.detach_instances(
+        current_desired_capacity = desired_capacity
+        @asg_client.detach_instances(
           instance_ids: [instance_id],
           auto_scaling_group_name: asg,
           should_decrement_desired_capacity: true
         )
-        resp.activities.first.status_code == 'Successful'
+        wait_until(current_desired_capacity - 1) do
+          desired_capacity
+        end
       end
     end
   end
