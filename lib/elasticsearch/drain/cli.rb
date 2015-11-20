@@ -46,7 +46,7 @@ module Elasticsearch
         end
 
         def drain_nodes
-          drainer.asg.min_size(0)
+          drainer.asg.min_size = 0
           nodes_to_drain = active_nodes.map(&:id).join(',')
           say_status 'Drain Nodes', "Draining nodes: #{nodes_to_drain}", :magenta
           drainer.cluster.drain_nodes(nodes_to_drain, '_id')
@@ -83,6 +83,7 @@ module Elasticsearch
           ensure_cluster_healthy
           say_status 'ASG Remove Node', "Removing node: #{node} from AutoScalingGroup: #{drainer.asg.asg}", :magenta
           drainer.asg.detach_instance(instance.instance_id)
+          sleep 2
           ensure_cluster_healthy
           say_status 'Terminate Instance', "Terminating instance: #{node}", :magenta
           instance.terminate
