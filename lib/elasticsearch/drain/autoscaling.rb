@@ -31,9 +31,9 @@ module Elasticsearch
         @instance_ids = instances
       end
 
-      # Describe an AutoScaling Group
+      # Get instances in an AutoScaling Group
       #
-      # @return [Struct] AutoScaling Group
+      # @return [Array<Aws::EC2::Types::Instance>] EC2 Instance objects
       def describe_instances
         instances = []
         find_instances_in_asg if @instance_ids.nil?
@@ -45,6 +45,9 @@ module Elasticsearch
         @instances = instances
       end
 
+      # Describe an AutoScaling Group
+      #
+      # @return [Struct] AutoScaling Group
       def describe_autoscaling_group
         group = []
         groups = @asg_client.describe_auto_scaling_groups(
