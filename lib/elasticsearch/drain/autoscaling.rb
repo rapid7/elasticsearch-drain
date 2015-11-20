@@ -49,14 +49,10 @@ module Elasticsearch
       #
       # @return [Struct] AutoScaling Group
       def describe_autoscaling_group
-        group = []
         groups = @asg_client.describe_auto_scaling_groups(
           auto_scaling_group_names: [asg]
         )
-        groups.auto_scaling_groups.each do |page|
-          group << page
-        end
-        group.first
+        groups.auto_scaling_groups.first
       end
 
       def find_private_ips
