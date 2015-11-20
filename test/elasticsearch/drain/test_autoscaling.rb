@@ -22,6 +22,12 @@ class TestAutoScaling < Minitest::Test
     assert_respond_to @asg.find_instances_in_asg, :each
   end
 
+  def test_missing_instance
+    assert_raises(::Elasticsearch::Drain::Errors::NodeNotFound) do
+      @asg.instance('1.1.1.1')
+    end
+  end
+
   def test_find_instances_matches_instance_pattern
     assert_match /i-[a-z0-9]{8}/, @asg.find_instances_in_asg.first
   end

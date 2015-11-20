@@ -55,15 +55,12 @@ module Elasticsearch
         def remove_nodes # rubocop:disable Metrics/MethodLength
           while active_nodes.length > 0
             active_nodes.each do |instance|
-              instance_id = drainer.asg.instance(instance.ipaddress).instance_id
-              instance.instance_id = instance_id
-
               self.active_nodes = drainer.active_nodes_in_asg
               if instance.bytes_stored > 0
                 say_status 'Drain Status', "Node #{instance.ipaddress} has #{instance.bytes_stored} bytes to move", :blue
                 sleep 2
               else
-                remove_node(instance)
+                next unless remove_node(instance)
                 self.active_nodes = drainer.active_nodes_in_asg
                 break if active_nodes.length < 1
                 say_status 'Waiting', 'Sleeping for 1 minute before removing the next node', :green
@@ -74,6 +71,8 @@ module Elasticsearch
         end
 
         def remove_node(instance) # rubocop:disable Metrics/MethodLength
+          instance_id = drainer.asg.instance(ipaddress).instance_id
+          instance.instance_id = instance_id
           say_status(
             'Removing Node',
             "Removing #{instance.ipaddress} from Elasticsearch cluster and #{drainer.asg.asg} AutoScalingGroup",
@@ -87,6 +86,8 @@ module Elasticsearch
           ensure_cluster_healthy
           say_status 'Terminate Instance', "Terminating instance: #{node}", :magenta
           instance.terminate
+        rescue Errors::NodeNotFound
+          false
         end
       end
     end
