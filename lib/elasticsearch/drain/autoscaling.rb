@@ -71,7 +71,9 @@ module Elasticsearch
       def instance(ipaddress)
         describe_instances if @instances.nil?
         instances = @instances.clone
-        instances.find { |i| i.private_ip_address == ipaddress }
+        instance = instances.find { |i| i.private_ip_address == ipaddress }
+        fail Errors::NodeNotFound if instance.nil?
+        instance
       end
 
       # Sets the MinSize of an AutoScalingGroup

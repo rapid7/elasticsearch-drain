@@ -61,6 +61,7 @@ module Elasticsearch
           'Waiter Expired' + $ERROR_INFO
         end
       end
+      class NodeNotFound < RuntimeError; end
     end
   end
 end
