@@ -1,5 +1,5 @@
 module Elasticsearch
   class Drain
-    VERSION = '0.0.3'
+    VERSION = IO.read(File.expand_path('../../../../VERSION', __FILE__)) rescue '0.0.1'
   end
 end
