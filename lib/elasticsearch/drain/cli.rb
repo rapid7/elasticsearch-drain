@@ -71,7 +71,7 @@ module Elasticsearch
         end
 
         def remove_node(instance) # rubocop:disable Metrics/MethodLength
-          instance_id = drainer.asg.instance(ipaddress).instance_id
+          instance_id = drainer.asg.instance(instance.ipaddress).instance_id
           instance.instance_id = instance_id
           say_status(
             'Removing Node',
