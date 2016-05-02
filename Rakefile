@@ -16,14 +16,21 @@ end
 
 ENV['ES_VERSION'] ||= '1.7.2'
 
+def elasticsearch_install_dir
+  path = ::File.join('tmp', "elasticsearch-#{ENV['ES_VERSION']}")
+  ::File.expand_path(path, __dir__)
+end
+
+
 def elasticsearch_command
-  path = "tmp/elasticsearch-#{ENV['ES_VERSION']}/bin/elasticsearch"
+  path = ::File.join(elasticsearch_install_dir, 'bin/elasticsearch')
   path = ::File.expand_path(path, __dir__)
   "bash #{path}"
 end
 
 ENV['TEST_CLUSTER_NODES'] = '1'
 ENV['TEST_CLUSTER_COMMAND'] = elasticsearch_command
+ENV['TEST_CLUSTER_LOGS'] = ::File.join(elasticsearch_install_dir, 'logs')
 
 namespace :elasticsearch do
   task :clean do
@@ -62,6 +69,14 @@ namespace :elasticsearch do
 
   desc 'Install a test Elasticsearch Cluster in project directory'
   task install: [:clean, :download, :extract, :install_lock]
+
+  task 'elasticsearch:start' => 'log_dir'
+  task 'log_dir' do
+    logs_dir = ::File.join(elasticsearch_install_dir, 'logs')
+    unless ::File.exist(logs_dir)
+      mkdir_p logs_dir
+    end
+  end
 end
 
 desc 'Start/Stop Elasticsearch Cluster to refresh test fixtures'
