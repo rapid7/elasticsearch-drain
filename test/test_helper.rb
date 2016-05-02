@@ -11,8 +11,13 @@ SimpleCov.start
 
 require_relative '../lib/elasticsearch/drain'
 
+def es_version
+  '1.7.2' if ENV['ES_VERSION'].nil?
+  ENV['ES_VERSION']
+end
+
 VCR.configure do |c|
-  c.cassette_library_dir = 'test/cassettes'
+  c.cassette_library_dir = ::File.join('test/cassettes', es_version)
   c.hook_into :webmock
   # c.debug_logger = $stderr
   # c.default_cassette_options = { allow_playback_repeats: true }
