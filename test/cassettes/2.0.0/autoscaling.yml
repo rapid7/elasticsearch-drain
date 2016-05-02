@@ -1,0 +1,55 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://autoscaling.us-east-1.amazonaws.com/
+    body:
+      encoding: UTF-8
+      string: Action=DescribeAutoScalingInstances&Version=2011-01-01
+    headers:
+      Content-Type:
+      - application/x-www-form-urlencoded; charset=utf-8
+      Accept-Encoding:
+      - ''
+      User-Agent:
+      - aws-sdk-ruby2/2.3.0 ruby/2.2.4 x86_64-darwin14
+      X-Amz-Date:
+      - 20160502T183808Z
+      Host:
+      - autoscaling.us-east-1.amazonaws.com
+      X-Amz-Content-Sha256:
+      - a491bab697b02179c504975ff7c43308ecfe04a995c46ebfc7244d7ae0151395
+      Authorization:
+      - AWS4-HMAC-SHA256 Credential=AKIAIUO77UUZYJM4F54Q/20160502/us-east-1/autoscaling/aws4_request,
+        SignedHeaders=content-type;host;x-amz-content-sha256;x-amz-date, Signature=cf054d9a34f943caa9904cec0fa96f981e0fae99d446f6dc163a16300ba221ca
+      Content-Length:
+      - '54'
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 403
+      message: Forbidden
+    headers:
+      X-Amzn-Requestid:
+      - 0470515f-1095-11e6-9b42-a758f49766e9
+      Content-Type:
+      - text/xml
+      Content-Length:
+      - '313'
+      Date:
+      - Mon, 02 May 2016 18:38:08 GMT
+    body:
+      encoding: UTF-8
+      string: |
+        <ErrorResponse xmlns="http://autoscaling.amazonaws.com/doc/2011-01-01/">
+          <Error>
+            <Type>Sender</Type>
+            <Code>InvalidClientTokenId</Code>
+            <Message>The security token included in the request is invalid.</Message>
+          </Error>
+          <RequestId>0470515f-1095-11e6-9b42-a758f49766e9</RequestId>
+        </ErrorResponse>
+    http_version: 
+  recorded_at: Mon, 02 May 2016 18:38:08 GMT
+recorded_with: VCR 2.9.3
