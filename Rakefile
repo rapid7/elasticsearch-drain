@@ -43,7 +43,7 @@ namespace :elasticsearch do
   task download: [:tmp] do
     next if File.exist? 'tmp/es.lock'
     Net::HTTP.start('download.elastic.co') do |http|
-      resp = http.get("/elasticsearch/elasticsearch/elasticsearch-#{ENV['ES_VERSION']}.zip")
+      resp = http.get("/elasticsearch/release/org/elasticsearch/distribution/zip/elasticsearch/#{ENV['ES_VERSION']}/elasticsearch-#{ENV['ES_VERSION']}.zip")
       open('tmp/es.zip', 'w') { |file| file.write(resp.body) }
     end
   end
