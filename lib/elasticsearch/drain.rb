@@ -40,7 +40,7 @@ module Elasticsearch
 
     # Convience method to access {Elasticsearch::Drain::Nodes}
     def nodes
-      Nodes.new(client, asg)
+      @nodes ||= Nodes.new(client, asg)
     end
 
     # Convience method to access {Elasticsearch::Drain::Cluster#cluster}
