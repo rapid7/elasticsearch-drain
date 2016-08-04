@@ -40,7 +40,7 @@ module Elasticsearch
 
     # Convience method to access {Elasticsearch::Drain::Nodes}
     def nodes
-      Nodes.new(client, asg)
+      @nodes ||= Nodes.new(client, asg)
     end
 
     # Convience method to access {Elasticsearch::Drain::Cluster#cluster}
@@ -52,7 +52,7 @@ module Elasticsearch
 
     def active_nodes_in_asg
       instances = asg.instances
-      nodes.nodes_in_asg(reload: true, instances: instances)
+      nodes.filter_nodes(instances, true)
     end
 
     module Errors

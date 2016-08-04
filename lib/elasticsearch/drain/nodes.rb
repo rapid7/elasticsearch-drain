@@ -26,7 +26,7 @@ module Elasticsearch
       # Get list of nodes in the cluster
       #
       # @return [Array<OpenStruct>] Array of node objects
-      def nodes(reload: false)
+      def nodes(reload = false)
         load if reload
         @info['nodes'].map do |node|
           Drain::Node.new(
@@ -38,8 +38,8 @@ module Elasticsearch
         end
       end
 
-      def nodes_in_asg(reload: false, instances:)
-        nodes(reload: false).find_all { |n| instances.include? n.ipaddress }
+      def filter_nodes(instances, reload = false)
+        nodes(reload).find_all { |n| instances.include? n.ipaddress }
       end
     end
   end
