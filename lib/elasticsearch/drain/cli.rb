@@ -19,14 +19,16 @@ module Elasticsearch
                                             options[:region])
         ensure_cluster_healthy
         @active_nodes = drainer.active_nodes_in_asg
-        do_exit { say_status 'Complete', 'Nothing to do', :green } if active_nodes.empty?
-        say_status 'Found Nodes', "AutoScalingGroup: #{instances}", :magenta
-        ensure_cluster_healthy
+
         # If a node or nodes are specified, only drain the requested node(s)
         @active_nodes = active_nodes.find_all do |n|
           instance_id = drainer.asg.instance(n.ipaddress).instance_id
           options[:nodes].split(',').include?(instance_id)
         end if options[:nodes]
+
+        do_exit { say_status 'Complete', 'Nothing to do', :green } if active_nodes.empty?
+        say_status 'Found Nodes', "AutoScalingGroup: #{instances}", :magenta
+        ensure_cluster_healthy
         drain_nodes
         remove_nodes
         say_status 'Complete', 'Draining nodes complete!', :green
