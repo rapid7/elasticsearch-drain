@@ -5,12 +5,12 @@ class TestAutoScaling < Minitest::Test
   def setup
     Aws.config[:stub_responses] = true
     @asg = ::Elasticsearch::Drain::AutoScaling.new('my-asg', 'us-east-1')
-    stub_describe_auto_scaling_groups(@asg.asg_client, ['i-abcd1234', 'i-1234abcd'], 'my-asg')
-    stub_describe_auto_scaling_instances(@asg.asg_client, ['i-abcd1234', 'i-1234abcd'], 'my-asg')
+    stub_asg_describe_auto_scaling_groups(@asg.asg_client, ['i-abcd1234', 'i-1234abcd'], 'my-asg')
+    stub_asg_describe_auto_scaling_instances(@asg.asg_client, ['i-abcd1234', 'i-1234abcd'], 'my-asg')
     stub_ec2_describe_instances(@asg.ec2_client, 'i-abcd1245' => '192.168.0.3', 'i-1234abcd' => '192.168.0.4')
   end
 
-  def stub_describe_auto_scaling_groups(asg_client, instances, asg_name)
+  def stub_asg_describe_auto_scaling_groups(asg_client, instances, asg_name)
     raise ArgumentError, 'instances must be an array' unless instances.respond_to?(:each)
 
     launch_config_name = "#{asg_name}-#{SecureRandom.hex[0..10].upcase}"
@@ -35,7 +35,7 @@ class TestAutoScaling < Minitest::Test
                               }])
   end
 
-  def stub_describe_auto_scaling_instances(asg_client, instances, asg_name)
+  def stub_asg_describe_auto_scaling_instances(asg_client, instances, asg_name)
     raise ArgumentError, 'instances must be an array' unless instances.respond_to?(:each)
 
     launch_config_name = "#{asg_name}-#{SecureRandom.hex[0..10].upcase}"
