@@ -76,7 +76,7 @@ module Elasticsearch
         def remove_nodes # rubocop:disable Metrics/MethodLength
           while active_nodes.length > 0
             active_nodes.each do |instance|
-              instance = drainer.nodes.filter_nodes([instance], true).first
+              instance = drainer.nodes.filter_nodes([instance.ipaddress], true).first
               if instance.bytes_stored > 0
                 say_status 'Drain Status', "Node #{instance.ipaddress} has #{instance.bytes_stored} bytes to move", :blue
                 sleep 2
