@@ -19,11 +19,15 @@ module Elasticsearch
       end
 
       def asg_client
-        Aws::AutoScaling::Client.new(region: region)
+        Aws::AutoScaling::Client.new(region: region, credentials: creds)
       end
 
       def ec2_client
-        Aws::EC2::Client.new(region: region)
+        Aws::EC2::Client.new(region: region, credentials: creds)
+      end
+
+      def creds
+        Aws::SharedCredentials.new
       end
 
       def find_instances_in_asg
