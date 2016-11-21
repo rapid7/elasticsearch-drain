@@ -34,6 +34,11 @@ module Elasticsearch
           }
         )
       end
+
+      def currently_draining(exclude_by = '_ip')
+        settings = cluster.get_settings(:flat_settings => true)
+        settings.fetch('transient', {}).fetch("cluster.routing.allocation.exclude.#{exclude_by}", nil)
+      end
     end
   end
 end
