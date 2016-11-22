@@ -85,7 +85,7 @@ module Elasticsearch
           auto_scaling_group_name: asg,
           min_size: count
         )
-        wait_until(0) do
+        wait_until(count) do
           min_size
         end
       end
