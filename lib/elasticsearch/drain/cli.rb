@@ -73,13 +73,24 @@ module Elasticsearch
           drainer.cluster.drain_nodes(nodes_to_drain, '_id')
         end
 
+        def wait_sleep_time
+          ips = active_nodes.map(&:ipaddress)
+          bytes = drainer.nodes.filter_nodes(ips).map(&:bytes_stored)
+          sleep_time = 10
+          sleep_time = 30 if bytes.any? { |b| b >= 100_000 }
+          sleep_time = 60 if bytes.any? { |b| b >= 1_000_000 }
+          sleep_time = 120 if bytes.any? { |b| b >= 10_000_000_000 }
+          sleep_time
+        end
+
         def remove_nodes # rubocop:disable Metrics/MethodLength
           while active_nodes.length > 0
+            sleep_time = wait_sleep_time
             active_nodes.each do |instance|
               instance = drainer.nodes.filter_nodes([instance.ipaddress], true).first
               if instance.bytes_stored > 0
                 say_status 'Drain Status', "Node #{instance.ipaddress} has #{instance.bytes_stored} bytes to move", :blue
-                sleep 2
+                sleep sleep_time
               else
                 next unless remove_node(instance)
                 active_nodes.delete_if { |n| n.ipaddress == instance.ipaddress }
