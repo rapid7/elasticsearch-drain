@@ -12,9 +12,9 @@ module Elasticsearch
       option :host, default: 'localhost:9200'
       option :asg, required: true
       option :region, required: true
-      option :nodes
-      option :number
-      option :continue, type: :boolean, default: true
+      option :nodes, type: :array, desc: 'A comma separated list of node IDs to drain'
+      option :number, type: :numeric, desc: 'The number of nodes to drain'
+      option :continue, type: :boolean, default: true, desc: 'Whether to continue draining nodes once the first iteration of --number is complete'
       def asg # rubocop:disable Metrics/MethodLength
         @drainer = Elasticsearch::Drain.new(options[:host],
                                             options[:asg],
@@ -36,7 +36,7 @@ module Elasticsearch
         # If a node or nodes are specified, only drain the requested node(s)
         @active_nodes = active_nodes.find_all do |n|
           instance_id = drainer.asg.instance(n.ipaddress).instance_id
-          options[:nodes].split(',').include?(instance_id)
+          options[:nodes].include?(instance_id)
         end if options[:nodes]
 
         do_exit { say_status 'Complete', 'Nothing to do', :green } if active_nodes.empty?
