@@ -12,7 +12,7 @@ module Elasticsearch
       option :host, default: 'localhost:9200'
       option :asg, required: true
       option :region, required: true
-      option :nodes, type: :array, desc: 'A comma separated list of node IDs to drain'
+      option :nodes, type: :array, desc: 'A comma separated list of node IDs to drain. If specified, the --number option has no effect'
       option :number, type: :numeric, desc: 'The number of nodes to drain'
       option :continue, type: :boolean, default: true, desc: 'Whether to continue draining nodes once the first iteration of --number is complete'
       def asg # rubocop:disable Metrics/MethodLength
@@ -25,6 +25,7 @@ module Elasticsearch
 
         # If :nodes are specified, :number has no effect
         if options[:nodes]
+          say "Nodes #{options[:nodes].join(', ')} have been specified, the --number option has no effect"
           number_to_drain = nil
           currently_draining_nodes = nil
         else
