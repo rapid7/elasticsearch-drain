@@ -124,6 +124,16 @@ module Elasticsearch
           drainer.cluster.drain_nodes(nodes_to_drain, '_id')
         end
 
+        def wait_sleep_time
+          ips = active_nodes.map(&:ipaddress)
+          bytes = drainer.nodes.filter_nodes(ips).map(&:bytes_stored)
+          sleep_time = 10
+          sleep_time = 30 if bytes.any? { |b| b >= 100_000 }
+          sleep_time = 60 if bytes.any? { |b| b >= 1_000_000 }
+          sleep_time = 120 if bytes.any? { |b| b >= 10_000_000_000 }
+          sleep_time
+        end
+
         def remove_nodes(nodes) # rubocop:disable Metrics/MethodLength
           while nodes.length > 0
             nodes.each do |instance|
