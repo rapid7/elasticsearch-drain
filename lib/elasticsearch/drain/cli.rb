@@ -80,7 +80,14 @@ module Elasticsearch
 
           # Remove the drained nodes from the list of active_nodes
           @active_nodes -= nodes
-          say_status 'Drain Nodes', "#{active_nodes.length} nodes remaining", :green unless active_nodes.empty?
+
+          unless active_nodes.empty?
+            say_status 'Drain Nodes', "#{active_nodes.length} nodes remaining", :green
+
+            sleep_time = wait_sleep_time
+            say_status 'Waiting', "Sleeping for #{sleep_time} seconds before the next iteration", :green
+            sleep sleep_time
+          end
         end
         say_status 'Complete', 'Draining nodes complete!', :green
       end
@@ -136,11 +143,12 @@ module Elasticsearch
 
         def remove_nodes(nodes) # rubocop:disable Metrics/MethodLength
           while nodes.length > 0
+            sleep_time = wait_sleep_time
             nodes.each do |instance|
               instance = drainer.nodes.filter_nodes([instance.ipaddress], true).first
               if instance.bytes_stored > 0
                 say_status 'Drain Status', "Node #{instance.ipaddress} has #{instance.bytes_stored} bytes to move", :blue
-                sleep 2
+                sleep sleep_time
               else
                 next unless remove_node(instance)
                 nodes.delete_if { |n| n.ipaddress == instance.ipaddress }
