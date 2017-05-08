@@ -38,12 +38,12 @@ module Elasticsearch
       @asg_client ||= AutoScaling.new(@asg_name, @region)
     end
 
-    # Convience method to access {Elasticsearch::Drain::Nodes}
+    # Convenience method to access {Elasticsearch::Drain::Nodes}
     def nodes
       @nodes ||= Nodes.new(client, asg)
     end
 
-    # Convience method to access {Elasticsearch::Drain::Cluster#cluster}
+    # Convenience method to access {Elasticsearch::Drain::Cluster#cluster}
     #
     # @return [Elasticsearch::API::Cluster] Elasticsearch cluster client
     def cluster
