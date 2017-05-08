@@ -2,12 +2,13 @@ require 'thor'
 
 module Elasticsearch
   class Drain
-    class CLI < ::Thor
+    class CLI < ::Thor # rubocop:disable Metrics/ClassLength
       package_name :elasticsearch
 
       attr_reader :drainer
       attr_accessor :active_nodes
 
+      # rubocop:disable Metrics/LineLength
       desc 'asg', 'Drain all documents from all nodes in an EC2 AutoScaling Group'
       option :host, default: 'localhost:9200'
       option :asg, required: true
@@ -15,6 +16,7 @@ module Elasticsearch
       option :nodes, type: :array, desc: 'A comma separated list of node IDs to drain. If specified, the --number option has no effect'
       option :number, type: :numeric, desc: 'The number of nodes to drain'
       option :continue, type: :boolean, default: true, desc: 'Whether to continue draining nodes once the first iteration of --number is complete'
+      # rubocop:enable Metrics/LineLength
       def asg # rubocop:disable Metrics/MethodLength
         @drainer = Elasticsearch::Drain.new(options[:host],
                                             options[:asg],
@@ -32,7 +34,6 @@ module Elasticsearch
           number_to_drain = options[:number]
           currently_draining_nodes = drainer.cluster.currently_draining('_id')
         end
-
 
         # If a node or nodes are specified, only drain the requested node(s)
         @active_nodes = active_nodes.find_all do |n|
@@ -147,7 +148,8 @@ module Elasticsearch
           say_status(
             'Removing Node',
             "Removing #{instance.ipaddress} from Elasticsearch cluster and #{drainer.asg.asg} AutoScalingGroup",
-            :magenta)
+            :magenta
+          )
           sleep 5 unless instance.in_recovery?
           node = "#{instance.instance_id}(#{instance.ipaddress})"
           ensure_cluster_healthy
