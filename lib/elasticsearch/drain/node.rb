@@ -99,7 +99,7 @@ module Elasticsearch
         @asg.ec2_client.wait_until(:instance_terminated,
                                    instance_ids: [instance_id]) do |w|
           w.max_attempts = 10
-          w.delay = 30
+          w.delay = 60
         end
       end
     end
