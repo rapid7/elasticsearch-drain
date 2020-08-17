@@ -121,7 +121,7 @@ module Elasticsearch
                                # Removing the nodes will result in the min_size being violated
                                desired_capacity - nodes.length
                              end
-          say_status 'Debug', 'min_size = #{min_size}, desired_capacity = #{desired_capacity}, desired_min_size = #{desired_min_size}', :magenta
+          say_status 'Debug', "min_size = #{min_size}, desired_capacity = #{desired_capacity}, desired_min_size = #{desired_min_size}", :magenta
           desired_min_size
         end
 
