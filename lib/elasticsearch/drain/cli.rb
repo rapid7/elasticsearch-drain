@@ -119,9 +119,8 @@ module Elasticsearch
                                (min_size - nodes.length) <= 0 ? 0 : (min_size - nodes.length)
                              else
                                # Removing the nodes will result in the min_size being violated
-                               desired_capacity - nodes.length
+                               (desired_capacity - nodes.length) <= 0 ? 0 : (desired_capacity - nodes.length)
                              end
-          say_status 'Debug', "min_size = #{min_size}, desired_capacity = #{desired_capacity}, desired_min_size = #{desired_min_size}", :magenta
           desired_min_size
         end
 
