@@ -83,7 +83,7 @@ module Elasticsearch
           say_status "pre-subtract", "active_nodes=#{active_nodes}", "green"
 
           deleted_nodes.each do |deleted_node|
-            @active_nodes.delete_if { |n| n.ipaddress == deleted_node.ipaddress }
+            @active_nodes.delete_if { |n| n == deleted_node }
           end 
 
           say_status "post-subtract", "active_nodes=#{active_nodes}", "green"
