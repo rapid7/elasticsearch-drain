@@ -81,7 +81,11 @@ module Elasticsearch
           # Remove the drained nodes from the list of active_nodes
           say_status "deleted nodes", "deleted_nodes=#{deleted_nodes}", "green"
           say_status "pre-subtract", "active_nodes=#{active_nodes}", "green"
-          @active_nodes -= deleted_nodes
+
+          deleted_nodes.each do |deleted_node|
+            @active_nodes.delete_if { |n| n.ipaddress == deleted_node.ipaddress }
+          end 
+
           say_status "post-subtract", "active_nodes=#{active_nodes}", "green"
 
           unless active_nodes.empty?
