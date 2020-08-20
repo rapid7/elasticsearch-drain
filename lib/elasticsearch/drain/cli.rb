@@ -76,17 +76,10 @@ module Elasticsearch
           @active_nodes = nodes unless options[:continue]
 
           drain_nodes(nodes)
-          deleted_nodes = remove_nodes(nodes)
+          remove_nodes(nodes)
 
           # Remove the drained nodes from the list of active_nodes
-          say_status "deleted nodes", "deleted_nodes=#{deleted_nodes}", "green"
-          say_status "pre-subtract", "active_nodes=#{active_nodes}", "green"
-
-          deleted_nodes.each do |deleted_node|
-            @active_nodes.delete_if { |n| n == deleted_node }
-          end 
-
-          say_status "post-subtract", "active_nodes=#{active_nodes}", "green"
+          @active_nodes -= nodes
 
           unless active_nodes.empty?
             say_status 'Drain Nodes', "#{active_nodes.length} nodes remaining", :green
@@ -126,7 +119,7 @@ module Elasticsearch
                                (min_size - nodes.length) <= 0 ? 0 : (min_size - nodes.length)
                              else
                                # Removing the nodes will result in the min_size being violated
-                               (desired_capacity - nodes.length) <= 0 ? 0 : (desired_capacity - nodes.length)
+                               desired_capacity - nodes.length
                              end
           desired_min_size
         end
@@ -149,7 +142,6 @@ module Elasticsearch
         end
 
         def remove_nodes(nodes) # rubocop:disable Metrics/MethodLength
-          deleted_nodes = []
           while nodes.length > 0
             sleep_time = wait_sleep_time
             nodes.each do |instance|
@@ -159,7 +151,6 @@ module Elasticsearch
                 sleep sleep_time
               else
                 next unless remove_node(instance)
-                deleted_nodes.push(nodes.select { |n| n.ipaddress == instance.ipaddress })
                 nodes.delete_if { |n| n.ipaddress == instance.ipaddress }
                 break if nodes.length < 1
                 say_status 'Waiting', 'Sleeping for 1 minute before removing the next node', :green
@@ -167,7 +158,6 @@ module Elasticsearch
               end
             end
           end
-          deleted_nodes
         end
 
         def remove_node(instance) # rubocop:disable Metrics/MethodLength
