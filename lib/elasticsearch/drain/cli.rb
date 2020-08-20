@@ -155,7 +155,7 @@ module Elasticsearch
                 sleep sleep_time
               else
                 next unless remove_node(instance)
-                deleted_nodes.push(nodes.select { |n| n.ipaddress == instance.ipaddress }
+                deleted_nodes.push(nodes.select { |n| n.ipaddress == instance.ipaddress })
                 nodes.delete_if { |n| n.ipaddress == instance.ipaddress }
                 break if nodes.length < 1
                 say_status 'Waiting', 'Sleeping for 1 minute before removing the next node', :green
