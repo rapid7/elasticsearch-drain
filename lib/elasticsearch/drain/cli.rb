@@ -79,7 +79,9 @@ module Elasticsearch
           remove_nodes(nodes)
 
           # Remove the drained nodes from the list of active_nodes
+          say_status "pre-subtract", "active_nodes=#{active_nodes}, nodes=#{nodes}", "green"
           @active_nodes -= nodes
+          say_status "post-subtract", "active_nodes=#{active_nodes}, nodes=#{nodes}", "green"
 
           unless active_nodes.empty?
             say_status 'Drain Nodes', "#{active_nodes.length} nodes remaining", :green
