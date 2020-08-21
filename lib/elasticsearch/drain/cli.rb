@@ -76,10 +76,12 @@ module Elasticsearch
           @active_nodes = nodes unless options[:continue]
 
           drain_nodes(nodes)
-          remove_nodes(nodes)
+          deleted_nodes = remove_nodes(nodes)
 
           # Remove the drained nodes from the list of active_nodes
-          @active_nodes -= nodes
+          deleted_nodes.each do |deleted_node|
+            active_nodes.delete_if { |n| n.id == deleted_node.id }
+	  end
 
           unless active_nodes.empty?
             say_status 'Drain Nodes', "#{active_nodes.length} nodes remaining", :green
@@ -142,6 +144,7 @@ module Elasticsearch
         end
 
         def remove_nodes(nodes) # rubocop:disable Metrics/MethodLength
+          deleted_nodes = []
           while nodes.length > 0
             sleep_time = wait_sleep_time
             nodes.each do |instance|
@@ -151,6 +154,7 @@ module Elasticsearch
                 sleep sleep_time
               else
                 next unless remove_node(instance)
+                deleted_nodes.push(nodes.find { |n| n.ipaddress == instance.ipaddress })
                 nodes.delete_if { |n| n.ipaddress == instance.ipaddress }
                 break if nodes.length < 1
                 say_status 'Waiting', 'Sleeping for 1 minute before removing the next node', :green
@@ -158,6 +162,7 @@ module Elasticsearch
               end
             end
           end
+          deleted_nodes
         end
 
         def remove_node(instance) # rubocop:disable Metrics/MethodLength
