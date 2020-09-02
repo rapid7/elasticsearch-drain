@@ -53,21 +53,21 @@ module Elasticsearch
       #
       # @return [String] Elasticsearch node ipaddress
       def ipaddress
-        address(info[1]['http_address']).split(':')[0]
+        info[1]['http_address'].split(':')[0]
       end
 
       # The Elasticsearch node Transport Address
       #
       # @return [String] Elasticsearch node Transport Address
       def transport_address
-        address(info[1]['transport_address'])
+        info[1]['transport_address']
       end
 
       # The Elasticsearch node HTTP Address
       #
       # @return [String] Elasticsearch nodes HTTP Address
       def http_address
-        address(info[1]['http_address'])
+        info[1]['http_address']
       end
 
       # Get size in bytes used for indices for a node
@@ -75,14 +75,6 @@ module Elasticsearch
       # @return [Integer] size in bytes used to store indicies on node
       def bytes_stored
         stats[1]['indices']['store']['size_in_bytes']
-      end
-
-      # Extract ip:port from string passed in
-      #
-      # @param [String] str The address object to parse for the ip:port
-      # @return [String] ip:port pair from the data passed in
-      def address(str)
-        str.match(/.+\[\/(.+)\]/)[1]
       end
 
       def in_recovery?
