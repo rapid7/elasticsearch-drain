@@ -149,16 +149,18 @@ module Elasticsearch
             sleep_time = wait_sleep_time
             nodes.each do |instance|
               instance = drainer.nodes.filter_nodes([instance.ipaddress], true).first
-              if instance.bytes_stored > 0
-                say_status 'Drain Status', "Node #{instance.ipaddress} has #{instance.bytes_stored} bytes to move", :blue
-                sleep sleep_time
-              else
-                next unless remove_node(instance)
-                deleted_nodes.push(nodes.find { |n| n.ipaddress == instance.ipaddress })
-                nodes.delete_if { |n| n.ipaddress == instance.ipaddress }
-                break if nodes.length < 1
-                say_status 'Waiting', 'Sleeping for 1 minute before removing the next node', :green
-                sleep 60
+              unless instance.nil? || instance == 0
+                if instance.bytes_stored > 0
+                  say_status 'Drain Status', "Node #{instance.ipaddress} has #{instance.bytes_stored} bytes to move", :blue
+                  sleep sleep_time
+                else
+                  next unless remove_node(instance)
+                  deleted_nodes.push(nodes.find { |n| n.ipaddress == instance.ipaddress })
+                  nodes.delete_if { |n| n.ipaddress == instance.ipaddress }
+                  break if nodes.length < 1
+                  say_status 'Waiting', 'Sleeping for 1 minute before removing the next node', :green
+                  sleep 60
+                end
               end
             end
           end
