@@ -161,6 +161,9 @@ module Elasticsearch
                   say_status 'Waiting', 'Sleeping for 1 minute before removing the next node', :green
                   sleep 60
                 end
+              else
+                deleted_nodes.push(instance)
+                nodes.delete(instance)
               end
             end
           end
