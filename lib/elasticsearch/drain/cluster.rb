@@ -11,8 +11,7 @@ module Elasticsearch
 
       def health(opts = {})
         default_opts = {
-          wait_for_status: 'green',
-          timeout: 60
+          wait_for_status: 'green'
         }
         opts = default_opts.merge(opts)
         cluster.health(opts)
