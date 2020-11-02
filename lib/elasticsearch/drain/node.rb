@@ -50,13 +50,20 @@ module Elasticsearch
       end
 
       # The Elasticsearch node ipaddress
+      # 
+      # For ES v1.x, we must extract and modify the IP
+      # address from the http_address key. For all later
+      # versions, we can use the host key directly.
+      # That's why we check with the if/else statement.
       #
       # @return [String] Elasticsearch node ipaddress
       def ipaddress
-        if info[1]['transport_address'] != "" 
-          address(info[1]['transport_address']).split(':')[0]
+        block = /\d{,2}|1\d{2}|2[0-4]\d|25[0-5]/
+        re = /\A#{block}\.#{block}\.#{block}\.#{block}\z/
+        if info[1]['host'] && re =~ info[1]['host']
+          info[1]['host']
         else
-          address(info[1]['http_address']).split(':')[0]
+          address(info[1]['http_address']).split(':')[0]  
         end
       end
 
