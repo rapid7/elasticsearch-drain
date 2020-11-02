@@ -53,7 +53,7 @@ module Elasticsearch
       #
       # @return [String] Elasticsearch node ipaddress
       def ipaddress
-        if info[1]['transport'] != "" 
+        if info[1]['transport_address'] != "" 
           address(info[1]['transport_address']).split(':')[0]
         else
           address(info[1]['http_address']).split(':')[0]
