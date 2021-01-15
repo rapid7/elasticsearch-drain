@@ -97,7 +97,10 @@ module Elasticsearch
       end
 
       def in_recovery?
-        recovery = client.cat.recovery(format: 'json', v: true).first.values
+        recovery = client.cat.recovery(format: 'json', v: true)
+        if recovery.first != nil
+          recovery = recovery.first.values
+        end
         [hostname, name].any? { |a| recovery.include?(a) }
       end
 
