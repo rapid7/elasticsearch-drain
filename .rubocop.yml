@@ -1,1 +1,7 @@
 inherit_from: .rubocop_todo.yml
+AllCops:
+  Exclude:
+  - 'vendor/**/*'
+
+Style/SignalException:
+  EnforcedStyle: only_raise
