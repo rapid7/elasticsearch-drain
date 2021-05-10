@@ -1,13 +1,16 @@
 require 'vcr'
 require 'ipaddr'
 require 'webmock'
-require 'simplecov'
 require 'minitest/spec'
 require 'minitest/autorun'
 require 'elasticsearch/extensions/test/cluster'
 
 gem 'minitest'
-SimpleCov.start
+
+if ENV['COVERAGE'] || ENV['CI']
+  require 'simplecov'
+  SimpleCov.start
+end
 
 require_relative '../lib/elasticsearch/drain'
 
