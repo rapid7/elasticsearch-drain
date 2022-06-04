@@ -11,6 +11,10 @@ module Elasticsearch
       # AWS region
       attr_reader :region
 
+      # @attribute [r]
+      # AutoScaling Client
+      attr_reader :asg_client
+
       def initialize(asg, region)
         @asg = asg
         @region = region
