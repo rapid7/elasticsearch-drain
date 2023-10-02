@@ -1,0 +1,14 @@
+---
+info:
+  title: Elasticsearch Drain
+  x-cortex-git:
+    github:
+      alias: r7org
+      repository: rapid7/elasticsearch-drain
+  x-cortex-tag: elasticsearch-drain
+  x-cortex-type: service
+  x-cortex-domain-parents:
+  - tag: platform-delivery
+openapi: 3.0.1
+servers:
+- url: "/"
